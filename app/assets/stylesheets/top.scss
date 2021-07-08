@@ -1,3 +1,14 @@
 // Place all the styles related to the top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+$top_background-color: #fee;
+
+.top_background_img {
+  height: 500px;
+  background-image: url('top/hospital.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $top_background-color;
+}

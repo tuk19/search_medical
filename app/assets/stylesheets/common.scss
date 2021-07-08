@@ -1,4 +1,28 @@
-$main-color: #cef;
+$main-color: #16e;
+$body_background-color: skyblue;
+$jp_font-family: "メイリオ";
+
+body {
+  margin: 20px 40px;
+  background-color: $body_background_color;
+  font-family: $jp_font-family;
+}
+
+a {
+  text-decoration: none;
+}
+
+.image_mask {
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.page_title {
+  margin: -20px;
+  padding: 20px;
+  background-color: $body_background-color;
+}
 
 .flex {
   display: flex;
