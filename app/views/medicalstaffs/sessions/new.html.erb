@@ -1,23 +1,30 @@
 <div class="medicalstaff_login_main">
-  <h2>医療関係者ログイン</h2>
-  <%= form_with(model: resource, scope: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <p class="medicalstaff_login_mail_label">メールアドレス</p>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-    <div class="field">
-      <p class="medicalstaff_login_password_label">パスワード</p>
-      <%= f.password_field :password, autocomplete: "current-password" %>
-    </div>
-    <% if devise_mapping.rememberable? %>
+  <div class="medicalstaff_login_container">
+    <h2>医療関係者ログイン</h2>
+    <%= form_with(model: resource, scope: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
-        <%= f.check_box :remember_me %>
-        <span class="medicalstaff_login_remember_me">ログイン情報を記憶する</span>
+        <span class="medicalstaff_login_mail_label">メールアドレス</span>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+      <div class="field">
+        <span class="medicalstaff_login_password_label">パスワード</span>
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
+      <% if devise_mapping.rememberable? %>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <span class="medicalstaff_login_remember_me">ログイン情報を記憶する</span>
+        </div>
+      <% end %>
+      <div class="actions">
+        <%= f.submit "ログイン", class: "medicalstaff_login_submit" %>
       </div>
     <% end %>
-    <div class="actions">
-      <%= f.submit "ログイン", class: "medicalstaff_login_submit" %>
+    <%= render "medicalstaffs/shared/links" %>
+    <div class="medicalstaff_admin">
+      <p class="medicalstaff_admin_text">テスト用アカウント</p>
+      <p class="medicalstaff_admin_mail">staff@staff.com</p>
+      <p class="medicalstaff_admin_password">foobarbaz</p>
     </div>
-  <% end %>
-  <%= render "medicalstaffs/shared/links" %>
+  </div>
 </div>
