@@ -3,12 +3,42 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 $top_background-color: #fee;
+$user-color: #16e;
+$medicalstaff_color: #eaf;
 
 .top_background_img {
-  height: 500px;
+  height: 650px;
   background-image: url('top/hospital.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   background-color: $top_background-color;
+  .image_mask {
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.45);
+    .size_adjust {
+      margin: 0 30px;
+      padding: 30px;
+    }
+  }
+}
+
+.user_login {
+  color: $user-color;
+  font-weight: bold;
+}
+
+.medicalstaff_login {
+  color: $medicalstaff_color;
+  font-weight: bold;
+}
+
+.down_triangle {
+  margin: auto;
+  width: 0px;
+  height: 0px;
+  border-top: 30px solid black;
+  border-right: 30px solid transparent;
+  border-left:  30px solid transparent;
 }
