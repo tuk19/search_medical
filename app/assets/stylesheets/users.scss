@@ -1,3 +1,77 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+$user-color: #16e;
+
+/* ===================================================================
+                  user_sessions_new
+====================================================================*/
+.user_login_main {
+  padding: 0 25%;
+  text-align: center;
+  h2 {
+    color: $user-color;
+  }
+  .user_login_container{
+    border: 2px solid $user-color;
+    border-radius: 20px;
+    background-color: white;
+  }
+  .field {
+    margin: 10px;
+  }
+  .user_login_mail_label, .user_login_password_label {
+    padding-right: 10px;
+  }
+  .user_login_submit {
+    padding: 5px 40px;
+    margin: 10px;
+    color: white;
+    border: 1px solid $user-color;
+    border-radius: 5px;
+    background-color: $user-color;
+  }
+  .user_admin {
+    padding: 10px;
+    margin: 20px 25%;
+    border: 1px solid black;
+    border-radius: 20px;
+  }
+}
+
+/* ===================================================================
+                  user_registrations_new
+====================================================================*/
+.user_registration_main {
+  padding: 0 25%;
+  text-align: center;
+  h2 {
+    color: $user-color;
+  }
+  .user_registration_container{
+    border: 2px solid $user-color;
+    border-radius: 20px;
+    background-color: white;
+  }
+  .field {
+    margin: 10px;
+  }
+  .user_registration_mail_label, .user_registration_password_label, .user_registration_password_confirmation_label {
+    padding-right: 10px;
+  }
+  .user_registration_submit {
+    padding: 5px 40px;
+    margin: 10px;
+    color: white;
+    border: 1px solid $user-color;
+    border-radius: 5px;
+    background-color: $user-color;
+  }
+  .user_admin {
+    padding: 10px;
+    margin: 20px 25%;
+    border: 1px solid black;
+    border-radius: 20px;
+  }
+}
