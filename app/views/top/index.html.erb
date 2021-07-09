@@ -3,48 +3,57 @@
     <div class="size_adjust">
       <h1>医療機関を検索できます</h1>
       <div class="login">
-          <% if user_signed_in? %>
-            <div class="user_body">
+        <% if user_signed_in? %>
+          <div class="user_body">
+            <p>ログインしています(ログアウトは右上から)</p>
+            <p>お気に入り機能が使えます</p>
+            <p>コメントを残すことができます</p>
+          </div>
+        <% elsif medicalstaff_signed_in? %>
+          <div class="midecal_staff_body">
+            <p>医療関係者としてログインしています</p>
+            <p>近隣医療機関を表示することができます</p>
+          </div>
+        <% else %>
+          <div class="login_body font_large">
+            <div class="login_top">
+              <p class="login_text">ログインしてお気に入り機能を使おう</p>
+              <p class="login_description">
+                ログインするとお気に入り機能が使えるようになります。<br>
+                かかりつけの医療機関や気になった医療機関をお気に入りにすることで、より便利にご利用いただけます。
+              </p>
             </div>
-          <% elsif medicalstaff_signed_in? %>
-            <div class="midecal_staff_body">
-            </div>
-          <% else %>
-            <div class="login_body font_large">
-              <div class="login_top">
-                <p class="login_text">ログインしてお気に入り機能を使おう</p>
-                <p class="login_description">
-                  ログインするとお気に入り機能が使えるようになります。<br>
-                  かかりつけの医療機関や気になった医療機関をお気に入りにすることで、より便利にご利用いただけます。
-                </p>
-              </div>
-              <div class="flex_justify container">
-                <div class="user_login text_center font_larger">
-                  <p class="user_login_text">患者様・ご家族様はこちら</p>
-                  <div class="new_user_login">
-                    <%= link_to "ログイン", new_user_session_path, class: "new_user_login_text sesstion_path" %>
-                  </div>
-                  <div class="new_user_registration">
-                    <%= link_to "新規登録", new_user_registration_path, class: "new_user_registration_text registration_path" %>
-                  </div>
+            <div class="flex_justify container">
+              <div class="user_login text_center font_larger">
+                <p class="user_login_text">患者様・ご家族様はこちら</p>
+                <div class="new_user_login">
+                  <%= link_to "ログイン", new_user_session_path, class: "new_user_login_text sesstion_path" %>
                 </div>
-                <div class="medicalstaff_login text_center font_larger">
-                  <p class="medicalstaff_login_text">医療関係者の皆様はこちら</p>
-                  <div class="new_medicalstaff_login">
-                    <%= link_to "ログイン", new_medicalstaff_session_path, class: "new_medicalstaff_login_text sesstion_path" %>
-                  </div>
-                  <div class="new_medicalstaff_registration">
-                    <%= link_to "新規登録", new_medicalstaff_registration_path, class: "new_medicalstaff_registarion_text registration_path" %>
-                  </div>
+                <div class="new_user_registration">
+                  <%= link_to "新規登録", new_user_registration_path, class: "new_user_registration_text registration_path" %>
                 </div>
               </div>
+              <div class="medicalstaff_login text_center font_larger">
+                <p class="medicalstaff_login_text">医療関係者の皆様はこちら</p>
+                <div class="new_medicalstaff_login">
+                  <%= link_to "ログイン", new_medicalstaff_session_path, class: "new_medicalstaff_login_text sesstion_path" %>
+                </div>
+                <div class="new_medicalstaff_registration">
+                  <%= link_to "新規登録", new_medicalstaff_registration_path, class: "new_medicalstaff_registarion_text registration_path" %>
+                </div>
+              </div>
+            </div>
+            <% if user_signed_in? %>
+            <% elsif medicalstaff_signed_in? %>
+            <% else %>
               <div class="without_login text_center font_larger">
-                <p class="without_login_text">ログインしない場合</p>
+                <p class="without_login_text">ログインせずに検索</p>
                 <div class="down_triangle">
                 </div>
               </div>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

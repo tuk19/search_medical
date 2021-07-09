@@ -5,18 +5,23 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <header class="header">
-      <h2 class="page_title">医療機関検索</h2>
+      <div class="top_bar">
+        <h2 class="page_title">医療機関検索</h2>
+        <% if user_signed_in? %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        <% elsif medicalstaff_signed_in? %>
+          <%= link_to "ログアウト", destroy_medicalstaff_session_path, method: :delete %>
+        <% end %>
+        <%= link_to "home", root_path %>
+      </div>
     </header>
     <%= yield %>
     <div class="footer">
-
     </div>
   </body>
 </html>
