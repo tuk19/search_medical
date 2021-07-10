@@ -44,6 +44,9 @@
         <%= link_to "home", root_path %>
       </div>
     </header>
+    <% if flash.notice %>
+      <%= flash.notice %>
+    <% end %>
     <%= yield %>
     <div class="footer">
     </div>
