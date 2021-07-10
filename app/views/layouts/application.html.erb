@@ -13,8 +13,15 @@
       <div class="top_bar">
         <h2 class="page_title">医療機関検索</h2>
         <% if user_signed_in? %>
-          <%= link_to "プロフィール画面", users_index_path %>
+          <%= link_to "プロフィール画面", users_path %>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <%= link_to users_path do %>
+            <% if current_user.name? %>
+              <%= current_user.name %>
+            <% else %>
+              <p>ゲスト</p>
+            <% end %>
+          <% end %>
           <% if current_user.image? %>
             <%= image_tag current_user.image.url, alt: "プロフィール画像", class: "user_image" %>
           <% else %>
