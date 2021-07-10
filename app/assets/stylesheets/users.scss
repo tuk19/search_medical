@@ -5,9 +5,20 @@
 $user-color: #16e;
 
 /* ===================================================================
-                  user_sessions_new
+                  users/common
+====================================================================*/
+.default_user_image, .user_image {
+  width: 80px;
+  border-radius: 50%;
+  background-color: white;
+  height: 80px;
+}
+
+/* ===================================================================
+                  users/sessions/new
 ====================================================================*/
 .user_login_main {
+  margin: 30px 0;
   padding: 0 25%;
   text-align: center;
   h2 {
@@ -41,12 +52,17 @@ $user-color: #16e;
 }
 
 /* ===================================================================
-                  user_registrations_new
+          users/registrations/new & users/registrations/edit
 ====================================================================*/
 .user_registration_main {
+  margin: 30px 0;
   padding: 0 25%;
   text-align: center;
+  .user_registration_container {
+    padding: 20px;
+  }
   h2 {
+    margin: 0;
     color: $user-color;
   }
   .user_registration_container{
@@ -57,7 +73,67 @@ $user-color: #16e;
   .field {
     margin: 10px;
   }
-  .user_registration_mail_label, .user_registration_password_label, .user_registration_password_confirmation_label {
+  .user_registration_mail_label, .user_registration_password_label, .user_registration_password_confirmation_label, .user_registration_current_password_label {
+    padding-right: 10px;
+  }
+  .user_registration_submit, .link_to_back {
+    padding: 5px 40px;
+    margin: 10px;
+    color: white;
+    border: 1px solid $user-color;
+    border-radius: 5px;
+    background-color: $user-color;
+  }
+  .delete_account_button{
+    padding: 5px 40px;
+    margin: 10px;
+    color: red;
+    border: 1px solid red;
+    border-radius: 5px;
+    background-color: white;
+  }
+  .user_admin {
+    padding: 10px;
+    margin: 20px 25%;
+    border: 1px solid black;
+    border-radius: 20px;
+  }
+}
+
+/* ===================================================================
+                  users/shared/_links
+====================================================================*/
+
+.user_link_container {
+  margin: 10px;
+  .user_link {
+    padding: 5px 10px;
+    color: $user-color;
+    border: 1px solid black;
+    border-radius: 20px;
+  }
+}
+
+/* ===================================================================
+                  users/index
+====================================================================*/
+.user_index_main {
+  margin: 30px 0;
+  padding: 0 25%;
+  text-align: center;
+  .user_index_container {
+    padding: 20px;
+    border: 2px solid $user-color;
+    border-radius: 20px;
+    background-color: white;
+  }
+  h2 {
+    color: $user-color;
+  }
+  .user_index_name_container, .user_index_email_container, .user_index_password_container{
+    margin: 5px;
+  }
+  .user_name_index, .user_email_index, .user_password_index {
     padding-right: 10px;
   }
   .user_registration_submit {
@@ -68,10 +144,48 @@ $user-color: #16e;
     border-radius: 5px;
     background-color: $user-color;
   }
-  .user_admin {
-    padding: 10px;
-    margin: 20px 25%;
-    border: 1px solid black;
+  .user_index_link_edit {
+    margin: 20px 0;
+    .link_to_user_edit {
+      padding: 10px;
+      color: $user-color;
+      border: 1px solid black;
+      border-radius: 20px;
+    }
+  }
+}
+
+/* ===================================================================
+                  users/edit
+====================================================================*/
+.user_edit_main {
+  margin: 30px 0;
+  padding: 0 25%;
+  text-align: center;
+  .user_edit_container {
+    padding: 20px;
+    border: 2px solid $user-color;
     border-radius: 20px;
+    background-color: white;
+  }
+  h2 {
+    color: $user-color;
+  }
+  .user_edit_name_container {
+    margin: 20px;
+  }
+  .user_edit_image_container, .user_edit_prof_image_container {
+    margin: 10px;
+  }
+  .user_image_label {
+    vertical-align: top;
+  }
+  .user_edit_submit {
+    padding: 5px 40px;
+    margin: 10px;
+    color: white;
+    border: 1px solid $user-color;
+    border-radius: 5px;
+    background-color: $user-color;
   }
 }
