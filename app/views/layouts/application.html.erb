@@ -29,6 +29,17 @@
           <% end %>
         <% elsif medicalstaff_signed_in? %>
           <%= link_to "ログアウト", destroy_medicalstaff_session_path, method: :delete %>
+          <% if current_medicalstaff.name? %>
+            <%= current_medicalstaff.name %>
+          <% else %>
+            <p>ゲスト</p>
+          <% end %>
+          <% if current_medicalstaff.address? %>
+            <%= current_medicalstaff.address %>
+          <% else %>
+            住所が登録されていません
+          <% end %>
+          <%= link_to "登録情報確認", medicalstaffs_path %>
         <% end %>
         <%= link_to "home", root_path %>
       </div>
