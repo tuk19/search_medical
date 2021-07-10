@@ -1,5 +1,27 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
-<%= @user.id %>
-<%= @user.name %>
-<%= link_to "編集", edit_user_path(current_user.id) %>
+<div class="user_index_main">
+  <div class="user_index_container">
+    <h2>ユーザープロフィール</h2>
+    <div class="user_index_name_container">
+      <span class="user_name_index">ユーザー名</span>
+      <% if @user.name? %>
+        <%= @user.name %>
+      <% else %>
+        ゲスト
+      <% end %>
+    </div>
+    <div class="user_index_email_container">
+      <span class="user_email_index">メールアドレス</span>
+      <%= @user.email %>
+    </div>
+    <div class="user_index_password_container">
+      <span class="user_password_index">パスワード</span>
+      <%= "*" * 6 %>
+    </div>
+    <div class="user_index_link_edit">
+      <%= link_to "アカウント情報を編集する", edit_user_registration_path(current_user.id), class: "user_link link_to_user_edit" %>
+    </div>
+    <div class="user_index_link_edit">
+      <%= link_to "プロフィールを編集する", edit_user_path(current_user.id), class: "user_link link_to_user_edit" %>
+    </div>
+  </div>
+</div>
