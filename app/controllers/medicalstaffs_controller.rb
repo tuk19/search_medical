@@ -8,7 +8,7 @@ class MedicalstaffsController < ApplicationController
   end
 
   def update
-    @staff = medicalstaff.find(current_medicalstaff.id)
+    @staff = Medicalstaff.find(current_medicalstaff.id)
     if @staff.update(params.require(:medicalstaff).permit(:name, :address))
       flash[:notice] = "プロフィール情報を更新しました"
       redirect_to edit_medicalstaff_path(current_medicalstaff)
