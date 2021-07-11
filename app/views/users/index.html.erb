@@ -18,10 +18,10 @@
       <%= "*" * 6 %>
     </div>
     <div class="user_index_link_edit">
-      <%= link_to "アカウント情報を編集する", edit_user_registration_path(current_user.id), class: "user_link link_to_user_edit" %>
+      <%= link_to "アカウント情報を編集する", edit_user_registration_path(@user.id), class: "user_link link_to_user_edit" %>
     </div>
     <div class="user_index_link_edit">
-      <%= link_to "プロフィールを編集する", edit_user_path(current_user.id), class: "user_link link_to_user_edit" %>
+      <%= link_to "プロフィールを編集する", edit_user_path(@user.id), class: "user_link link_to_user_edit" %>
     </div>
   </div>
 </div>
