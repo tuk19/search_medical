@@ -12,14 +12,13 @@
     <header class="header">
       <div class="top_bar">
         <h2 class="page_title">医療機関検索</h2>
+        <div class="linkto_home"><%= link_to "home", root_path %></div>
         <% if user_signed_in? %>
-          <%= link_to "プロフィール画面", users_path %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
           <%= link_to users_path do %>
             <% if current_user.name? %>
-              <%= current_user.name %>
+              <div class="user_name"><%= current_user.name %></div>
             <% else %>
-              <p>ゲスト</p>
+              <div class="user_guest">ゲスト</div>
             <% end %>
           <% end %>
           <% if current_user.image? %>
@@ -27,21 +26,22 @@
           <% else %>
             <%= image_tag "default_icon.png", alt: "プロフィール画像", class: "default_user_image" %>
           <% end %>
+          <div class="link_users_path"><%= link_to "プロフィール画面", users_path %></div>
+          <div class="logout_users"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
         <% elsif medicalstaff_signed_in? %>
-          <%= link_to "ログアウト", destroy_medicalstaff_session_path, method: :delete %>
           <% if current_medicalstaff.name? %>
-            <%= current_medicalstaff.name %>
+            <div class="staff_name"><%= current_medicalstaff.name %></div>
           <% else %>
-            <p>ゲスト</p>
+            <div class="staff_guest">ゲスト</div>
           <% end %>
           <% if current_medicalstaff.address? %>
-            <%= current_medicalstaff.address %>
+            <div class="staff_address"><%= current_medicalstaff.address %></div>
           <% else %>
-            住所が登録されていません
+            <div class="default_staff_address">住所が登録されていません</div>
           <% end %>
-          <%= link_to "登録情報確認", medicalstaffs_path %>
+          <div class="linkto_staff_info"><%= link_to "登録情報確認", medicalstaffs_path %></div>
+          <div class="logout_staff"><%= link_to "ログアウト", destroy_medicalstaff_session_path, method: :delete %></div>
         <% end %>
-        <%= link_to "home", root_path %>
       </div>
     </header>
     <% if flash.notice %>
