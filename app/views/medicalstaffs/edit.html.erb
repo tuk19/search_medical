@@ -3,17 +3,13 @@
     <h2>ユーザープロフィール編集</h2>
     <%= form_with model: @staff do |f| %>
       <div class="medicalstaff_edit_name_container">
-        <%= f.label :name, "医療機関名" %>
+        <%= f.label :name, "登録名" %>
         <%= f.text_field :name %>
       </div>
       <div class="medicalstaff_edit_address_container">
-        <%= f.label :address, "登録住所", class: "medicalstaff_address_label" %>
+        <%= f.label :address, "住所", class: "medicalstaff_address_label" %>
         <div class="medicalstaff_address_container">
-          <% if @staff.address? %>
-            <%= @staff.address %>
-          <% else %>
-            住所が登録されていません
-          <% end %>
+          <%= f.text_field :address, class: "medicalstaff_address_text_field" %>
         </div>
       </div>
       <%= f.submit "更新する", class: "medicalstaff_edit_submit" %>
