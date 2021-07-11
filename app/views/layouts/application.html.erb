@@ -12,7 +12,8 @@
     <header class="header">
       <div class="top_bar">
         <h2 class="page_title">医療機関検索</h2>
-        <div class="linkto_home"><%= link_to "home", root_path %></div>
+        <div class="link_home"><%= link_to "home", root_path %></div>
+        <div class="link_institution"><%= link_to "医療機関情報", institutions_path %></div>
         <% if user_signed_in? %>
           <%= link_to users_path do %>
             <% if current_user.name? %>
@@ -39,7 +40,7 @@
           <% else %>
             <div class="default_staff_address">住所が登録されていません</div>
           <% end %>
-          <div class="linkto_staff_info"><%= link_to "登録情報確認", medicalstaffs_path %></div>
+          <div class="link_staff_info"><%= link_to "登録情報確認", medicalstaffs_path %></div>
           <div class="logout_staff"><%= link_to "ログアウト", destroy_medicalstaff_session_path, method: :delete %></div>
         <% end %>
       </div>
