@@ -4,9 +4,10 @@
 
 $medicalstaff-color: #eaf;
 /* ===================================================================
-                  medicalstaff_sessions_new
+                  medicalstaff/sessions/new
 ====================================================================*/
 .medicalstaff_login_main {
+  margin: 30px 0;
   padding: 0 25%;
   text-align: center;
   h2 {
@@ -40,12 +41,17 @@ $medicalstaff-color: #eaf;
 }
 
 /* ===================================================================
-                  medicalstaff_registrations_new
+  medicalstaffs/registrations/new & medicalstaffs/registrations/edit
 ====================================================================*/
 .medicalstaff_registration_main {
+  margin: 30px 0;
   padding: 0 25%;
   text-align: center;
+  .medicalstaff_registration_container {
+    padding: 20px;
+  }
   h2 {
+    margin: 0;
     color: $medicalstaff-color;
   }
   .medicalstaff_registration_container{
@@ -67,10 +73,109 @@ $medicalstaff-color: #eaf;
     border-radius: 5px;
     background-color: $medicalstaff-color;
   }
+  .delete_account_button{
+    padding: 5px 40px;
+    margin: 10px;
+    color: red;
+    border: 1px solid red;
+    border-radius: 5px;
+    background-color: white;
+  }
   .medicalstaff_admin {
     padding: 10px;
     margin: 20px 25%;
     border: 1px solid black;
     border-radius: 20px;
+  }
+}
+
+/* ===================================================================
+                  medicalstaffs/shared/_links
+====================================================================*/
+
+.medicalstaff_link_container {
+  margin: 10px;
+  .medicalstaff_link {
+    padding: 5px 10px;
+    color: $medicalstaff-color;
+    border: 1px solid black;
+    border-radius: 20px;
+  }
+}
+
+
+/* ===================================================================
+                  medicalstaffs/index
+====================================================================*/
+.medicalstaff_index_main {
+  margin: 30px 0;
+  padding: 0 25%;
+  text-align: center;
+  .medicalstaff_index_container {
+    padding: 20px;
+    border: 2px solid $medicalstaff-color;
+    border-radius: 20px;
+    background-color: white;
+  }
+  h2 {
+    color: $medicalstaff-color;
+  }
+  .medicalstaff_index_name_container, .medicalstaff_index_address_container, .medicalstaff_index_email_container, .medicalstaff_index_password_container{
+    margin: 5px;
+  }
+  .medicalstaff_name_index, .medicalstaff_address_index, .medicalstaff_email_index, .medicalstaff_password_index {
+    padding-right: 10px;
+  }
+  .medicalstaff_registration_submit {
+    padding: 5px 40px;
+    margin: 10px;
+    color: white;
+    border: 1px solid $medicalstaff-color;
+    border-radius: 5px;
+    background-color: $medicalstaff-color;
+  }
+  .medicalstaff_index_link_edit {
+    margin: 20px 0;
+    .link_to_medicalstaff_edit {
+      padding: 10px;
+      color: $medicalstaff-color;
+      border: 1px solid black;
+      border-radius: 20px;
+    }
+  }
+}
+
+/* ===================================================================
+                  medicalstaffs/edit
+====================================================================*/
+.medicalstaff_edit_main {
+  margin: 30px 0;
+  padding: 0 25%;
+  text-align: center;
+  .medicalstaff_edit_container {
+    padding: 20px;
+    border: 2px solid $medicalstaff-color;
+    border-radius: 20px;
+    background-color: white;
+  }
+  h2 {
+    color: $medicalstaff-color;
+  }
+  .medicalstaff_edit_name_container {
+    margin: 20px;
+  }
+  .medicalstaff_edit_address_container, .medicalstaff_edit_prof_address_container {
+    margin: 10px;
+  }
+  .medicalstaff_address_label {
+    vertical-align: top;
+  }
+  .medicalstaff_edit_submit {
+    padding: 5px 40px;
+    margin: 10px;
+    color: white;
+    border: 1px solid $medicalstaff-color;
+    border-radius: 5px;
+    background-color: $medicalstaff-color;
   }
 }

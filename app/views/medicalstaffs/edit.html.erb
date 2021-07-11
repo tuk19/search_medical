@@ -1,3 +1,22 @@
-<%= form_with model: @staff do |f| %>
-  <%= @staff.id %>
-<% end %>
+<div class="medicalstaff_edit_main">
+  <div class="medicalstaff_edit_container">
+    <h2>ユーザープロフィール編集</h2>
+    <%= form_with model: @staff do |f| %>
+      <div class="medicalstaff_edit_name_container">
+        <%= f.label :name, "医療機関名" %>
+        <%= f.text_field :name %>
+      </div>
+      <div class="medicalstaff_edit_address_container">
+        <%= f.label :address, "登録住所", class: "medicalstaff_address_label" %>
+        <div class="medicalstaff_address_container">
+          <% if @staff.address? %>
+            <%= @staff.address %>
+          <% else %>
+            住所が登録されていません
+          <% end %>
+        </div>
+      </div>
+      <%= f.submit "更新する", class: "medicalstaff_edit_submit" %>
+    <% end %>
+  </div>
+</div>

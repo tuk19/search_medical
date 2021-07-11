@@ -1,3 +1,35 @@
-<h1>Medicalstaffs#index</h1>
-<p>Find me in app/views/medicalstaffs/index.html.erb</p>
-<%= link_to "編集画面へ", edit_medicalstaff_path(@staff.id) %>
+<div class="medicalstaff_index_main">
+  <div class="medicalstaff_index_container">
+    <h2>登録情報</h2>
+    <div class="medicalstaff_index_name_container">
+      <span class="medicalstaff_name_index">所属医療機関</span>
+      <% if @staff.name? %>
+        <%= @staff.name %>
+      <% else %>
+        医療機関が登録されていません
+      <% end %>
+    </div>
+    <div class="medicalstaff_index_address_container">
+      <span class="medicalstaff_address_index">住所</span>
+      <% if @staff.address? %>
+        <%= @staff.address %>
+      <% else %>
+        住所が登録されていません
+      <% end %>
+    </div>
+    <div class="medicalstaff_index_email_container">
+      <span class="medicalstaff_email_index">メールアドレス</span>
+      <%= @staff.email %>
+    </div>
+    <div class="medicalstaff_index_password_container">
+      <span class="medicalstaff_password_index">パスワード</span>
+      <%= "*" * 6 %>
+    </div>
+    <div class="medicalstaff_index_link_edit">
+      <%= link_to "アカウント情報を編集する", edit_medicalstaff_registration_path(@staff.id), class: "medicalstaff_link link_to_medicalstaff_edit" %>
+    </div>
+    <div class="medicalstaff_index_link_edit">
+      <%= link_to "登録情報を編集する", edit_medicalstaff_path(@staff.id), class: "medicalstaff_link link_to_medicalstaff_edit" %>
+    </div>
+  </div>
+</div>
