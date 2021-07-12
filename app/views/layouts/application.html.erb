@@ -13,7 +13,6 @@
       <div class="top_bar">
         <h2 class="page_title">医療機関検索</h2>
         <div class="link_home"><%= link_to "home", root_path %></div>
-        <div class="link_institution"><%= link_to "医療機関情報", institutions_path %></div>
         <% if user_signed_in? %>
           <%= link_to users_path do %>
             <% if current_user.name? %>
@@ -30,6 +29,7 @@
           <div class="link_users_path"><%= link_to "プロフィール画面", users_path %></div>
           <div class="logout_users"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
         <% elsif medicalstaff_signed_in? %>
+          <div class="link_institution"><%= link_to "医療機関情報", institutions_path %></div>
           <% if current_medicalstaff.name? %>
             <div class="staff_name"><%= current_medicalstaff.name %></div>
           <% else %>
