@@ -1,2 +1,27 @@
 <h1>Institutions#index</h1>
-<p>Find me in app/views/institutions/index.html.erb</p>
+  <h2>医療機関情報</h2>
+  <p><%= link_to "新規作成", new_institution_path %></p>
+  <div class="insitution_index_table">
+    <tr>
+      <th>画像</th>
+      <th>郵便番号</th>
+      <th>住所</th>
+      <th>編集</th>
+      <th>削除</th>
+    </tr>
+    <% @institution.each do |institution| %>
+      <tr>
+        <td>
+          <% if institution.image? %>
+            <%= image_tag institution.image.url %>
+          <% else %>
+            <%= image_tag "default_institution_image.png"%>
+          <% end %>
+        </td>
+        <td><%= institution.address %></td>
+        <td><%= institution.address %></td>
+        <td><%= link_to "情報を編集する", edit_institution_path(institution.id) %></td>
+        <td><%= link_to "情報を削除する", institution, method: :delte, data: {confirm: "本当に削除しますか"} %></td>
+      </tr>
+    <% end %>
+  </div>
