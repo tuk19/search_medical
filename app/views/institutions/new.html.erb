@@ -1,5 +1,4 @@
 <h2>医療機関情報新規作成</h2>
-
 <%= form_with model: @institution do |f| %>
   <div class="field">
     <%= f.label :name, "医療機関名" %><br>
@@ -18,16 +17,16 @@
     <%= f.text_field :address_city %>
   </div>
   <div class="field">
-    <%= f.label :address_street %><br>
+    <%= f.label :address_street,"番地" %><br>
     <%= f.text_field :address_street %>
   </div>
   <div class="field">
-    <%= f.label :address_building %><br>
+    <%= f.label :address_building, "建物名" %><br>
     <%= f.text_field :address_building %>
   </div>
   <div class="field">
     <%= f.label :introduction, "紹介文" %><br>
-    <%= f.text_field :introduction %>
+    <%= f.text_area :introduction %>
   </div>
   <div class="field">
     <%= f.submit "登録する" %>
