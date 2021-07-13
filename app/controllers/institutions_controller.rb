@@ -14,6 +14,7 @@ class InstitutionsController < ApplicationController
 
   def create
     @institution = Institution.new(institution_params)
+    @institution.address = "#{@institution.prefecture}#{@institution.address_city}#{@institution.address_street}#{@institution.address_building}"
     if @institution.save
       redirect_to institutions_path, notice: "医療機関を追加しました"
     else
@@ -42,6 +43,6 @@ class InstitutionsController < ApplicationController
 
   private
   def institution_params
-    params.require(:institution).permit(:name, :address, :introduction, :image)
+    params.require(:institution).permit(:name, :postcode, :prefecture, :address_city, :address_street, :address_building, :introduction, :image)
   end
 end

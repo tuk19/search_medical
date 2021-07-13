@@ -20,9 +20,9 @@ jQuery(document).on("turbolinks:load", function() {
       '#institution_postcode'
     ],
     address: {
-      "#institution_prefecture_code": "%3", // # 都道府県が入力される
-      "#institution_address_city"   : "%4%5", // # 市区町村と町域が入力される
-      "#institution_address_street" : "%6%7" // # 大口事務所の番地と名称が入力される
+      "#institution_prefecture": "%3",
+      "#institution_address_city"   : "%4%5",
+      "#institution_address_street" : "%6%7"
     }
   });
 });
