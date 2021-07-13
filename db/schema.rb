@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_12_203212) do
+ActiveRecord::Schema.define(version: 2021_07_13_005900) do
 
   create_table "institutions", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_07_12_203212) do
     t.string "address_city"
     t.string "address_street"
     t.string "address_building"
+    t.string "prefecture"
   end
 
   create_table "medicalstaffs", force: :cascade do |t|
