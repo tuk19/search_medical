@@ -29,7 +29,12 @@ class InstitutionsController < ApplicationController
   def update
     @institution = Institution.find(params[:id])
     if @institution.update(institution_params)
-      redirect_to edit_institution_path(params[:id]), notice: "医療機関情報を更新しました"
+      @institution.address = @institution.join_address
+      if @institution.update(institution_params)
+        redirect_to institutions_path, notice: "医療機関情報を更新しました"
+      else
+        render "edit"
+      end
     else
       render "edit"
     end
@@ -43,6 +48,6 @@ class InstitutionsController < ApplicationController
 
   private
   def institution_params
-    params.require(:institution).permit(:name, :postcode, :prefecture, :address_city, :address_street, :address_building, :introduction, :image)
+    params.require(:institution).permit(:name, :postcode, :prefecture, :address_city, :address_street, :address_building, :address, :introduction, :image)
   end
 end
