@@ -1,47 +1,55 @@
-<h2>医療機関情報新規作成</h2>
-<%= form_with model: @institution do |f| %>
-  <div class="field">
-    <%= f.label :name, "医療機関名" %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="institution_edit_image_container">
-    <%= f.label :image, "画像登録", class: "institution_image_label" %>
-      <div class="institution_image_container">
-        <% if @institution.image? %>
-          <%= image_tag @institution.image.url, alt: "アイコン画像", class: "institution_image" %>
-        <% else %>
-          <%= image_tag "default_institution_image.png", alt: "アイコン画像", class: "default_institution_image" %>
-        <% end %>
+<div class="institution_new_main">
+  <div class="institution_new_container">
+    <h2>医療機関情報新規作成</h2>
+    <%= form_with model: @institution do |f| %>
+      <div class="flex_spacearound">
+        <div class="institution_info_container">
+          <div class="institution_name_container">
+            <%= f.label :name, "医療機関名", class: "institution_name_label" %>
+            <%= f.text_field :name, class: "institution_name_text" %>
+          </div>
+          <div class="institution_postcode_container">
+            <%= f.label :postcode, "郵便番号", class: "institution_postcode_label" %>
+            <%= f.text_field :postcode, class: "institution_postcode_text" %>
+          </div>
+          <div class="institution_prefecture_container">
+            <%= f.label :prefecture, "都道府県", class: "institution_prefecture_label" %>
+            <%= f.collection_select :prefecture, JpPrefecture::Prefecture.all, :name, :name, prompt: "都道府県", class: "institution_prefecture_text" %>
+          </div>
+          <div class="institution_city_container">
+            <%= f.label :address_city, "市町村", class: "institution_citylabel" %>
+            <%= f.text_field :address_city, class: "institution_city_text" %>
+          </div>
+          <div class="institution_treet_container">
+            <%= f.label :address_street,"番地", class: "institution_street_label" %>
+            <%= f.text_field :address_street, class: "institution_street_text" %>
+          </div>
+          <div class="institution_building_container">
+            <%= f.label :address_building, "建物名", class: "institution_building_label" %>
+            <%= f.text_field :address_building, class: "institution_building_text" %>
+          </div>
+          <div class="institution_intro_container">
+            <%= f.label :introduction, "紹介", class: "institution_intro_label" %>
+            <%= f.text_area :introduction, class: "institution_intro_text" %>
+          </div>
+        </div>
+        <div class="institution_image_container">
+          <%= f.label :image, "画像登録", class: "institution_image_label" %>
+            <div class="institution_image_container">
+              <% if @institution.image? %>
+                <%= image_tag @institution.image.url, alt: "アイコン画像", class: "institution_image" %>
+              <% else %>
+                <%= image_tag "default_institution_image.png", alt: "アイコン画像", class: "default_institution_image" %>
+              <% end %>
+            </div>
+          <div class="institution_image_uploader">
+            <%= f.file_field :image %>
+          </div>
+        </div>
       </div>
-    <div class="institution_image_uploader">
-      <%= f.file_field :image %>
-    </div>
+      <div class="institution_name_container">
+        <%= f.submit "登録する", class: "institution_submit" %>
+      </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :postcode, "郵便番号" %><br>
-    <%= f.text_field :postcode %>
-  </div>
-  <div class="field">
-    <%= f.label :prefecture, "都道府県" %><br>
-    <%= f.collection_select :prefecture, JpPrefecture::Prefecture.all, :name, :name, prompt: "都道府県" %>
-  </div>
-  <div class="field">
-    <%= f.label :address_city, "市町村" %><br>
-    <%= f.text_field :address_city %>
-  </div>
-  <div class="field">
-    <%= f.label :address_street,"番地" %><br>
-    <%= f.text_field :address_street %>
-  </div>
-  <div class="field">
-    <%= f.label :address_building, "建物名" %><br>
-    <%= f.text_field :address_building %>
-  </div>
-  <div class="field">
-    <%= f.label :introduction, "紹介文" %><br>
-    <%= f.text_area :introduction %>
-  </div>
-  <div class="field">
-    <%= f.submit "登録する" %>
-  </div>
-<% end %>
+</div>

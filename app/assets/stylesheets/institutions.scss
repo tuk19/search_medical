@@ -4,6 +4,10 @@
 
 $medical-color: #eaf;
 
+.flex {
+  display: flex;
+}
+
 /* ===================================================================
                   institution/index
 ====================================================================*/
@@ -53,6 +57,45 @@ $medical-color: #eaf;
         width: 20%;
         overflow-wrap: break-word;
       }
+    }
+  }
+}
+
+/* ===================================================================
+                  institution/new
+====================================================================*/
+.institution_new_main {
+  margin: 30px 0;
+  padding: 0 5%;
+  text-align: center;
+  .institution_new_container {
+    padding: 5px 20px;
+    border: 2px solid $medical-color;
+    border-radius: 20px;
+    background-color: white;
+    h2 {
+      color: $medical-color;
+    }
+    .institution_name_container, .institution_image_container, .institution_postcode_container, .institution_prefecture_container, .institution_city_container, .institution_street_container, .institution_building_container, .institution_intro_container {
+      margin: 20px;
+    }
+    .institution_intro_label {
+      vertical-align: top;
+    }
+    .institution_name_text, .institution_postcode_text, .institution_prefecture_text, .institution_city_text, .institution_street_text, .institution_building_text, .institution_intro_text {
+      width: 200px;
+    }
+    .institution_intro_text{
+      height: 100px;
+    }
+    .institution_submit {
+      padding: 10px 20%;
+      margin: 10px;
+      font-size: larger;
+      color: white;
+      border: 1px solid $medical-color;
+      border-radius: 5px;
+      background-color: $medical-color;
     }
   }
 }
