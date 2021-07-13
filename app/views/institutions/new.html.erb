@@ -2,26 +2,26 @@
 
 <%= form_with model: @institution do |f| %>
   <div class="field">
-    <%= f.label :postal_code, "郵便番号" %><br>
-    <%= f.text_field :postal_code %>
+    <%= f.label :postcode, "郵便番号" %><br>
+    <%= f.text_field :postcode %>
   </div>
-
   <div class="field">
     <%= f.label :prefecture_code, "都道府県" %><br>
     <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :name, :name, prompt: "都道府県" %>
   </div>
-
   <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-
-  <div class="field">
-    <%= f.label :street %><br>
-    <%= f.text_field :street %>
+    <%= f.label :address_city, "市町村" %><br>
+    <%= f.text_field :address_city %>
   </div>
   <div class="field">
-    <%= f.label :other_address %><br>
-    <%= f.text_field :other_address %>
+    <%= f.label :address_street %><br>
+    <%= f.text_field :address_street %>
+  </div>
+  <div class="field">
+    <%= f.label :address_building %><br>
+    <%= f.text_field :address_building %>
+  </div>
+  <div class="field">
+    <%= f.submit "登録する" %>
   </div>
 <% end %>
