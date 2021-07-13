@@ -1,3 +1,58 @@
 // Place all the styles related to the institutions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+$medical-color: #eaf;
+
+/* ===================================================================
+                  institution/index
+====================================================================*/
+.institution_index_main {
+  margin: 30px 0;
+  padding: 0 5%;
+  text-align: center;
+  .institution_index_container {
+    padding: 5px 20px;
+    border: 2px solid $medical-color;
+    border-radius: 20px;
+    background-color: white;
+    h2 {
+      color: $medical-color;
+    }
+    .linkto_institution_new {
+      padding: 5px 40px;
+      margin: 10px;
+      color: white;
+      border: 1px solid $medical-color;
+      border-radius: 5px;
+      background-color: $medical-color;
+    }
+    .insitution_index_table {
+      text-align: center;
+      .institution_index_td {
+        padding: 10px;
+      }
+      .image_td {
+        width: 20%;
+        .institution_index_image {
+          width: 75%;
+          height: 150px;
+        }
+      }
+      .name_td {
+        width: 10%;
+        overflow-wrap: break-word;
+      }
+      .postcode_td {
+        width: 10%;
+      }
+      .address_td {
+        width: 30%;
+      }
+      .intro_td {
+        width: 20%;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+}

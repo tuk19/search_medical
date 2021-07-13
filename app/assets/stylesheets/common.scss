@@ -33,6 +33,12 @@ a {
   background-color: $body_background_color;
 }
 
+.flex_spacebetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .flex_justify {
   display: flex;
   justify-content: space-around;

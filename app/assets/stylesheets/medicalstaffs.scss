@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-$medicalstaff-color: #eaf;
+$medical-color: #eaf;
 /* ===================================================================
                   medicalstaff/sessions/new
 ====================================================================*/
@@ -11,10 +11,10 @@ $medicalstaff-color: #eaf;
   padding: 0 25%;
   text-align: center;
   h2 {
-    color: $medicalstaff-color;
+    color: $medical-color;
   }
   .medicalstaff_login_container{
-    border: 2px solid $medicalstaff-color;
+    border: 2px solid $medical-color;
     border-radius: 20px;
     background-color: white;
   }
@@ -28,9 +28,9 @@ $medicalstaff-color: #eaf;
     padding: 5px 40px;
     margin: 10px;
     color: white;
-    border: 1px solid $medicalstaff-color;
+    border: 1px solid $medical-color;
     border-radius: 5px;
-    background-color: $medicalstaff-color;
+    background-color: $medical-color;
   }
   .medicalstaff_admin {
     padding: 10px;
@@ -52,10 +52,10 @@ $medicalstaff-color: #eaf;
   }
   h2 {
     margin: 0;
-    color: $medicalstaff-color;
+    color: $medical-color;
   }
   .medicalstaff_registration_container{
-    border: 2px solid $medicalstaff-color;
+    border: 2px solid $medical-color;
     border-radius: 20px;
     background-color: white;
   }
@@ -69,9 +69,9 @@ $medicalstaff-color: #eaf;
     padding: 5px 40px;
     margin: 10px;
     color: white;
-    border: 1px solid $medicalstaff-color;
+    border: 1px solid $medical-color;
     border-radius: 5px;
-    background-color: $medicalstaff-color;
+    background-color: $medical-color;
   }
   .delete_account_button{
     padding: 5px 40px;
@@ -97,7 +97,7 @@ $medicalstaff-color: #eaf;
   margin: 10px;
   .medicalstaff_link {
     padding: 5px 10px;
-    color: $medicalstaff-color;
+    color: $medical-color;
     border: 1px solid black;
     border-radius: 20px;
   }
@@ -113,12 +113,12 @@ $medicalstaff-color: #eaf;
   text-align: center;
   .medicalstaff_index_container {
     padding: 20px;
-    border: 2px solid $medicalstaff-color;
+    border: 2px solid $medical-color;
     border-radius: 20px;
     background-color: white;
   }
   h2 {
-    color: $medicalstaff-color;
+    color: $medical-color;
   }
   .medicalstaff_index_name_container, .medicalstaff_index_address_container, .medicalstaff_index_email_container, .medicalstaff_index_password_container{
     margin: 5px;
@@ -130,15 +130,15 @@ $medicalstaff-color: #eaf;
     padding: 5px 40px;
     margin: 10px;
     color: white;
-    border: 1px solid $medicalstaff-color;
+    border: 1px solid $medical-color;
     border-radius: 5px;
-    background-color: $medicalstaff-color;
+    background-color: $medical-color;
   }
   .medicalstaff_index_link_edit {
     margin: 20px 0;
     .link_to_medicalstaff_edit {
       padding: 10px;
-      color: $medicalstaff-color;
+      color: $medical-color;
       border: 1px solid black;
       border-radius: 20px;
     }
@@ -154,12 +154,12 @@ $medicalstaff-color: #eaf;
   text-align: center;
   .medicalstaff_edit_container {
     padding: 20px;
-    border: 2px solid $medicalstaff-color;
+    border: 2px solid $medical-color;
     border-radius: 20px;
     background-color: white;
   }
   h2 {
-    color: $medicalstaff-color;
+    color: $medical-color;
   }
   .medicalstaff_edit_name_container {
     margin: 20px;
@@ -177,8 +177,8 @@ $medicalstaff-color: #eaf;
     padding: 5px 40px;
     margin: 10px;
     color: white;
-    border: 1px solid $medicalstaff-color;
+    border: 1px solid $medical-color;
     border-radius: 5px;
-    background-color: $medicalstaff-color;
+    background-color: $medical-color;
   }
 }
