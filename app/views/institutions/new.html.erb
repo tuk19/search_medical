@@ -4,6 +4,19 @@
     <%= f.label :name, "医療機関名" %><br>
     <%= f.text_field :name %>
   </div>
+  <div class="institution_edit_image_container">
+    <%= f.label :image, "画像登録", class: "institution_image_label" %>
+      <div class="institution_image_container">
+        <% if @institution.image? %>
+          <%= image_tag @institution.image.url, alt: "アイコン画像", class: "institution_image" %>
+        <% else %>
+          <%= image_tag "default_institution_image.png", alt: "アイコン画像", class: "default_institution_image" %>
+        <% end %>
+      </div>
+    <div class="institution_image_uploader">
+      <%= f.file_field :image %>
+    </div>
+  </div>
   <div class="field">
     <%= f.label :postcode, "郵便番号" %><br>
     <%= f.text_field :postcode %>
