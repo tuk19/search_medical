@@ -1,35 +1,42 @@
-<h1>Institutions#index</h1>
-  <h2>医療機関情報</h2>
-  <p><%= link_to "新規作成", new_institution_path %></p>
-  <table class="insitution_index_table">
-    <thead>
-      <tr>
-        <th>画像</th>
-        <th>名前</th>
-        <th>郵便番号</th>
-        <th>住所</th>
-        <th>紹介</th>
-        <th>編集</th>
-        <th>削除</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @institution.each do |institution| %>
-          <tr>
-            <td>
-              <% if institution.image? %>
-                <%= image_tag institution.image.url %>
-              <% else %>
-                <%= image_tag "default_institution_image.png"%>
-              <% end %>
-            </td>
-            <td><%= institution.name %></td>
-            <td><%= institution.postcode %></td>
-            <td><%= institution.address %></td>
-            <td><%= institution.introduction%></td>
-            <td><%= link_to "情報を編集する", edit_institution_path(institution.id) %></td>
-            <td><%= link_to "情報を削除する", institution, method: :delete, data: {confirm: "本当に削除しますか"} %></td>
-          </tr>
+<div class="institution_index_main">
+  <div class="institution_index_container">
+    <div class="flex_spacebetween">
+      <h2>医療機関情報</h2>
+      <%= link_to new_institution_path do %>
+        <p class="linkto_institution_new">新規作成</p>
       <% end %>
-    </tbody>
-  </table>
+    </div>
+    <table class="insitution_index_table">
+      <thead class="institution_index_table_thead">
+        <tr class="institution_index_thead_tr">
+          <th class="institution_index_th image_th">画像</th>
+          <th class="institution_index_th name_th">名前</th>
+          <th class="institution_index_th postcode_th">郵便番号</th>
+          <th class="institution_index_th address_th">住所</th>
+          <th class="institution_index_th intro_th">紹介</th>
+          <th class="institution_index_th edit_th"></th>
+          <th class="institution_index_th delete_th"></th>
+        </tr>
+      </thead>
+      <tbody class="institution_index_table_tbody">
+        <% @institution.each do |institution| %>
+            <tr class="institution_index_tbody_tr">
+              <td class="institution_index_td image_td">
+                <% if institution.image? %>
+                  <%= image_tag institution.image.url, alt: "クリニック画像", class: "institution_index_image" %>
+                <% else %>
+                  <%= image_tag "default_institution_image.png", class: "institution_index_image" %>
+                <% end %>
+              </td>
+              <td class="institution_index_td name_td"><%= institution.name %></td>
+              <td class="institution_index_td postcode_td"><%= institution.postcode %></td>
+              <td class="institution_index_td address_td"><%= institution.address %></td>
+              <td class="institution_index_td intro_td"><%= institution.introduction%></td>
+              <td class="institution_index_td edit_td"><%= link_to "編集", edit_institution_path(institution.id) %></td>
+              <td class="institution_index_td delete_td"><%= link_to "削除", institution, method: :delete, data: {confirm: "本当に削除しますか"} %></td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
