@@ -14,7 +14,7 @@ class InstitutionsController < ApplicationController
 
   def create
     @institution = Institution.new(institution_params)
-    @institution.address = "#{@institution.prefecture}#{@institution.address_city}#{@institution.address_street}#{@institution.address_building}"
+    @institution.address = @institution.join_address
     if @institution.save
       redirect_to institutions_path, notice: "医療機関を追加しました"
     else
