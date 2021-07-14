@@ -9,7 +9,7 @@ $medical-color: #eaf;
 }
 
 /* ===================================================================
-              institution/index & institution/search
+                        institution/index
 ====================================================================*/
 .institution_index_main {
   margin: 30px 0;
@@ -47,24 +47,24 @@ $medical-color: #eaf;
       .institution_index_td {
         padding: 10px;
       }
-      .image_td {
+      .image_th, .image_td {
         width: 20%;
         .institution_index_image {
           width: 75%;
           height: 150px;
         }
       }
-      .name_td {
+      .name_td, .name_th {
         width: 10%;
         overflow-wrap: break-word;
       }
-      .postcode_td {
+      .postcode_td, .postcode_th {
         width: 10%;
       }
-      .address_td {
+      .address_td, .address_th {
         width: 30%;
       }
-      .intro_td {
+      .intro_td, .intro_th {
         width: 20%;
         overflow-wrap: break-word;
       }
