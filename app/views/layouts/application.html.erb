@@ -14,7 +14,9 @@
       <div class="top_bar">
         <h2 class="page_title">医療機関検索</h2>
         <div class="link_home"><%= link_to "home", root_path %></div>
+        <div class="link_institution"><%= link_to "医療機関情報", institutions_path %></div>
         <% if user_signed_in? %>
+          <div class="link_users_path"><%= link_to "プロフィール画面", users_path %></div>
           <%= link_to users_path do %>
             <% if current_user.name? %>
               <div class="user_name"><%= current_user.name %></div>
@@ -27,10 +29,9 @@
           <% else %>
             <%= image_tag "default_icon.png", alt: "プロフィール画像", class: "default_user_image" %>
           <% end %>
-          <div class="link_users_path"><%= link_to "プロフィール画面", users_path %></div>
           <div class="logout_users"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
         <% elsif medicalstaff_signed_in? %>
-          <div class="link_institution"><%= link_to "医療機関情報", institutions_path %></div>
+          <div class="link_staff_info"><%= link_to "登録情報確認", medicalstaffs_path %></div>
           <% if current_medicalstaff.name? %>
             <div class="staff_name"><%= current_medicalstaff.name %></div>
           <% else %>
@@ -41,7 +42,6 @@
           <% else %>
             <div class="default_staff_address">住所が登録されていません</div>
           <% end %>
-          <div class="link_staff_info"><%= link_to "登録情報確認", medicalstaffs_path %></div>
           <div class="logout_staff"><%= link_to "ログアウト", destroy_medicalstaff_session_path, method: :delete %></div>
         <% end %>
       </div>
