@@ -1,17 +1,13 @@
 class InstitutionsController < ApplicationController
-  before_action :set_q, only: [:index, :search]
+  before_action :set_q, only: :index
 
   def index
     max_num = 50
-    if Institution.count > 50
-      @institution = Institution.limit(max_num)
+    if @q.result.count > 50
+      @institution = @q.result.limit(max_num)
     else
-      @institution = Institution.all
+      @institution = @q.result.all
     end
-  end
-
-  def search
-    @results = @q.result
   end
 
   def new

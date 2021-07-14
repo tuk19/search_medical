@@ -1,6 +1,6 @@
 <div class="institution_index_main">
   <h3>医療機関検索フォーム</h1>
-  <%= search_form_for @q, url: search_institutions_path do |f| %>
+  <%= search_form_for @q, url: institutions_path do |f| %>
     <%= f.label :name_or_address_cont, '医療機関名' %>
     <%= f.search_field :name_or_address_cont %>
     <%= f.submit '検　索', class:"search_submit" %>
