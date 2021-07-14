@@ -1,4 +1,6 @@
 class InstitutionsController < ApplicationController
+  before_action :set_q, only: [:index, :search]
+
   def index
     max_num = 50
     if Institution.count > 50
@@ -6,6 +8,10 @@ class InstitutionsController < ApplicationController
     else
       @institution = Institution.all
     end
+  end
+
+  def search
+    @results = @q.result
   end
 
   def new
@@ -47,7 +53,12 @@ class InstitutionsController < ApplicationController
   end
 
   private
+
   def institution_params
     params.require(:institution).permit(:name, :postcode, :prefecture, :address_city, :address_street, :address_building, :address, :introduction, :image)
+  end
+
+  def set_q
+    @q = Institution.ransack(params[:q])
   end
 end
