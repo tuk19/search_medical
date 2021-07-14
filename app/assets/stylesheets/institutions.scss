@@ -9,12 +9,23 @@ $medical-color: #eaf;
 }
 
 /* ===================================================================
-                  institution/index
+              institution/index & institution/search
 ====================================================================*/
 .institution_index_main {
   margin: 30px 0;
   padding: 0 5%;
   text-align: center;
+  h3 {
+    margin: 0;
+  }
+  .search_submit {
+    padding: 5px 10px;
+    margin: 10px;
+    color: white;
+    border: 1px solid $medical-color;
+    border-radius: 5px;
+    background-color: $medical-color;
+  }
   .institution_index_container {
     padding: 5px 20px;
     border: 2px solid $medical-color;
