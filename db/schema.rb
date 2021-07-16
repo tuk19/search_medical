@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 2021_07_15_163114) do
     t.integer "institution_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index "\"user_id\", \"post_id\"", name: "index_favorites_on_user_id_and_post_id", unique: true
     t.index ["institution_id"], name: "index_favorites_on_institution_id"
+    t.index ["user_id", "institution_id"], name: "index_favorites_on_user_id_and_institution_id", unique: true
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
