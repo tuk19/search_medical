@@ -12,34 +12,6 @@
         <p class="linkto_institution_new">新規作成</p>
       <% end %>
     </div>
-    <table class="insitution_index_table">
-      <thead class="institution_index_table_thead">
-        <tr class="institution_index_thead_tr">
-          <th class="institution_index_th image_th">画像</th>
-          <th class="institution_index_th name_th">名前</th>
-          <th class="institution_index_th postcode_th">郵便番号</th>
-          <th class="institution_index_th address_th">住所</th>
-          <th class="institution_index_th intro_th">紹介</th>
-        </tr>
-      </thead>
-      <tbody class="institution_index_table_tbody">
-        <% @institution.each do |institution| %>
-          <tr class="institution_index_tbody_tr" data-href="/institutions/<%= institution.id%>">
-            <td class="institution_index_td image_td">
-              <% if institution.image? %>
-                <%= image_tag institution.image.url, alt: "クリニック画像", class: "institution_index_image" %>
-              <% else %>
-                <%= image_tag "default_institution_image.png", class: "institution_index_image" %>
-              <% end %>
-            </td>
-            <td class="institution_index_td name_td"><%= institution.name %></td>
-            <td class="institution_index_td postcode_td"><%= institution.postcode.to_s[0,3] %>-<%= institution.postcode.to_s[3..] %></td>
-            <td class="institution_index_td address_td"><%= institution.address %></td>
-            <td class="institution_index_td intro_td"><%= institution.introduction%></td>
-          </tr>
-          <td class="institution_index_td favorite_td"><%= render "favorites/favorite", institution: institution %></td>
-        <% end %>
-      </tbody>
-    </table>
+    <%= render partial: "shared/institution_table", collection: @institution, as: "institution" %>
   </div>
 </div>

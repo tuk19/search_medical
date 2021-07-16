@@ -42,33 +42,6 @@ $medical-color: #eaf;
       border-radius: 5px;
       background-color: $medical-color;
     }
-    .insitution_index_table {
-      text-align: center;
-      .institution_index_td {
-        padding: 10px;
-      }
-      .image_th, .image_td {
-        width: 20%;
-        .institution_index_image {
-          width: 100%;
-        }
-      }
-      .name_td, .name_th {
-        width: 15%;
-        overflow-wrap: break-word;
-      }
-      .postcode_td, .postcode_th {
-        width: 15%;
-      }
-      .address_td, .address_th {
-        width: 20%;
-        overflow-wrap: break-word;
-      }
-      .intro_td, .intro_th {
-        width: 30%;
-        overflow-wrap: break-word;
-      }
-    }
   }
 }
 
