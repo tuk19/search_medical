@@ -33,7 +33,7 @@
               <% end %>
             </td>
             <td class="institution_index_td name_td"><%= institution.name %></td>
-            <td class="institution_index_td postcode_td"><%= institution.postcode %></td>
+            <td class="institution_index_td postcode_td"><%= institution.postcode.to_s[0,3] %>-<%= institution.postcode.to_s[3..] %></td>
             <td class="institution_index_td address_td"><%= institution.address %></td>
             <td class="institution_index_td intro_td"><%= institution.introduction%></td>
           </tr>
