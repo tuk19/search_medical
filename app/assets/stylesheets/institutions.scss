@@ -99,6 +99,9 @@ $medical-color: #eaf;
     .institution_intro_text{
       height: 100px;
     }
+    .institution_image_box {
+      margin: 10px 0;
+    }
     .institution_submit {
       padding: 10px 20%;
       margin: 10px;
@@ -107,6 +110,56 @@ $medical-color: #eaf;
       border: 1px solid $medical-color;
       border-radius: 5px;
       background-color: $medical-color;
+    }
+  }
+}
+
+/* ===================================================================
+                          institution/show
+====================================================================*/
+.institution_show_main {
+  margin: 30px 0;
+  padding: 0 5%;
+  text-align: center;
+  .institution_show_container {
+    padding: 5px 20px;
+    border: 2px solid $medical-color;
+    border-radius: 20px;
+    background-color: white;
+    h2 {
+      color: $medical-color;
+    }
+    .institution_show_info_container {
+      .institution_show_name_container, .institution_show_postcode_container, .institution_show_address_container, .institution_show_intro_container, .institution_show_image_container {
+        margin: 20px;
+      }
+      .show_label {
+        margin-bottom: 5px;
+        border: 1px solid $medical-color;
+        border-radius: 5px;
+      }
+      .show_text {
+        font-size: large;
+      }
+      .institution_show_intro_text {
+        overflow-wrap: break-word;
+      }
+    }
+    .institution_show_edit {
+      padding: 5px 20px;
+      margin: 10px;
+      color: white;
+      border: 1px solid $medical-color;
+      border-radius: 5px;
+      background-color: $medical-color;
+    }
+    .institution_show_delete {
+      padding: 5px 20px;
+      margin: 10px;
+      color: red;
+      border: 1px solid red;
+      border-radius: 5px;
+      background-color: white;
     }
   }
 }

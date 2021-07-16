@@ -1,38 +1,36 @@
-<div class="institution_new_main">
-  <div class="institution_new_container">
+<div class="institution_show_main">
+  <div class="institution_show_container">
     <h2>医療機関情報</h2>
-    <div class="flex_spacearound">
-      <div class="institution_info_container">
-        <div class="institution_name_container">
-          <span class= "institution_name_label">医療機関名</span>
-          <span class="institution_name_text"><%= @institution.name %></span>
+    <div class="flex_spaceevenly">
+      <div class="institution_show_info_container">
+        <div class="institution_show_name_container">
+          <div class= "institution_show_name_label show_label">医療機関名</div>
+          <div class="institution_show_name_text show_text"><%= @institution.name %></div>
         </div>
-        <div class="institution_postcode_container">
-          <span class="institution_postcode_label">郵便番号</span>
-          <span class="institution_postcode_text"><%= @institution.postcode %></span>
+        <div class="institution_show_postcode_container">
+          <div class="institution_show_postcode_label show_label">郵便番号</div>
+          <div class="institution_show_postcode_text show_text"><%= @institution.postcode %></div>
         </div>
-        <div class="institution_address_container">
-          <span class="institution_address_label">住所</span>
-          <span class="institution_address_text"><%= @institution.address %></span>
+        <div class="institution_show_address_container">
+          <div class="institution_show_address_label show_label">住所</div>
+          <div class="institution_show_address_text show_text"><%= @institution.address %></div>
         </div>
-        <div class="institution_intro_container">
-          <span class="institution_intro_label">紹介</span>
-          <span class="institution_intro_text"><%= @institution.introduction %></span>
+        <div class="institution_show_intro_container">
+          <div class="institution_show_intro_label show_label">紹介</div>
+          <div class="institution_show_intro_text show_text"><%= @institution.introduction %></div>
         </div>
       </div>
-      <div class="institution_image_container">
-        <div class="institution_image_container">
-          <% if @institution.image? %>
-            <%= image_tag @institution.image.url, alt: "アイコン画像", class: "institution_image" %>
-          <% else %>
-            <%= image_tag "default_institution_image.png", alt: "アイコン画像", class: "default_institution_image" %>
-          <% end %>
-        </div>
+      <div class="institution_show_image_container">
+        <% if @institution.image? %>
+          <%= image_tag @institution.image.url, alt: "アイコン画像", class: "institution_show_image" %>
+        <% else %>
+          <%= image_tag "default_institution_image.png", alt: "アイコン画像", class: "default_institution_show_image" %>
+        <% end %>
       </div>
     </div>
     <div class="flex_spacearound">
-      <div class="institution_index_td edit_td"><%= link_to "編集", edit_institution_path(@institution.id) %></div>
-      <div class="institution_index_td delete_td"><%= link_to "削除", @institution, method: :delete, data: {confirm: "本当に削除しますか"} %></div>
+      <div class="institution_show_edit"><%= link_to "編　集", edit_institution_path(@institution.id) %></div>
+      <div class="institution_show_delete"><%= link_to "削　除", @institution, method: :delete, data: {confirm: "本当に削除しますか"} %></div>
     </div>
   </div>
 </div>

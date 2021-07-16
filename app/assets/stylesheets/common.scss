@@ -44,6 +44,10 @@ a {
   justify-content: space-around;
 }
 
+.flex_spaceevenly {
+  display: flex;
+  justify-content: space-evenly;
+}
 .font_large {
   font-size: 20px;
 }
