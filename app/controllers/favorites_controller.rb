@@ -1,9 +1,7 @@
 class FavoritesController < ApplicationController
   def create
     @institution = Institution.find(params[:institution_id])
-    # if @institution.user_id != current_user.id
-      @favorite  = Favorite.create(user_id: current_user.id, institution_id: @institution.id)
-    # end
+    @favorite  = Favorite.create(user_id: current_user.id, institution_id: @institution.id)
   end
 
   def destroy
