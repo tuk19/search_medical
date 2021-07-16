@@ -35,7 +35,7 @@
         </div>
         <div class="institution_image_container">
           <%= f.label :image, "画像登録", class: "institution_image_label" %>
-            <div class="institution_image_container">
+            <div class="institution_image_box">
               <% if @institution.image? %>
                 <%= image_tag @institution.image.url, alt: "アイコン画像", class: "institution_image" %>
               <% else %>
