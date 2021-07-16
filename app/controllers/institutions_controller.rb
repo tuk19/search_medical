@@ -8,8 +8,6 @@ class InstitutionsController < ApplicationController
     else
       @institution = @q.result.all
     end
-    favorites = Favorite.where(user_id: current_user.id).pluck(:institution_id)
-    @favorites_list = Institution.find(favorites)
   end
 
   def new

@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def index
     @user = User.find(current_user.id)
+    favorites = Favorite.where(user_id: current_user.id).pluck(:institution_id)
+    @favorites_list = Institution.find(favorites)
   end
 
   def edit
