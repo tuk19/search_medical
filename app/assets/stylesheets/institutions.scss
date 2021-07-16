@@ -50,12 +50,11 @@ $medical-color: #eaf;
       .image_th, .image_td {
         width: 20%;
         .institution_index_image {
-          width: 75%;
-          height: 150px;
+          width: 100%;
         }
       }
       .name_td, .name_th {
-        width: 10%;
+        width: 20%;
         overflow-wrap: break-word;
       }
       .postcode_td, .postcode_th {
