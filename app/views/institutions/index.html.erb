@@ -20,10 +20,8 @@
           <th class="institution_index_th postcode_th">郵便番号</th>
           <th class="institution_index_th address_th">住所</th>
           <th class="institution_index_th intro_th">紹介</th>
-          <th class="institution_index_th edit_th"></th>
-          <th class="institution_index_th delete_th"></th>
-          <th class="institution_index_th delete_th"></th>
-          <th class="institution_index_th delete_th"></th>
+          <th class="institution_index_th detail_th"></th>
+          <th class="institution_index_th favorite_th"></th>
         </tr>
       </thead>
       <tbody class="institution_index_table_tbody">
@@ -40,10 +38,8 @@
             <td class="institution_index_td postcode_td"><%= institution.postcode %></td>
             <td class="institution_index_td address_td"><%= institution.address %></td>
             <td class="institution_index_td intro_td"><%= institution.introduction%></td>
-            <td class="institution_index_td edit_td"><%= link_to "詳細", institution_path(institution.id) %></td>
-            <td class="institution_index_td edit_td"><%= link_to "編集", edit_institution_path(institution.id) %></td>
-            <td class="institution_index_td delete_td"><%= link_to "削除", institution, method: :delete, data: {confirm: "本当に削除しますか"} %></td>
-            <td><%= render "favorites/favorite", institution: institution %></td>
+            <td class="institution_index_td detail_td"><%= link_to "詳細", institution_path(institution.id) %></td>
+            <td class="institution_index_td favorite_td"><%= render "favorites/favorite", institution: institution %></td>
           </tr>
         <% end %>
       </tbody>
