@@ -9,7 +9,7 @@
         </div>
         <div class="institution_show_postcode_container">
           <div class="institution_show_postcode_label show_label">郵便番号</div>
-          <div class="institution_show_postcode_text show_text"><%= @institution.postcode %></div>
+          <div class="institution_show_postcode_text show_text"><%= @institution.postcode.to_s[0,3] %>-<%= @institution.postcode.to_s[3..]%></div>
         </div>
         <div class="institution_show_address_container">
           <div class="institution_show_address_label show_label">住所</div>
