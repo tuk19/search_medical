@@ -1,2 +1,39 @@
-<%= @institution.id %>
-<%= render "favorites/favorite", institution: @institution %>
+<div class="institution_new_main">
+  <div class="institution_new_container">
+    <h2>医療機関情報</h2>
+    <div class="flex_spacearound">
+      <div class="institution_info_container">
+        <div class="institution_name_container">
+          <span class= "institution_name_label">医療機関名</span>
+          <span class="institution_name_text"><%= @institution.name %></span>
+        </div>
+        <div class="institution_postcode_container">
+          <span class="institution_postcode_label">郵便番号</span>
+          <span class="institution_postcode_text"><%= @institution.postcode %></span>
+        </div>
+        <div class="institution_address_container">
+          <span class="institution_address_label">住所</span>
+          <span class="institution_address_text"><%= @institution.address %></span>
+        </div>
+        <div class="institution_intro_container">
+          <span class="institution_intro_label">紹介</span>
+          <span class="institution_intro_text"><%= @institution.introduction %></span>
+        </div>
+      </div>
+      <div class="institution_image_container">
+        <div class="institution_image_container">
+          <% if @institution.image? %>
+            <%= image_tag @institution.image.url, alt: "アイコン画像", class: "institution_image" %>
+          <% else %>
+            <%= image_tag "default_institution_image.png", alt: "アイコン画像", class: "default_institution_image" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="flex_spacearound">
+
+      <div class="institution_index_td edit_td"><%= link_to "編集", edit_institution_path(@institution.id) %></div>
+      <div class="institution_index_td delete_td"><%= link_to "削除", @institution, method: :delete, data: {confirm: "本当に削除しますか"} %></div>
+    </div>
+  </div>
+</div>
