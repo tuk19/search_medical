@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "jquery"
 import "packs/jquery.jpostal.js"
+import "packs/institutions.js"
 
 Rails.start()
 Turbolinks.start()

@@ -20,13 +20,11 @@
           <th class="institution_index_th postcode_th">郵便番号</th>
           <th class="institution_index_th address_th">住所</th>
           <th class="institution_index_th intro_th">紹介</th>
-          <th class="institution_index_th detail_th"></th>
-          <th class="institution_index_th favorite_th"></th>
         </tr>
       </thead>
       <tbody class="institution_index_table_tbody">
         <% @institution.each do |institution| %>
-          <tr class="institution_index_tbody_tr">
+          <tr class="institution_index_tbody_tr" data-href="/institutions/<%= institution.id%>">
             <td class="institution_index_td image_td">
               <% if institution.image? %>
                 <%= image_tag institution.image.url, alt: "クリニック画像", class: "institution_index_image" %>
@@ -38,9 +36,8 @@
             <td class="institution_index_td postcode_td"><%= institution.postcode %></td>
             <td class="institution_index_td address_td"><%= institution.address %></td>
             <td class="institution_index_td intro_td"><%= institution.introduction%></td>
-            <td class="institution_index_td detail_td"><%= link_to "詳細", institution_path(institution.id) %></td>
-            <td class="institution_index_td favorite_td"><%= render "favorites/favorite", institution: institution %></td>
           </tr>
+          <td class="institution_index_td favorite_td"><%= render "favorites/favorite", institution: institution %></td>
         <% end %>
       </tbody>
     </table>
