@@ -33,3 +33,9 @@
     </div>
   </div>
 </div>
+<div class="institution_index_main">
+  <div class="institution_index_container">
+    <h2>所属医療機関一覧</h2>
+    <%= render partial: "shared/institution_table", collection: @staff_institution_list, as: "institution" %>
+  </div>
+</div>
