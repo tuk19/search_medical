@@ -1,0 +1,13 @@
+<div class='star-btn' id="staffinstitution_<%= institution.id %>">
+  <% if !StaffInstitution.exists?(medicalstaff_id: current_medicalstaff.id, institution_id: institution.id) %>
+    <%= link_to institution_staff_institutions_path(institution.id), method: :post, remote: true, class:"like-btn" do %>
+      <i class="fa fa-id-card-o">所属登録</i>
+    <% end %>
+    <span class="star-count1"><%= institution.staff_institutions.count %></span>
+  <% else %>
+    <%= link_to institution_staff_institutions_path(institution_id: institution.id, id: institution.staff_institutions[0].id), method: :delete, remote: true, class:"like-btn" do %>
+      <i class="fa fa-id-card">登録解除</i>
+    <% end %>
+    <span class="star-count2"><%= institution.staff_institutions.count %></span>
+  <% end %>
+</div>

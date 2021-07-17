@@ -1,5 +1,7 @@
 class Institution < ApplicationRecord
   has_many :favorites, dependent: :destroy
+  has_many :staff_institutions, dependent: :destroy
+  has_many :medicalstaffs, through: :staff_institutions
   mount_uploader :image, ImageUploader
 
   def join_address

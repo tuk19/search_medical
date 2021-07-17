@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :medicalstaffs, only: [:index, :edit, :update]
   resources :institutions do
     resource :favorites, only: [:create, :destroy]
+    resource :staff_institutions, only: [:create, :destroy]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

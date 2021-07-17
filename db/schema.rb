@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_15_163114) do
+ActiveRecord::Schema.define(version: 2021_07_17_145107) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -51,6 +51,16 @@ ActiveRecord::Schema.define(version: 2021_07_15_163114) do
     t.index ["reset_password_token"], name: "index_medicalstaffs_on_reset_password_token", unique: true
   end
 
+  create_table "staff_institutions", force: :cascade do |t|
+    t.integer "medicalstaff_id", null: false
+    t.integer "institution_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["institution_id"], name: "index_staff_institutions_on_institution_id"
+    t.index ["medicalstaff_id", "institution_id"], name: "index_staff_institutions_on_medicalstaff_id_and_institution_id", unique: true
+    t.index ["medicalstaff_id"], name: "index_staff_institutions_on_medicalstaff_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -67,4 +77,6 @@ ActiveRecord::Schema.define(version: 2021_07_15_163114) do
 
   add_foreign_key "favorites", "institutions"
   add_foreign_key "favorites", "users"
+  add_foreign_key "staff_institutions", "institutions"
+  add_foreign_key "staff_institutions", "medicalstaffs"
 end
