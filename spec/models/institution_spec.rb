@@ -1,5 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Institution, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#join_address' do
+    let(:institution) { create(:testinstitution) }
+
+    example "addressを返すこと" do
+      binding.pry
+      expect(institution.join_address).to eq(institution.address)
+    end
+  end
 end
