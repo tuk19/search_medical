@@ -1,4 +1,6 @@
 class MedicalstaffsController < ApplicationController
+  before_action :authenticate_medicalstaff!
+
   def index
     @staff = Medicalstaff.find(current_medicalstaff.id)
     staff_institutions = @staff.staff_institutions.pluck(:institution_id)
