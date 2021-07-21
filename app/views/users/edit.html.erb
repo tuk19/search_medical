@@ -4,7 +4,7 @@
     <%= form_with model: @user do |f| %>
       <div class="user_edit_name_container">
         <%= f.label :name, "ユーザー名" %>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, id: "user_edit_name" %>
       </div>
       <div class="user_edit_image_container">
         <%= f.label :image, "プロフィール画像", class: "user_image_label" %>
