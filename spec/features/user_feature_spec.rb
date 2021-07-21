@@ -12,8 +12,9 @@ RSpec.feature 'Users_Features', type: :feature do
       fill_in "user_registration_email", with: "example@example.com"
       fill_in "user_registration_password", with: "foobar"
       fill_in "user_registration_confirm_password", with: "foobar"
-      click_button "新規登録"
-      expect(page).to have_content("ログインしています")
+      expect do
+        click_button "新規登録"
+      end.to change(User, :count).by(1)
     end
 
     scenario 'ログインできるか' do
@@ -25,7 +26,6 @@ RSpec.feature 'Users_Features', type: :feature do
       expect(page).to have_content("ログインしています")
     end
   end
-
 
   describe "link_to_users" do
     let(:user) { create(:testuser) }
