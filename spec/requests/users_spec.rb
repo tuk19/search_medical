@@ -14,7 +14,6 @@ RSpec.describe "Users", type: :request do
     end
 
     example "ユーザー情報が含まれること" do
-      binding.pry
       expect(response.body).to include(user.name)
       expect(response.body).to include(user.email)
     end
