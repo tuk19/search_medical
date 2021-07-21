@@ -4,11 +4,11 @@
     <%= form_with(model: resource, scope: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <span class="user_login_mail_label">メールアドレス</span>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", id: "user_login_email" %>
       </div>
       <div class="field">
         <span class="user_login_password_label">パスワード</span>
-        <%= f.password_field :password, autocomplete: "current-password" %>
+        <%= f.password_field :password, autocomplete: "current-password", id: "user_login_password" %>
       </div>
       <% if devise_mapping.rememberable? %>
         <div class="field">

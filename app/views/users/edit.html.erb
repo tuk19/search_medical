@@ -16,7 +16,7 @@
           <% end %>
         </div>
         <div class="user_image_uploader">
-          <%= f.file_field :image %>
+          <%= f.file_field :image, id: "user_edit_image" %>
         </div>
       </div>
       <%= f.submit "更新する", class: "user_edit_submit" %>
