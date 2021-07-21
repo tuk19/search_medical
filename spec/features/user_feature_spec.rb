@@ -57,7 +57,7 @@ RSpec.feature 'Users_Features', type: :feature do
       fill_in 'edit_user_registratin_confirm_password', with: "foobarbaz"
       fill_in 'edit_user_current_password', with: user.password
       click_button "アカウント情報を更新する"
-      expect(page).to have_content("Your account has been updated successfully")
+      expect(page).to have_content("アカウント情報を変更しました")
     end
 
     scenario 'プロフィール画面からプロフィール編集画面へ遷移できるか' do
