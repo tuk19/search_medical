@@ -4,7 +4,7 @@ RSpec.feature 'Users_Features', type: :feature do
   include Devise::Test::IntegrationHelpers
 
   describe "user_login" do
-    let(:user) { create(:testuser)}
+    let(:user) { create(:testuser) }
 
     scenario "新規作成できるか" do
       visit new_user_registration_path
@@ -29,6 +29,8 @@ RSpec.feature 'Users_Features', type: :feature do
 
   describe "link_to_users" do
     let(:user) { create(:testuser) }
+    let(:institution) { create(:testinstitution) }
+    let!(:favorite) { create(:testfavorite, user: user, institution: institution) }
 
     background do
       sign_in user
@@ -47,6 +49,13 @@ RSpec.feature 'Users_Features', type: :feature do
       expect(page).to have_content(user.email)
       expect(page).to have_content("アカウント情報を編集する")
       expect(page).to have_content("プロフィールを編集する")
+    end
+
+    scenario 'プロフィール画面からアカウント情報編集画面へ遷移し、プロフィール画面へ戻れるか', js: true do
+      visit users_path
+      expect(page).to have_content("お気に入り解除")
+      find('.like-btn').click
+      expect(page).not_to have_content("お気に入り解除")
     end
 
     scenario 'アカウント編集画面からアカウント情報が更新できるか' do
