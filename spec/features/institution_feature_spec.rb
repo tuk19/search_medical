@@ -27,6 +27,14 @@ RSpec.feature "Institution_Features", type: :feature do
     expect(page).to have_content("大阪市大阪9-8-7アパート大阪201")
   end
 
+  scenario "詳細ページへ遷移できるか", js: true do
+    visit institutions_path
+    find(".institution_index_tbody_tr").click
+    expect(page).to have_content("医療機関情報")
+    expect(page).to have_content("編　集")
+    expect(page).to have_content("削　除")
+  end
+
   scenario "詳細ページから編集画面が表示できるか" do
     visit institution_path(institution.id)
     expect(page).to have_content("医療機関情報")
