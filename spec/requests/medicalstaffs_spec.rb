@@ -29,7 +29,7 @@ RSpec.describe "Medicalstaffs", type: :request do
     end
 
     example "スタッフ情報編集画面が表示されること" do
-      expect(response.body).to include("ユーザープロフィール編集")
+      expect(response.body).to include("登録情報編集")
     end
   end
 end
