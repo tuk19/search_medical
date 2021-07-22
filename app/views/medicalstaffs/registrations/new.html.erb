@@ -5,7 +5,7 @@
       <%= render "medicalstaffs/shared/error_messages", resource: resource %>
       <div class="field">
         <span class="medicalstaff_registration_mail_label">メールアドレス</span>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", id: "medicalstaff_registration_email" %>
       </div>
       <div class="field">
         <span class="medicalstaff_registration_password_label">パスワード
@@ -13,11 +13,11 @@
             <em>(<%= @minimum_password_length %>文字以上)</em>
           <% end %>
         </span>
-        <%= f.password_field :password, autocomplete: "new-password" %>
+        <%= f.password_field :password, autocomplete: "new-password", id: "medicalstaff_registration_password" %>
       </div>
       <div class="field">
         <span class="medicalstaff_registration_password_confirmation_label">パスワード(確認用)</span>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", id: "medicalstaff_registration_confirm_password" %>
       </div>
       <div class="actions">
         <%= f.submit "新規登録", class: "medicalstaff_registration_submit" %>
