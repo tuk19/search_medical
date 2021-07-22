@@ -5,7 +5,6 @@ RSpec.describe Institution, type: :model do
     let(:institution) { create(:testinstitution) }
 
     example "addressを返すこと" do
-      binding.pry
       expect(institution.join_address).to eq(institution.address)
     end
   end
