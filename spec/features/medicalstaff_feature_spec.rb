@@ -28,7 +28,7 @@ RSpec.feature 'Medicalstaff_Features', type: :feature do
   end
 
   describe "link_to_medicalstaffs" do
-    let(:medicalstaff) { create(:teststaff) }
+    let(:medicalstaff) { create(:teststaff, :staff_institution) }
 
     background do
       sign_in medicalstaff
@@ -45,6 +45,15 @@ RSpec.feature 'Medicalstaff_Features', type: :feature do
       expect(page).to have_content(medicalstaff.email)
       expect(page).to have_content("アカウント情報を編集する")
       expect(page).to have_content("登録情報を編集する")
+    end
+
+    scenario 'プロフィール画面からアカウント情報編集画面へ遷移し、プロフィール画面へ戻れるか', js: true do
+      visit medicalstaffs_path
+      expect(page).to have_content("登録解除")
+      expect(page).not_to have_content("所属登録")
+      find('.like-btn').click
+      expect(page).not_to have_content("登録解除")
+      expect(page).to have_content("所属登録")
     end
 
     scenario 'アカウント編集画面からアカウント情報が更新できるか' do

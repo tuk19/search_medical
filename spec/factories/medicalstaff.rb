@@ -1,7 +1,13 @@
 FactoryBot.define do
   factory :teststaff, class: 'Medicalstaff' do
     name { "teststaff" }
-    email { "teststaff@staff.com" }
+    sequence(:email) { |n| "teststaff#{n}@staff.com" }
     password { "foobarbaz" }
+
+    trait :staff_institution do
+      after(:create) do |medicalstaff|
+        create(:teststaff_institution, medicalstaff: medicalstaff, institution: create(:testinstitution) )
+      end
+    end
   end
 end
