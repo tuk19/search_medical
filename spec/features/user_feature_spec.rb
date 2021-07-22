@@ -80,16 +80,6 @@ RSpec.feature 'Users_Features', type: :feature do
       expect(page).to have_content("医療機関検索フォーム")
     end
 
-    scenario '医療機関情報一覧へ遷移できるか' do
-      visit users_path
-      expect(page).to have_content(user.name)
-      expect(page).to have_content(user.email)
-      expect(page).to have_content("アカウント情報を編集する")
-      expect(page).to have_content("プロフィールを編集する")
-      click_link "医療機関情報"
-      expect(page).to have_content("医療機関検索フォーム")
-    end
-
     scenario 'プロフィール編集画面からログアウトできるか' do
       visit users_path
       expect(page).to have_content(user.name)
