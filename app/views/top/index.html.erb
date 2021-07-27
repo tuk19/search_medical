@@ -58,3 +58,8 @@
     </div>
   </div>
 </div>
+<% unless medicalstaff_signed_in? %>
+  <div class="top_map_container">
+    <%= render "shared/top_map" %>
+  </div>
+<% end %>

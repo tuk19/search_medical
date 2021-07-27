@@ -42,3 +42,25 @@ $medicalstaff-color: #eaf;
   border-right: 30px solid transparent;
   border-left:  30px solid transparent;
 }
+
+.top_map_container{
+  margin: 20px auto;
+  width: 90%;
+  text-align: center;
+  #search_address{
+    width: 300px;
+    font-size: large;
+    padding: 3px;
+  }
+  #search_address_button{
+    font-size: large;
+  }
+  #result_address{
+    margin: 10px;
+    font-size: large;
+  }
+  #top_map {
+    height: 600px;
+    width: 100%;
+  }
+}
