@@ -121,3 +121,12 @@ $medical-color: #eaf;
     }
   }
 }
+
+.map_container{
+  margin: 30px auto;
+  width: 75%;
+  #institution_map {
+    height: 600px;
+    width: 100%;
+  }
+}

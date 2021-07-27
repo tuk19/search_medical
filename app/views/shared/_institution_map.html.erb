@@ -1,0 +1,27 @@
+<div id='institution_map'></div>
+
+<script>
+let map
+let geocoder
+
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+  let putAddress = document.getElementById('institution_mapping_address').textContent;
+  geocoder.geocode( { 'address': putAddress}, function(results, status) {
+    if (status == 'OK') {
+      map = new google.maps.Map(document.getElementById('institution_map'), {
+      zoom: 17,
+      });
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert('該当する結果がありませんでした：' + status);
+    }
+  });
+}
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GoogleMap_API_KEY'] %>&callback=initMap" async defer></script>
