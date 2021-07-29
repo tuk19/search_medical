@@ -20,12 +20,52 @@
           <div class="institution_show_intro_text show_text"><%= @institution.introduction %></div>
         </div>
       </div>
-      <div class="institution_show_image_container">
-        <% if @institution.image? %>
-          <%= image_tag @institution.image.url, alt: "アイコン画像", class: "institution_show_image" %>
-        <% else %>
-          <%= image_tag "default_institution_image.png", alt: "アイコン画像", class: "default_institution_show_image" %>
-        <% end %>
+      <div class="institution_show_detail_container">
+        <div class="institution_show_image_container">
+          <% if @institution.image? %>
+            <%= image_tag @institution.image.url, alt: "アイコン画像", class: "institution_show_image" %>
+          <% else %>
+            <%= image_tag "default_institution_image.png", alt: "アイコン画像", class: "default_institution_show_image" %>
+          <% end %>
+        </div>
+        <div class="institution_consultationhour_container">
+          <div class="institution_show_consultationhour_label show_label">診療時間</div>
+          <table class="institution_consultationhour_table">
+            <tr>
+              <th class="consultationhour_time">時間</th>
+              <th class="consultation_monday">月</th>
+              <th class="consultation_tuesday">火</th>
+              <th class="consultation_wednesday">水</th>
+              <th class="consultation_thursday">木</th>
+              <th class="consultation_friday">金</th>
+              <th class="consultation_saturday">土</th>
+              <th class="consultation_sunday">日</th>
+              <th class="consultation_holiday">祝</th>
+              <th class="consultation_edit">編集</th>
+              <th class="consultation_destroy">削除</th>
+            </tr>
+            <% if @consultationhours.exists? %>
+              <% @consultationhours.each do |consultationhour| %>
+                <tr>
+                  <td class="consultationhour_time"><%= consultationhour.start_time.to_s(:stamp) %> - <%= consultationhour.end_time.to_s(:stamp) %></td>
+                  <td class="consultation_monday"><%= consultationhour.monday %></td>
+                  <td class="consultation_tuesday"><%= consultationhour.tuesday %></td>
+                  <td class="consultation_wednesday"><%= consultationhour.wednesday %></td>
+                  <td class="consultation_thursday"><%= consultationhour.thursday %></td>
+                  <td class="consultation_friday"><%= consultationhour.friday %></td>
+                  <td class="consultation_saturday"><%= consultationhour.saturday %></td>
+                  <td class="consultation_sunday"><%= consultationhour.sunday %></td>
+                  <td class="consultation_holiday"><%= consultationhour.holiday %></td>
+                  <td class="consultation_holiday"></td>
+                  <td class="consultation_holiday"><%= link_to "診療時間削除", consultationhour, method: :delete, data: {confirm: "本当に削除しますか"} %></td>
+                </tr>
+              <% end %>
+            <% else %>
+              <div>診療時間が登録されていません</div>
+            <% end %>
+          </table>
+          <div class="institution_consultationhour_create_link"><%= link_to "診療時間を登録する", consultationhour_institution_path(@institution.id) %></div>
+        </div>
       </div>
     </div>
     <% if medicalstaff_signed_in? %>
@@ -37,5 +77,5 @@
   </div>
 </div>
 <div class="map_container">
-  <%= render "shared/institution_map" %>
+  <%#= render "shared/institution_map" %>
 </div>

@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_17_145107) do
+ActiveRecord::Schema.define(version: 2021_07_29_110417) do
+
+  create_table "consultationhours", force: :cascade do |t|
+    t.time "start_time"
+    t.time "end_time"
+    t.string "monday"
+    t.string "tuesday"
+    t.string "wednesday"
+    t.string "thursday"
+    t.string "friday"
+    t.string "saturday"
+    t.string "sunday"
+    t.string "holiday"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "institution_id"
+    t.string "detail"
+  end
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id", null: false

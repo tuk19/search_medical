@@ -58,8 +58,16 @@
     </div>
   </div>
 </div>
-<% unless medicalstaff_signed_in? %>
+<% if medicalstaff_signed_in? %>
+  <div class="top_map_caontainer">
+    <% if current_medicalstaff.address? %>
+
+    <% else %>
+      <%#= render "shared/top_map" %>
+    <% end %>
+  </div>
+<% else%>
   <div class="top_map_container">
-    <%= render "shared/top_map" %>
+    <%#= render "shared/top_map" %>
   </div>
 <% end %>

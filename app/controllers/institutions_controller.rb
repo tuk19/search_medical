@@ -26,6 +26,7 @@ class InstitutionsController < ApplicationController
 
   def show
     @institution = Institution.find(params[:id])
+    @consultationhours = @institution.consultationhours
   end
 
   def edit
@@ -50,6 +51,11 @@ class InstitutionsController < ApplicationController
     @institution = Institution.find(params[:id])
     @institution.destroy
     redirect_to institutions_path, notice: "医療機関を削除しました"
+  end
+
+  def consultationhour
+    @institution = Institution.find(params[:id])
+    @consultationhour = Consultationhour.new
   end
 
   private
