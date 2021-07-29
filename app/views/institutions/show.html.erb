@@ -41,8 +41,10 @@
               <th class="consultation_saturday">土</th>
               <th class="consultation_sunday">日</th>
               <th class="consultation_holiday">祝</th>
-              <th class="consultation_edit">編集</th>
-              <th class="consultation_destroy">削除</th>
+              <% if medicalstaff_signed_in? %>
+                <th class="consultation_edit">編集</th>
+                <th class="consultation_destroy">削除</th>
+              <% end %>
             </tr>
             <% if @consultationhours.exists? %>
               <% @consultationhours.each do |consultationhour| %>
@@ -56,15 +58,23 @@
                   <td class="consultation_saturday"><%= consultationhour.saturday %></td>
                   <td class="consultation_sunday"><%= consultationhour.sunday %></td>
                   <td class="consultation_holiday"><%= consultationhour.holiday %></td>
-                  <td class="consultation_holiday"><%= link_to "診療時間修正", edit_consultationhour_path(consultationhour.id) %></td>
-                  <td class="consultation_holiday"><%= link_to "診療時間削除", consultationhour, method: :delete, data: {confirm: "本当に削除しますか"} %></td>
+                  <% if medicalstaff_signed_in? %>
+                    <td class="consultation_holiday"><%= link_to "診療時間修正", edit_consultationhour_path(consultationhour.id) %></td>
+                    <td class="consultation_holiday"><%= link_to "診療時間削除", consultationhour, method: :delete, data: {confirm: "本当に削除しますか"} %></td>
+                  <% end %>
                 </tr>
               <% end %>
             <% else %>
               <div>診療時間が登録されていません</div>
             <% end %>
           </table>
-          <div class="institution_consultationhour_create_link"><%= link_to "診療時間を登録する", consultationhour_institution_path(@institution.id) %></div>
+          <div>
+            <% if @consultationhours.exists? %>
+              <% @consultationhours.each do |consultationhour| %>
+                <p><%= consultationhour.detail %></p>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
@@ -72,6 +82,7 @@
       <div class="flex_spacearound">
         <div class="institution_show_edit"><%= link_to "編　集", edit_institution_path(@institution.id) %></div>
         <div class="institution_show_delete"><%= link_to "削　除", @institution, method: :delete, data: {confirm: "本当に削除しますか"} %></div>
+        <div class="institution_consultationhour_create_link"><%= link_to "診療時間を登録する", consultationhour_institution_path(@institution.id) %></div>
       </div>
     <% end %>
   </div>
