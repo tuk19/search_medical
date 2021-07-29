@@ -33,6 +33,11 @@ a {
   background-color: $body_background_color;
 }
 
+
+.flex {
+  display: flex;
+}
+
 .flex_spacebetween {
   display: flex;
   justify-content: space-between;
@@ -48,6 +53,7 @@ a {
   display: flex;
   justify-content: space-evenly;
 }
+
 .font_large {
   font-size: 20px;
 }
