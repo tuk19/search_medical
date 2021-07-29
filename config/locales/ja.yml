@@ -1,0 +1,5 @@
+ja:
+  activerecord:
+    attributes:
+      consultationhour:
+        end_time: "終了時間"
