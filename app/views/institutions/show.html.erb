@@ -32,35 +32,35 @@
       <div class="institution_show_consultationhour_label show_label">診療時間</div>
       <table class="institution_consultationhour_table">
         <tr>
-          <th class="consultationhour_time">時間</th>
-          <th class="consultation_monday">月</th>
-          <th class="consultation_tuesday">火</th>
-          <th class="consultation_wednesday">水</th>
-          <th class="consultation_thursday">木</th>
-          <th class="consultation_friday">金</th>
-          <th class="consultation_saturday">土</th>
-          <th class="consultation_sunday">日</th>
-          <th class="consultation_holiday">祝</th>
+          <th class="consultationhour_time th_time">時間</th>
+          <th class="consultation_monday td_day">月</th>
+          <th class="consultation_tuesday td_day">火</th>
+          <th class="consultation_wednesday td_day">水</th>
+          <th class="consultation_thursday td_day">木</th>
+          <th class="consultation_friday td_day">金</th>
+          <th class="consultation_saturday td_day">土</th>
+          <th class="consultation_sunday td_day">日</th>
+          <th class="consultation_holiday td_day">祝</th>
           <% if medicalstaff_signed_in? %>
-            <th class="consultation_edit">編集</th>
-            <th class="consultation_destroy">削除</th>
+            <th class="consultation_edit th_edit">編集</th>
+            <th class="consultation_destroy th_destroy">削除</th>
           <% end %>
         </tr>
         <% if @consultationhours.exists? %>
           <% @consultationhours.each do |consultationhour| %>
             <tr>
-              <td class="consultationhour_time"><%= consultationhour.start_time.to_s(:stamp) %> - <%= consultationhour.end_time.to_s(:stamp) %></td>
-              <td class="consultation_monday"><%= consultationhour.monday %></td>
-              <td class="consultation_tuesday"><%= consultationhour.tuesday %></td>
-              <td class="consultation_wednesday"><%= consultationhour.wednesday %></td>
-              <td class="consultation_thursday"><%= consultationhour.thursday %></td>
-              <td class="consultation_friday"><%= consultationhour.friday %></td>
-              <td class="consultation_saturday"><%= consultationhour.saturday %></td>
-              <td class="consultation_sunday"><%= consultationhour.sunday %></td>
-              <td class="consultation_holiday"><%= consultationhour.holiday %></td>
+              <td class="consultationhour_time td_time"><%= consultationhour.start_time.to_s(:stamp) %> - <%= consultationhour.end_time.to_s(:stamp) %></td>
+              <td class="consultation_monday td_day"><%= consultationhour.monday %></td>
+              <td class="consultation_tuesday td_day"><%= consultationhour.tuesday %></td>
+              <td class="consultation_wednesday td_day"><%= consultationhour.wednesday %></td>
+              <td class="consultation_thursday td_day"><%= consultationhour.thursday %></td>
+              <td class="consultation_friday td_day"><%= consultationhour.friday %></td>
+              <td class="consultation_saturday td_day"><%= consultationhour.saturday %></td>
+              <td class="consultation_sunday td_day"><%= consultationhour.sunday %></td>
+              <td class="consultation_holiday td_day"><%= consultationhour.holiday %></td>
               <% if medicalstaff_signed_in? %>
-                <td class="consultation_holiday"><%= link_to "修正", edit_consultationhour_path(consultationhour.id) %></td>
-                <td class="consultation_holiday"><%= link_to "削除", consultationhour, method: :delete, data: {confirm: "本当に削除しますか"} %></td>
+                <td class="consultation_edit td_edit"><%= link_to "修正", edit_consultationhour_path(consultationhour.id) %></td>
+                <td class="consultation_destroy td_destroy"><%= link_to "削除", consultationhour, method: :delete, data: {confirm: "本当に削除しますか"} %></td>
               <% end %>
             </tr>
           <% end %>
@@ -68,7 +68,7 @@
           <div>診療時間が登録されていません</div>
         <% end %>
       </table>
-      <div>
+      <div class="consultation_detail_container">
         <% if @consultationhours.exists? %>
           <% @consultationhours.each do |consultationhour| %>
             <%= consultationhour.detail %><br>
