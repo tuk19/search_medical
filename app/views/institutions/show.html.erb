@@ -28,10 +28,12 @@
         <% end %>
       </div>
     </div>
-    <div class="flex_spacearound">
-      <div class="institution_show_edit"><%= link_to "編　集", edit_institution_path(@institution.id) %></div>
-      <div class="institution_show_delete"><%= link_to "削　除", @institution, method: :delete, data: {confirm: "本当に削除しますか"} %></div>
-    </div>
+    <% if medicalstaff_signed_in? %>
+      <div class="flex_spacearound">
+        <div class="institution_show_edit"><%= link_to "編　集", edit_institution_path(@institution.id) %></div>
+        <div class="institution_show_delete"><%= link_to "削　除", @institution, method: :delete, data: {confirm: "本当に削除しますか"} %></div>
+      </div>
+    <% end %>
   </div>
 </div>
 <div class="map_container">

@@ -8,8 +8,10 @@
   <div class="institution_index_container">
     <div class="flex_spacebetween">
       <h2>医療機関情報</h2>
-      <%= link_to new_institution_path do %>
-        <p class="linkto_institution_new">新規作成</p>
+      <% if medicalstaff_signed_in? %>
+        <%= link_to new_institution_path do %>
+          <p class="linkto_institution_new">新規作成</p>
+        <% end %>
       <% end %>
     </div>
     <%= render partial: "shared/institution_table", collection: @institution, as: "institution" %>
