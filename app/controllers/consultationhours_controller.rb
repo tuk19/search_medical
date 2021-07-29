@@ -13,9 +13,17 @@ class ConsultationhoursController < ApplicationController
   end
 
   def edit
+    @consultationhour = Consultationhour.find(params[:id])
   end
 
   def update
+    @consultationhour = Consultationhour.find(params[:id])
+    binding.pry
+    if @consultationhour.update(consultationhour_params)
+      redirect_to institution_path(@consultationhour.institution_id), notice: "診療時間を更新しました"
+    else
+      render template: "institutions/consultationhour"
+    end
   end
 
   def destroy

@@ -56,7 +56,7 @@
                   <td class="consultation_saturday"><%= consultationhour.saturday %></td>
                   <td class="consultation_sunday"><%= consultationhour.sunday %></td>
                   <td class="consultation_holiday"><%= consultationhour.holiday %></td>
-                  <td class="consultation_holiday"></td>
+                  <td class="consultation_holiday"><%= link_to "診療時間修正", edit_consultationhour_path(consultationhour.id) %></td>
                   <td class="consultation_holiday"><%= link_to "診療時間削除", consultationhour, method: :delete, data: {confirm: "本当に削除しますか"} %></td>
                 </tr>
               <% end %>
