@@ -11,30 +11,30 @@
       <div class="flex_spaceevenly">
         <div class="start_time_container">
           <%= f.label :start_time, "開始時間", class: "start_time_label" %>
-          <%= f.text_field :start_time, value: @consultationhour.start_time.to_s(:stamp), class: "start_time_text" %>
+          <%= f.text_field :start_time, value: @consultationhour.start_time.to_s(:stamp), class: "start_time_text", id: "edit_start_time" %>
         </div>
         <div class="end_time_container">
           <%= f.label :end_time, "終了時間", class: "end_time_label" %>
-          <%= f.text_field :end_time, value: @consultationhour.end_time.to_s(:stamp), class: "end_time_text" %>
+          <%= f.text_field :end_time, value: @consultationhour.end_time.to_s(:stamp), class: "end_time_text", id: "edit_end_time" %>
         </div>
       </div>
       <div class="consultationhour_new_day_container">
         <div class="flex_spacearound consultationhour_day_container">
           <div class="monday_container">
             <%= f.label :monday, "月曜日", class: "monday_label" %>
-            <%= f.select :monday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select" %>
+            <%= f.select :monday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select", id: "edit_monday" %>
           </div>
           <div class="tuesday_container">
             <%= f.label :tuesday, "火曜日", class: "tuesday_label" %>
-            <%= f.select :tuesday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select" %>
+            <%= f.select :tuesday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select", id: "edit_tuesday" %>
           </div>
           <div class="wednesday_container">
             <%= f.label :wednesday, "水曜日", class: "wednesday_label" %>
-            <%= f.select :wednesday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select" %>
+            <%= f.select :wednesday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select", id: "edit_wednesday" %>
           </div>
           <div class="thursday_container">
             <%= f.label :thursday, "木曜日", class: "thursday_label" %>
-            <%= f.select :thursday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select" %>
+            <%= f.select :thursday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select", id: "edit_thursday" %>
           </div>
         </div>
       </div>
@@ -42,25 +42,25 @@
         <div class="flex_spacearound consultationhour_day_container">
           <div class="friday_container">
             <%= f.label :friday, "金曜日", class: "friday_label" %>
-            <%= f.select :friday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select" %>
+            <%= f.select :friday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select", id: "edit_friday" %>
           </div>
           <div class="saturday_container">
             <%= f.label :saturday, "土曜日", class: "saturday_label" %>
-            <%= f.select :saturday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select" %>
+            <%= f.select :saturday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select", id: "edit_saturday" %>
           </div>
           <div class="sunday_container">
             <%= f.label :sunday, "日曜日", class: "sunday_label" %>
-            <%= f.select :sunday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select" %>
+            <%= f.select :sunday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select", id: "edit_sunday" %>
           </div>
           <div class="holiday_container">
             <%= f.label :holiday, "　祝日", class: "holiday_label" %>
-            <%= f.select :holiday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select" %>
+            <%= f.select :holiday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select", id: "edit_holiday" %>
           </div>
         </div>
       </div>
       <div class="detail_container">
         <%= f.label :detail, "詳細", class: "detail_label" %>
-        <%= f.text_area :detail, class: "detail_text" %>
+        <%= f.text_area :detail, class: "detail_text", id: "edit_detail" %>
       </div>
       <div class="flex_spaceevenly">
         <div class="consultationhour_submit_container">
