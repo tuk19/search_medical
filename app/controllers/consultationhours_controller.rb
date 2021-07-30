@@ -23,6 +23,8 @@ class ConsultationhoursController < ApplicationController
     if @consultationhour.update(consultationhour_params)
       redirect_to institution_path(@consultationhour.institution_id), notice: "診療時間を更新しました"
     else
+      @consultationhour.start_time = "00:00" if @consultationhour.start_time.nil?
+      @consultationhour.end_time = "00:00" if @consultationhour.end_time.nil?
       render "edit"
     end
   end
