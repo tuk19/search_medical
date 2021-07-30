@@ -5,9 +5,11 @@ class ConsultationhoursController < ApplicationController
 
   def create
     @consultationhour = Consultationhour.new(consultationhour_params)
+    institution_id = @consultationhour.institution_id
     if @consultationhour.save
       redirect_to institution_path(@consultationhour.institution_id), notice: "診療時間を追加しました"
     else
+      @institution = Institution.find(institution_id)
       render template: "institutions/consultationhour"
     end
   end
