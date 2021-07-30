@@ -121,4 +121,18 @@ RSpec.describe "Institutions", type: :request do
       expect(response).to redirect_to(institutions_path)
     end
   end
+
+  describe 'GET /consultationhour' do
+    before do
+      get consultationhour_institution_path(institution.id)
+    end
+
+    example "editページが表示できること" do
+      expect(response).to have_http_status(:success)
+    end
+
+    example "医療機関情報編集画面が表示されること" do
+      expect(response.body).to include("診療時間作成")
+    end
+  end
 end
