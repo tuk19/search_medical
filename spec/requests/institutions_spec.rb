@@ -20,7 +20,7 @@ RSpec.describe "Institutions", type: :request do
 
   describe "GET /index" do
     before do
-      get institutions_path, params: { q: { name_const: "test"} }
+      get institutions_path
     end
 
     example "ページを表示できること" do
@@ -63,8 +63,7 @@ RSpec.describe "Institutions", type: :request do
 
     example "医療機関情報が表示されること" do
       expect(response.body).to include(institution.name)
-      expect(response.body).to include("編　集")
-      expect(response.body).to include("削　除")
+      expect(response.body).to include(institution.address)
     end
   end
 

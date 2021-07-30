@@ -83,4 +83,58 @@ RSpec.feature "Institution_Features", type: :feature do
       expect(page).not_to have_content("削　除")
     end
   end
+
+  feature "医療機関検索" do
+    before do
+      visit institutions_path
+    end
+
+    scenario "住所に検索語を含むとき" do
+      fill_in 'q[address_cont]', with: '東京都'
+      find('#institution_search_submit').click
+      expect(page.status_code).to eq(200)
+      expect(page).to have_content(institution.name)
+      expect(page).to have_content(institution.address)
+    end
+
+    scenario "住所に検索語を含まないとき" do
+      fill_in 'q[address_cont]', with: '大阪府'
+      find('#institution_search_submit').click
+      expect(page.status_code).to eq(200)
+      expect(page).not_to have_content(institution.name)
+      expect(page).not_to have_content(institution.address)
+    end
+
+    scenario "検索欄が空欄のとき" do
+      fill_in 'q[address_cont]', with: ''
+      find('#institution_search_submit').click
+      expect(page.status_code).to eq(200)
+      expect(page).to have_content(institution.name)
+      expect(page).to have_content(institution.address)
+    end
+
+    scenario "名前に検索語を含むとき" do
+      fill_in 'q[name_or_introduction_cont]', with: 'test'
+      find('#institution_search_submit').click
+      expect(page.status_code).to eq(200)
+      expect(page).to have_content(institution.name)
+      expect(page).to have_content(institution.address)
+    end
+
+    scenario "名前に検索語を含まないとき" do
+      fill_in 'q[name_or_introduction_cont]', with: 'example'
+      find('#institution_search_submit').click
+      expect(page.status_code).to eq(200)
+      expect(page).not_to have_content(institution.name)
+      expect(page).not_to have_content(institution.address)
+    end
+
+    scenario "検索欄が空欄の時" do
+      fill_in 'q[name_or_introduction_cont]', with: ''
+      find('#institution_search_submit').click
+      expect(page.status_code).to eq(200)
+      expect(page).to have_content(institution.name)
+      expect(page).to have_content(institution.address)
+    end
+  end
 end
