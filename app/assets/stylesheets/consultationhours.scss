@@ -3,3 +3,80 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 $medical-color: #eaf;
+
+/* ===================================================================
+          institution/consultationhour & consultationhour/edit
+====================================================================*/
+
+.consultationhour_new_main {
+  width: 90%;
+  margin: 0 auto;
+  .consultationhour_new_container {
+    padding: 15px 20px;
+    border: 2px solid $medical-color;
+    border-radius: 20px;
+    background-color: white;
+    h2 {
+      margin: 10px;
+      color: $medical-color;
+    }
+    .consultationhour_new_explanation {
+      line-height: 1.5em;
+    }
+    .explanation3 {
+      margin: 15px 0;
+    }
+    .start_time_container, .end_time_container {
+      margin: 10px 0;
+      .start_time_text, .end_time_text {
+        font-size: 14px;
+        padding: 2px;
+      }
+    }
+    .consultationhour_day_new_container {
+      margin: 9px;
+      .consultationhour_day_container {
+        width: 70%;
+        margin: 0 auto;
+        .day_select {
+          padding: 10px;
+        }
+      }
+    }
+      .detail_container {
+        text-align: center;
+        margin: 20px;
+      .detail_label {
+        vertical-align: top;
+      }
+      .detail_text {
+      width: 60%;
+      height: 15em;
+      padding: 5px;
+      line-height: 1.5em;
+      letter-spacing: 1.5px;
+      }
+    }
+    .consultationhour_submit {
+      padding: 10px 20%;
+      margin: 10px;
+      color: white;
+      font-weight: bold;
+      letter-spacing: 2px;
+      border: 1px solid $medical-color;
+      border-radius: 5px;
+      background-color: $medical-color;
+    }
+    .consultationhour_institution_path_link_container {
+      width: 40%;
+      margin: 20px;
+      .consultationhour_institution_path_link {
+        padding: 10px 20%;
+        margin: 10px;
+        letter-spacing: 2px;
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+    }
+  }
+}

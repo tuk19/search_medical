@@ -2,64 +2,74 @@
   <div class="consultationhour_new_container">
     <h2>診療時間作成</h2>
     <div class="consultationhour_new_explanation">
-      <div class="">開始時間、終了時間は[00:00]の形式で入力してください</div>
-      <div class="">選択した時間に[当てはまる曜日は●]、[当てはまらない曜日は-]、[注釈が必要な場合は※を入力し、詳細欄に説明を記入してください]</div>
-      <div class="">例：開始時間8:30　終了時間13:00　月曜日●　火曜日●　水曜日●　木曜日-　金曜日●　土曜日※　日曜日-　祝日-　詳細土曜日は12:30まで</div>
+      <div class="explanation1">開始時間、終了時間は<span class="text_red">00:00</span>の形式で入力してください</div>
+      <div class="explanation2">選択した時間に<span class="text_red">当てはまる曜日は●</span>、<span class="text_red">当てはまらない曜日は-</span>、<span class="text_red">注釈が必要な場合は※を入力し、詳細欄に説明を記入</span>してください</div>
+      <div class="explanation3">例：開始時間8:30　終了時間13:00　月曜日●　火曜日●　水曜日●　木曜日-　金曜日●　土曜日※　日曜日-　祝日-　詳細土曜日は12:30まで</div>
     </div>
     <%= form_with model: @consultationhour do |f|%>
-      <div class="start_time_container">
-        <%= f.label :start_time, "開始時間", id: "start_time_label" %>
-        <%= f.text_field :start_time, id: "start_time_text" %>
+      <div class="flex_spaceevenly">
+        <div class="start_time_container">
+          <%= f.label :start_time, "開始時間", class: "start_time_label" %>
+          <%= f.text_field :start_time, class: "start_time_text" %>
+        </div>
+        <div class="end_time_container">
+          <%= f.label :end_time, "終了時間", class: "end_time_label" %>
+          <%= f.text_field :end_time, class: "end_time_text" %>
+        </div>
       </div>
-      <div class="start_time_container">
-        <%= f.label :end_time, "終了時間", id: "end_time_label" %>
-        <%= f.text_field :end_time, id: "end_time_text" %>
+      <div class="consultationhour_new_day_container">
+        <div class="flex_spaceevenly consultationhour_day_container">
+          <div class="monday_container">
+            <%= f.label :monday, "月曜日", class: "monday_label" %>
+            <%= f.select :monday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select" %>
+          </div>
+          <div class="tuesday_container">
+            <%= f.label :tuesday, "火曜日", class: "tuesday_label" %>
+            <%= f.select :tuesday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select" %>
+          </div>
+          <div class="wednesday_container">
+            <%= f.label :wednesday, "水曜日", class: "wednesday_label" %>
+            <%= f.select :wednesday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select" %>
+          </div>
+          <div class="thursday_container">
+            <%= f.label :thursday, "木曜日", class: "thursday_label" %>
+            <%= f.select :thursday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select" %>
+          </div>
+        </div>
       </div>
-      <div class="flex_spacearound">
-        <div class="monday_container">
-          <%= f.label :monday, "月曜日", id: "monday_label" %>
-          <%= f.select :monday, [["-", "-"], ["●", "●"], ["※", "※"]], id: "monday_select" %>
-        </div>
-        <div class="tuesday_container">
-          <%= f.label :tuesday, "火曜日", id: "tuesday_label" %>
-          <%= f.select :tuesday, [["-", "-"], ["●", "●"], ["※", "※"]], id: "tuesday_select" %>
-        </div>
-        <div class="wednesday_container">
-          <%= f.label :wednesday, "水曜日", id: "wednesday_label" %>
-          <%= f.select :wednesday, [["-", "-"], ["●", "●"], ["※", "※"]], id: "wednesdayselect" %>
-        </div>
-        <div class="thursday_container">
-          <%= f.label :thursday, "木曜日", id: "thursday_label" %>
-          <%= f.select :thursday, [["-", "-"], ["●", "●"], ["※", "※"]], id: "thursday_select" %>
-        </div>
-        <div class="friday_container">
-          <%= f.label :friday, "金曜日", id: "friday_label" %>
-          <%= f.select :friday, [["-", "-"], ["●", "●"], ["※", "※"]], id: "friday_select" %>
-        </div>
-        <div class="saturday_container">
-          <%= f.label :saturday, "土曜日", id: "saturday_label" %>
-          <%= f.select :saturday, [["-", "-"], ["●", "●"], ["※", "※"]], id: "saturday_select" %>
-        </div>
-        <div class="sunday_container">
-          <%= f.label :sunday, "日曜日", id: "sunday_label" %>
-          <%= f.select :sunday, [["-", "-"], ["●", "●"], ["※", "※"]], id: "sunday_select" %>
-        </div>
-        <div class="holiday_container">
-          <%= f.label :holiday, "祝日", id: "holiday_label" %>
-          <%= f.select :holiday, [["-", "-"], ["●", "●"], ["※", "※"]], id: "holiday_select" %>
+      <div class="consultationhour_new_day_container">
+        <div class="flex_spaceevenly consultationhour_day_container">
+          <div class="friday_container">
+            <%= f.label :friday, "金曜日", class: "friday_label" %>
+            <%= f.select :friday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select" %>
+          </div>
+          <div class="saturday_container">
+            <%= f.label :saturday, "土曜日", class: "saturday_label" %>
+            <%= f.select :saturday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select" %>
+          </div>
+          <div class="sunday_container">
+            <%= f.label :sunday, "日曜日", class: "sunday_label" %>
+            <%= f.select :sunday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select" %>
+          </div>
+          <div class="holiday_container">
+            <%= f.label :holiday, "　祝日", class: "holiday_label" %>
+            <%= f.select :holiday, [["-", "-"], ["●", "●"], ["※", "※"]], class: "day_select" %>
+          </div>
         </div>
       </div>
       <div class="detail_container">
-        <%= f.label :detail, "詳細", id: "detail_label" %>
-        <%= f.text_area :detail, id: "detail_text" %>
+        <%= f.label :detail, "詳細", class: "detail_label" %>
+        <%= f.text_area :detail, class: "detail_text" %>
       </div>
       <%= f.hidden_field :institution_id, value: @institution.id %>
-      <div class="consultationhour_submit_container">
-        <%= f.submit "登録する", class: "consultationhour_submit" %>
+      <div class="flex_spaceevenly">
+        <div class="consultationhour_submit_container">
+          <%= f.submit "登録する", class: "consultationhour_submit" %>
+        </div>
+        <div class="consultationhour_institution_path_link_container">
+          <%= link_to "医療機関情報へ戻る", institution_path(@institution.id), class: "consultationhour_institution_path_link" %>
+        </div>
       </div>
     <% end %>
-    <div class="institution_path_link_container">
-      <%= link_to "医療機関情報へ戻る", institution_path(@institution.id), class: "institution_path_link" %>
-    </div>
   </div>
 </div>
