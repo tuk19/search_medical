@@ -1,0 +1,15 @@
+<tr>
+  <th class="consultationhour_time th_time">時間</th>
+  <th class="consultation_monday td_day">月</th>
+  <th class="consultation_tuesday td_day">火</th>
+  <th class="consultation_wednesday td_day">水</th>
+  <th class="consultation_thursday td_day">木</th>
+  <th class="consultation_friday td_day">金</th>
+  <th class="consultation_saturday td_day">土</th>
+  <th class="consultation_sunday td_day">日</th>
+  <th class="consultation_holiday td_day">祝</th>
+  <% if medicalstaff_signed_in? %>
+    <th class="consultation_edit th_edit">編集</th>
+    <th class="consultation_destroy th_destroy">削除</th>
+  <% end %>
+</tr>

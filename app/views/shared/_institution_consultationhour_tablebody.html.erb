@@ -1,0 +1,15 @@
+<tr>
+  <td class="consultationhour_time td_time"><%= consultationhour.start_time.to_s(:stamp) %> - <%= consultationhour.end_time.to_s(:stamp) %></td>
+  <td class="consultation_monday td_day"><%= consultationhour.monday %></td>
+  <td class="consultation_tuesday td_day"><%= consultationhour.tuesday %></td>
+  <td class="consultation_wednesday td_day"><%= consultationhour.wednesday %></td>
+  <td class="consultation_thursday td_day"><%= consultationhour.thursday %></td>
+  <td class="consultation_friday td_day"><%= consultationhour.friday %></td>
+  <td class="consultation_saturday td_day"><%= consultationhour.saturday %></td>
+  <td class="consultation_sunday td_day"><%= consultationhour.sunday %></td>
+  <td class="consultation_holiday td_day"><%= consultationhour.holiday %></td>
+  <% if medicalstaff_signed_in? %>
+    <td class="consultation_edit td_edit"><%= link_to "修正", edit_consultationhour_path(consultationhour.id) %></td>
+    <td class="consultation_destroy td_destroy"><%= link_to "削除", consultationhour, method: :delete, data: {confirm: "本当に削除しますか"} %></td>
+  <% end %>
+</tr>

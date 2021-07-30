@@ -5,7 +5,10 @@
     <div class="institution_consultationhour_container">
       <div class="institution_show_consultationhour_label show_label">診療時間</div>
       <% if @consultationhours.exists? %>
-        <%= render partial: "shared/institution_consultationhour_table", collection: @consultationhours, as: "consultationhour" %>
+        <table class="institution_consultationhour_table">
+          <%= render partial: "shared/institution_consultationhour_tablehead" %>
+          <%= render partial: "shared/institution_consultationhour_tablebody", collection: @consultationhours, as: "consultationhour" %>
+        </table>
       <% else%>
         <div>診療時間が登録されていません</div>
       <% end %>
