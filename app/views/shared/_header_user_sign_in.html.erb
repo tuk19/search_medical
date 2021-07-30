@@ -1,0 +1,14 @@
+<div class="link_users_path font_large"><%= link_to "プロフィール画面", users_path %></div>
+<%= link_to users_path do %>
+  <% if current_user.name? %>
+    <div class="user_name font_large"><%= current_user.name %></div>
+  <% else %>
+    <div class="user_guest font_large">ゲスト</div>
+  <% end %>
+<% end %>
+<% if current_user.image? %>
+  <%= image_tag current_user.image.url, alt: "プロフィール画像", class: "user_image" %>
+<% else %>
+  <%= image_tag "default_icon.png", alt: "プロフィール画像", class: "default_user_image" %>
+<% end %>
+<div class="logout_users font_large"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>

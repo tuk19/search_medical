@@ -1,0 +1,12 @@
+<div class="link_staff_info"><%= link_to "登録情報確認", medicalstaffs_path %></div>
+<% if current_medicalstaff.name? %>
+  <div class="staff_name"><%= current_medicalstaff.name %></div>
+<% else %>
+  <div class="staff_guest">ゲスト</div>
+<% end %>
+<% if current_medicalstaff.address? %>
+  <div class="staff_address"><%= current_medicalstaff.address %></div>
+<% else %>
+  <div class="default_staff_address">住所が登録されていません</div>
+<% end %>
+<div class="logout_staff"><%= link_to "ログアウト", destroy_medicalstaff_session_path, method: :delete %></div>
