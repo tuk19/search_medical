@@ -37,6 +37,10 @@ a {
 .flex {
   display: flex;
 }
+.flex_center {
+  display: flex;
+  justify-content: center;
+}
 
 .flex_spacebetween {
   display: flex;
