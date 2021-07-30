@@ -57,6 +57,8 @@ RSpec.describe "Institutions", type: :request do
   end
 
   describe "GET /show" do
+    let!(:consultationhour) { create(:testconsultationhour, institution: institution)}
+
     before do
       get institution_path(institution.id)
     end
@@ -64,6 +66,14 @@ RSpec.describe "Institutions", type: :request do
     example "医療機関情報が表示されること" do
       expect(response.body).to include(institution.name)
       expect(response.body).to include(institution.address)
+    end
+
+    example "診療時間が表示されること" do
+      expect(response.body).to include("診療時間")
+      expect(response.body).to include("●")
+      expect(response.body).to include("-")
+      expect(response.body).to include("※")
+      expect(response.body).to include("土曜日は13:00まで")
     end
   end
 
