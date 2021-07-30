@@ -1,0 +1,27 @@
+<div class="flex_spaceevenly">
+  <div class="institution_show_info_container">
+    <div class="institution_show_name_container">
+      <div class= "institution_show_name_label show_label">医療機関名</div>
+      <div class="institution_show_name_text show_text"><%= institution.name %></div>
+    </div>
+    <div class="institution_show_postcode_container">
+      <div class="institution_show_postcode_label show_label">郵便番号</div>
+      <div class="institution_show_postcode_text show_text"><%= institution.postcode.to_s[0,3] %>-<%= institution.postcode.to_s[3..]%></div>
+    </div>
+    <div class="institution_show_address_container">
+      <div class="institution_show_address_label show_label">住所</div>
+      <div class="institution_show_address_text show_text", id="institution_mapping_address"><%= institution.address %></div>
+    </div>
+    <div class="institution_show_intro_container">
+      <div class="institution_show_intro_label show_label">紹介</div>
+      <div class="institution_show_intro_text show_text"><%= institution.introduction %></div>
+    </div>
+  </div>
+  <div class="institution_show_image_container">
+    <% if institution.image? %>
+      <%= image_tag institution.image.url, alt: "アイコン画像", class: "institution_show_image" %>
+    <% else %>
+      <%= image_tag "default_institution_image.png", alt: "アイコン画像", class: "default_institution_show_image" %>
+    <% end %>
+  </div>
+</div>
