@@ -33,16 +33,6 @@ $medical-color: #eaf;
         padding: 2px;
       }
     }
-    .consultationhour_day_new_container {
-      margin: 9px;
-      .consultationhour_day_container {
-        width: 70%;
-        margin: 0 auto;
-        .day_select {
-          padding: 10px;
-        }
-      }
-    }
       .detail_container {
         text-align: center;
         margin: 20px;
@@ -77,6 +67,21 @@ $medical-color: #eaf;
         border: 1px solid black;
         border-radius: 5px;
       }
+    }
+  }
+}
+
+/* ===================================================================
+                  _consultationhours_form_day
+====================================================================*/
+
+.consultationhour_day_new_container {
+  margin: 9px;
+  .consultationhour_day_container {
+    width: 70%;
+    margin: 0 auto;
+    .day_select {
+      padding: 10px;
     }
   }
 }
