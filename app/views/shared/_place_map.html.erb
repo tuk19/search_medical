@@ -1,34 +1,42 @@
-<h1>testplace</h1>
+
+<div class="place_map_container">
+  <h2>周辺の医療機関検索</h2>
+  <div class="place_map_search_area">
+    <input type="text" size="55" id="place_search">
+    <input type="button" size="55" value="検索" id="place_search_button" onClick="SearchGo()">
+  </div>
+  <div id="place_map"></div>
+</div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GoogleMap_API_KEY'] %>&libraries=places"></script>
-
-<input type="text" size="55" id="place_search">
-<input type="button" size="55" value="検索" onClick="SearchGo()" />
-<div id="place_map" style="width: 500px; height: 500px;"></div>
-
 <script>
-var mayMap;
+var myMap;
 var service;
 
 function initialize() {
-    // Mapクラスのインスタンスを作成（緯度経度は池袋駅に設定）
-    var initPos = new google.maps.LatLng(35.729756, 139.711069);
-    // 地図のプロパティを設定（倍率、マーカー表示位置、地図の種類）
-    var myOptions = {
-        zoom: 15,
-        center: initPos,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    // #map_canva要素にMapクラスの新しいインスタンスを作成
-    myMap = new google.maps.Map(document.getElementById("place_map"), myOptions);
-    // 検索の条件を指定（緯度経度、半径、検索の分類）
-    var request = {
-        location: initPos,
-        radius: 1000,      // ※１ 表示する半径領域を設定(1 = 1M)
-        types: ['hospital']    // ※２ typesプロパティの施設タイプを設定
-    };
-    var service = new google.maps.places.PlacesService(myMap);
-    service.search(request, Result_Places);
+  geocoder = new google.maps.Geocoder()
+  let defaultAddress = document.getElementById('place_medicalstaff_address').textContent;
+  geocoder.geocode( { 'address': defaultAddress}, function(results, status) {
+    if (status == 'OK') {
+      let lat = results[0].geometry.location.lat();
+      let lng = results[0].geometry.location.lng();
+      var initPos = new google.maps.LatLng(lat, lng);
+      var myOptions = {
+          zoom: 15,
+          center: initPos,
+      };
+      myMap = new google.maps.Map(document.getElementById("place_map"), myOptions);
+      var request = {
+      location: initPos,
+      radius: 1000,
+      types: ['hospital']
+      };
+      var service = new google.maps.places.PlacesService(myMap);
+      service.search(request, Result_Places);
+    } else {
+      alert('該当する結果がありませんでした：' + status);
+    }
+  });
 }
 
 // 検索結果を受け取る
@@ -51,8 +59,7 @@ function SearchGo() {
     var initPos = new google.maps.LatLng(0,0);
     var mapOptions = {
         center : initPos,
-        zoom: 0,
-        mapTypeId : google.maps.MapTypeId.ROADMAP
+        zoom: 0
     };
     // #map_canva要素にMapクラスの新しいインスタンスを作成
     myMap = new google.maps.Map(document.getElementById("place_map"), mapOptions);
