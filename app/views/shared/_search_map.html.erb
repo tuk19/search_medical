@@ -5,7 +5,7 @@
 <div>
   <div id="result_address">住所が表示されます</div>
 </div>
-<div id='top_map'></div>
+<div id='search_map'></div>
 
 <script>
 let search_map
@@ -14,7 +14,7 @@ let search_geocoder
 function initMap(){
   search_geocoder = new google.maps.Geocoder()
 
-  search_map = new google.maps.Map(document.getElementById('top_map'), {
+  search_map = new google.maps.Map(document.getElementById('search_map'), {
     center: {lat: 35.6809591, lng: 139.7673068},
     zoom: 15,
   });
