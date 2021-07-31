@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def index
     @user = User.find(current_user.id)
     favorites = Favorite.where(user_id: current_user.id).pluck(:institution_id)
-    @favorites_list = Institution.find(favorites)
+    @favorites_list = Institution.includes(:favorites).find(favorites)
   end
 
   def edit
