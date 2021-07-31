@@ -1,0 +1,46 @@
+
+<h2>医療機関を検索</h2>
+<input id="search_address" type="textbox">
+<input id="search_address_button", type="button" value="検索" onclick="codeAddress()">
+<div>
+  <div id="result_address">住所が表示されます</div>
+</div>
+<div id='top_map'></div>
+
+<script>
+let search_map
+let search_geocoder
+
+function initMap(){
+  search_geocoder = new google.maps.Geocoder()
+
+  search_map = new google.maps.Map(document.getElementById('top_map'), {
+    center: {lat: 35.6809591, lng: 139.7673068},
+    zoom: 15,
+  });
+
+  marker = new google.maps.Marker({
+    position:  {lat: 35.6809591, lng: 139.7673068},
+    map: search_map
+  });
+}
+
+function codeAddress(){
+  let inputAddress = document.getElementById('search_address').value;
+
+  search_geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+      search_map.setCenter(results[0].geometry.location);
+      result_address = results[0].formatted_address;
+      document.getElementById('result_address').textContent = result_address
+      var marker = new google.maps.Marker({
+          map: search_map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert('該当する結果がありませんでした：' + status);
+    }
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GoogleMap_API_KEY'] %>&callback=initMap" async defer></script>
