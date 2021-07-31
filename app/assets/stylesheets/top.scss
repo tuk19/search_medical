@@ -43,7 +43,35 @@ $medicalstaff-color: #eaf;
   border-left:  30px solid transparent;
 }
 
-.top_map_container{
+
+/* ===================================================================
+                  shared/place_map
+====================================================================*/
+.place_map_container{
+  margin: 20px auto;
+  width: 90%;
+  text-align: center;
+  .place_map_search_area {
+    margin-bottom: 10px;
+    #place_search {
+      width: 300px;
+      font-size: large;
+      padding: 3px;
+    }
+    #place_search_button{
+      font-size: large;
+    }
+  }
+  #place_map {
+    height: 600px;
+    width: 100%;
+  }
+}
+
+/* ===================================================================
+                  shared/search_map
+====================================================================*/
+.search_map_container{
   margin: 20px auto;
   width: 90%;
   text-align: center;
