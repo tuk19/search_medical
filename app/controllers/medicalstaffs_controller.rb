@@ -4,7 +4,7 @@ class MedicalstaffsController < ApplicationController
   def index
     @staff = Medicalstaff.find(current_medicalstaff.id)
     staff_institutions = @staff.staff_institutions.pluck(:institution_id)
-    @staff_institution_list = Institution.find(staff_institutions)
+    @staff_institution_list = Institution.includes(:staff_institutions).find(staff_institutions)
   end
 
   def edit
