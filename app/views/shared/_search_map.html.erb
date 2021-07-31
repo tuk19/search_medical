@@ -1,11 +1,13 @@
 
-<h2>医療機関を検索</h2>
-<input id="search_address" type="textbox">
-<input id="search_address_button", type="button" value="検索" onclick="codeAddress()">
-<div>
-  <div id="result_address">住所が表示されます</div>
+<div class="search_map_container">
+  <h2>医療機関を検索</h2>
+  <input id="search_address" type="textbox">
+  <input id="search_address_button", type="button" value="検索" onclick="codeAddress()">
+  <div>
+    <div id="result_address">住所が表示されます</div>
+  </div>
+  <div id='search_map'></div>
 </div>
-<div id='search_map'></div>
 
 <script>
 let search_map
