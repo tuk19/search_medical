@@ -5,7 +5,7 @@
   <div class="staff_guest">ゲスト</div>
 <% end %>
 <% if current_medicalstaff.address? %>
-  <div class="staff_address"><%= current_medicalstaff.address %></div>
+  <div class="staff_address" id="place_medicalstaff_address"><%= current_medicalstaff.address %></div>
 <% else %>
   <div class="default_staff_address">住所が登録されていません</div>
 <% end %>
