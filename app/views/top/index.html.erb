@@ -45,7 +45,7 @@
 <% if medicalstaff_signed_in? %>
   <div class="top_map_caontainer">
     <% if current_medicalstaff.address? %>
-
+      <%= render "shared/place_map" %>
     <% else %>
       <%#= render "shared/search_map" %>
     <% end %>
