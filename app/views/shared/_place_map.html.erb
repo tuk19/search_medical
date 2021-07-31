@@ -1,4 +1,3 @@
-
 <div class="place_map_container">
   <h2>周辺の医療機関検索</h2>
   <div class="place_map_search_area">
@@ -55,23 +54,49 @@ function Result_Places(results, status){
 }
 
 // 入力キーワードと表示範囲を設定
+// function SearchGo() {
+//     var initPos = new google.maps.LatLng(0,0);
+//     var mapOptions = {
+//         center : initPos,
+//         zoom: 0
+//     };
+//     // #map_canva要素にMapクラスの新しいインスタンスを作成
+//     myMap = new google.maps.Map(document.getElementById("place_map"), mapOptions);
+//     service = new google.maps.places.PlacesService(myMap);
+//     // input要素に入力されたキーワードを検索の条件に設定
+//     var myword = document.getElementById("place_search");
+//     var request = {
+//         query : myword.value,
+//         radius : 5000,
+//         location : myMap.getCenter()
+//     };
+//     service.textSearch(request, result_search);
+// }
+
 function SearchGo() {
-    var initPos = new google.maps.LatLng(0,0);
-    var mapOptions = {
-        center : initPos,
-        zoom: 0
-    };
-    // #map_canva要素にMapクラスの新しいインスタンスを作成
-    myMap = new google.maps.Map(document.getElementById("place_map"), mapOptions);
-    service = new google.maps.places.PlacesService(myMap);
-    // input要素に入力されたキーワードを検索の条件に設定
-    var myword = document.getElementById("place_search");
-    var request = {
-        query : myword.value,
-        radius : 5000,
-        location : myMap.getCenter()
-    };
-    service.textSearch(request, result_search);
+  geocoder = new google.maps.Geocoder()
+  let defaultAddress = document.getElementById('place_search').value;
+  geocoder.geocode( { 'address': defaultAddress}, function(results, status) {
+    if (status == 'OK') {
+      let lat = results[0].geometry.location.lat();
+      let lng = results[0].geometry.location.lng();
+      var initPos = new google.maps.LatLng(lat, lng);
+      var myOptions = {
+          center : initPos,
+          zoom: 15
+      };
+      myMap = new google.maps.Map(document.getElementById("place_map"), myOptions);
+      var request = {
+        location: initPos,
+        radius: 1000,
+        types: ['hospital']
+      };
+      var service = new google.maps.places.PlacesService(myMap);
+      service.search(request, Result_Places);
+    } else {
+      alert('該当する結果がありませんでした：' + status);
+    }
+  });
 }
 
 // 検索の結果を受け取る
