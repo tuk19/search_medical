@@ -1,0 +1,47 @@
+<div class="medicalstaff_info_container">
+  <div class="medicalstaff_info_paragpraph">
+    <h2 class="medicalstaff_info_paragpraph_title">所属登録</h2>
+    <div class="medicalstaff_info_paragraph_text">
+      所属登録をすると、登録情報画面に一覧が表示されます。
+    </div>
+  </div>
+  <div class="medicalstaff_info_paragpraph">
+    <h2 class="medicalstaff_info_paragpraph_title">検索機能</h2>
+    <div class="medicalstaff_info_paragraph_text">
+      医療機関情報の検索フォームを使って、登録された医療機関を検索できます。<br>
+      医療機関名や住所、診療科目などで検索することで、お目当ての医療機関を見つけやすくなります。<br>
+      住所は住所検索から、医療機関名や診療科目などは、情報検索を活用ください。
+    </div>
+  </div>
+  <div class="medicalstaff_info_paragpraph">
+    <h2 class="medicalstaff_info_paragpraph_title">周辺情報表示機能</h2>
+    <div class="medicalstaff_info_paragraph_text">
+      登録情報の住所を登録しておくと、近隣の医療機関を表示できます。<br>
+      患者様からのお問合せにご活用ください<br>
+    </div>
+  </div>
+  <div class="medicalstaff_info_paragpraph">
+    <h2 class="medicalstaff_info_paragpraph_title">情報詳細</h2>
+    <div class="medicalstaff_info_paragraph_text">
+      登録された医療機関の情報を確認できます。<br>
+      気になる医療機関をクリックすると、詳細情報が確認できます。
+    </div>
+  </div>
+  <div class="medicalstaff_info_paragpraph">
+    <h2 class="medicalstaff_info_paragpraph_title">医療機関情報登録</h2>
+    <div class="medicalstaff_info_paragraph_text">
+      医療機関情報画面から、医療機関を新規に登録できます。<br>
+      医療機関名、診療科目、住所などをご記入ください<br>
+      紹介欄には、患者様へのメッセージをご記入ください。情報検索機能は紹介欄も含めて検索致します。<br>
+      登録した医療機関情報は後から修正できます。また、診療時間を登録できますので、合わせてご活用ください。
+    </div>
+  </div>
+  <% unless medicalstaff_signed_in? %>
+    <div class="new_medicalstaff_login">
+      <%= link_to "ログイン", new_medicalstaff_session_path, class: "new_medicalstaff_login_text sesstion_path" %>
+    </div>
+    <div class="new_medicalstaff_registration">
+      <%= link_to "新規登録", new_medicalstaff_registration_path, class: "new_medicalstaff_registarion_text registration_path" %>
+    </div>
+  <% end %>
+</div>
