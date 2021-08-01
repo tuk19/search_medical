@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "Institution_Features", type: :feature do
-  let!(:institution) { create(:testinstitution) }
+  let!(:institution) { create(:tokyoinstitution) }
 
   feature "medicalstaffでログインしたとき" do
     let(:medicalstaff) { create(:teststaff) }
@@ -114,7 +114,7 @@ RSpec.feature "Institution_Features", type: :feature do
     end
 
     scenario "名前に検索語を含むとき" do
-      fill_in 'q[name_or_introduction_cont]', with: 'test'
+      fill_in 'q[name_or_department_or_introduction_cont]', with: 'tokyo'
       find('#institution_search_submit').click
       expect(page.status_code).to eq(200)
       expect(page).to have_content(institution.name)
@@ -122,7 +122,7 @@ RSpec.feature "Institution_Features", type: :feature do
     end
 
     scenario "名前に検索語を含まないとき" do
-      fill_in 'q[name_or_introduction_cont]', with: 'example'
+      fill_in 'q[name_or_department_or_introduction_cont]', with: 'example'
       find('#institution_search_submit').click
       expect(page.status_code).to eq(200)
       expect(page).not_to have_content(institution.name)
@@ -130,7 +130,7 @@ RSpec.feature "Institution_Features", type: :feature do
     end
 
     scenario "検索欄が空欄の時" do
-      fill_in 'q[name_or_introduction_cont]', with: ''
+      fill_in 'q[name_or_department_or_introduction_cont]', with: ''
       find('#institution_search_submit').click
       expect(page.status_code).to eq(200)
       expect(page).to have_content(institution.name)
