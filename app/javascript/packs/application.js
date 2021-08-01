@@ -16,14 +16,14 @@ Turbolinks.start()
 ActiveStorage.start()
 
 jQuery(document).on("turbolinks:load", function() {
-  $('#institution_postcode').jpostal({
+  $('#institution_postcode_text').jpostal({
     postcode : [
-      '#institution_postcode'
+      '#institution_postcode_text'
     ],
     address: {
       "#institution_prefecture": "%3",
-      "#institution_address_city"   : "%4%5",
-      "#institution_address_street" : "%6%7"
+      "#institution_city_text"   : "%4%5",
+      "#institution_street_text" : "%6%7"
     }
   });
 });
