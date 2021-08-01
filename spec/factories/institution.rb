@@ -9,14 +9,14 @@ FactoryBot.define do
     address { "東京都東京区東京1-2-3東京ビル1F" }
   end
 
-  factory :osakainstitution, class: "Institution" do
-    name { "osakainstitution" }
+  factory :fukuokainstitution, class: "Institution" do
+    name { "fukuokainstitution" }
     department { '整形外科、リハビリテーション科' }
-    postcode { 9876543 }
-    prefecture { "大阪府" }
-    address_city { "大阪市中央区大阪下町" }
-    address_street { "9−9−9" }
-    address_building { "大阪ハイツ1F" }
-    address { "大阪府大阪市中央区大阪下町9−9−9大阪ハイツ1F" }
+    postcode { 1011120 }
+    prefecture { "福岡県" }
+    address_city { "福岡市福岡区福岡" }
+    address_street { "2-9-0" }
+    address_building { "福岡ハイツ1F" }
+    address { "福岡県福岡市福岡区福岡2-9-0福岡ハイツ1F" }
   end
 end
