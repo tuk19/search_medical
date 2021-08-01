@@ -28,12 +28,12 @@ $medicalstaff-color: #eaf;
   }
 }
 
-.user_login, .user_info_link {
+.user_login {
   color: $user-color;
   font-weight: bold;
 }
 
-.medicalstaff_login, .medicalstaff_info_link {
+.medicalstaff_login {
   color: $medicalstaff-color;
   font-weight: bold;
 }

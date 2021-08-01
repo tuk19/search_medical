@@ -1,5 +1,7 @@
 $body_background_color: skyblue;
 $jp_font-family: "メイリオ";
+$user-color: #16e;
+$medicalstaff-color: #eaf;
 
 body {
   margin: 0;
@@ -78,5 +80,18 @@ a {
     margin: 0px;
     padding: 10px 20px;
     background-color: $body_background_color;
+  }
+  .user_info_link {
+    color: white;
+    background-color: $user-color;
+    border: 1px solid $user-color;
+    border-radius: 2px;
+
+  }
+  .medicalstaff_info_link {
+    color: white;
+    background-color: $medicalstaff-color;
+    border: 1px solid $medicalstaff-color;
+    border-radius: 2px;
   }
 }
