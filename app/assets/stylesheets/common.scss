@@ -7,15 +7,6 @@ body {
   font-family: $jp_font-family;
 }
 
-.top_bar {
-  margin: 10px 20px;
-  display: flex;
-  align-items: center;
-  div {
-    margin: 0 10px;
-  }
-}
-
 a {
   text-decoration: none;
   &:visited {
@@ -27,16 +18,11 @@ a {
   padding: 20px 0;
 }
 
-.page_title {
-  margin: 0px;
-  padding: 10px 20px;
-  background-color: $body_background_color;
-}
-
 
 .flex {
   display: flex;
 }
+
 .flex_center {
   display: flex;
   justify-content: center;
@@ -72,4 +58,25 @@ a {
 
 .text_red {
   color: red;
+}
+
+/* ===================================================================
+                  layout/application
+====================================================================*/
+.top_bar {
+  margin: 10px 20px;
+  display: flex;
+  align-items: center;
+  div {
+    margin: 0 10px;
+  }
+}
+
+.top_title_container {
+  text-align: center;
+  .page_title {
+    margin: 0px;
+    padding: 10px 20px;
+    background-color: $body_background_color;
+  }
 }
