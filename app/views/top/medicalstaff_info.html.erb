@@ -1,47 +1,59 @@
-<div class="medicalstaff_info_container">
-  <div class="medicalstaff_info_paragpraph">
-    <h2 class="medicalstaff_info_paragpraph_title">所属登録</h2>
-    <div class="medicalstaff_info_paragraph_text">
-      所属登録をすると、登録情報画面に一覧が表示されます。
+<div class="medicalstaff_info_main">
+  <div class="medicalstaff_info_container">
+    <div class="medicalstaff_info_paragpraph">
+      <h2 class="medicalstaff_info_title">使える機能</h2>
+      <h3 class="medicalstaff_info_paragpraph_title">所属登録</h3>
+      <div class="medicalstaff_info_paragraph_text">
+        所属登録をすると、<span class="text_red">登録情報画面に一覧が表示</span>されます。
+      </div>
     </div>
+    <div class="medicalstaff_info_paragpraph">
+      <h3 class="medicalstaff_info_paragpraph_title">医療機関情報検索機能</h3>
+      <div class="medicalstaff_info_paragraph_text">
+        <span class="text_red">医療機関情報の検索フォームを使って、登録された医療機関を検索</span>できます。<br>
+        医療機関名や住所、診療科目などで検索することで、お目当ての医療機関を見つけやすくなります。<br>
+        <span class="text_red">住所は住所検索</span>から、 <span class="text_red">医療機関名や診療科目などは、情報検索</span>を活用ください。
+      </div>
+    </div>
+    <div class="medicalstaff_info_paragpraph">
+      <h3 class="medicalstaff_info_paragpraph_title">周辺情報表示機能</h3>
+      <div class="medicalstaff_info_paragraph_text">
+        <span class="text_red">登録情報の住所を登録しておくと、近隣の医療機関を表示</span>できます。<br>
+        患者様からのお問合せにご活用ください<br>
+        <span class="text_red">住所検索も可能</span>です。
+      </div>
+    </div>
+    <div class="medicalstaff_info_paragpraph">
+      <h3 class="medicalstaff_info_paragpraph_title">情報詳細</h3>
+      <div class="medicalstaff_info_paragraph_text">
+        登録された医療機関の情報を確認できます。<br>
+        <span class="text_red">気になる医療機関をクリックすると、詳細情報が確認</span>できます。
+      </div>
+    </div>
+    <div class="user_info_paragpraph">
+      <h3 class="user_info_paragpraph_title">地図検索機能</h3>
+      <div class="user_info_paragraph_text">
+        登録されていない医療機関でも、<span class="text_red">住所から地図を検索</span>できます。
+      </div>
+    </div>
+    <div class="medicalstaff_info_paragpraph">
+      <h3 class="medicalstaff_info_paragpraph_title">医療機関情報登録</h3>
+      <div class="medicalstaff_info_paragraph_text">
+        <span class="text_red">医療機関情報画面から、医療機関を新規に登録</span>できます。<br>
+        医療機関名、診療科目、住所などをご記入ください<br>
+        紹介欄には、患者様へのメッセージをご記入ください。情報検索機能は紹介欄も含めて検索致します。<br>
+        登録した医療機関情報は後から修正できます。また、<span class="text_red">診療時間を登録できます</span>ので、合わせてご活用ください。
+      </div>
+    </div>
+    <% unless medicalstaff_signed_in? %>
+      <div class="flex_spaceevenly">
+        <div class="medicalstaff_info_login">
+          <%= link_to "ログイン", new_medicalstaff_session_path, class: "new_medicalstaff_login_text sesstion_path" %>
+        </div>
+        <div class="medicalstaff_info_registration">
+          <%= link_to "新規登録", new_medicalstaff_registration_path, class: "new_medicalstaff_registarion_text registration_path" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <div class="medicalstaff_info_paragpraph">
-    <h2 class="medicalstaff_info_paragpraph_title">検索機能</h2>
-    <div class="medicalstaff_info_paragraph_text">
-      医療機関情報の検索フォームを使って、登録された医療機関を検索できます。<br>
-      医療機関名や住所、診療科目などで検索することで、お目当ての医療機関を見つけやすくなります。<br>
-      住所は住所検索から、医療機関名や診療科目などは、情報検索を活用ください。
-    </div>
-  </div>
-  <div class="medicalstaff_info_paragpraph">
-    <h2 class="medicalstaff_info_paragpraph_title">周辺情報表示機能</h2>
-    <div class="medicalstaff_info_paragraph_text">
-      登録情報の住所を登録しておくと、近隣の医療機関を表示できます。<br>
-      患者様からのお問合せにご活用ください<br>
-    </div>
-  </div>
-  <div class="medicalstaff_info_paragpraph">
-    <h2 class="medicalstaff_info_paragpraph_title">情報詳細</h2>
-    <div class="medicalstaff_info_paragraph_text">
-      登録された医療機関の情報を確認できます。<br>
-      気になる医療機関をクリックすると、詳細情報が確認できます。
-    </div>
-  </div>
-  <div class="medicalstaff_info_paragpraph">
-    <h2 class="medicalstaff_info_paragpraph_title">医療機関情報登録</h2>
-    <div class="medicalstaff_info_paragraph_text">
-      医療機関情報画面から、医療機関を新規に登録できます。<br>
-      医療機関名、診療科目、住所などをご記入ください<br>
-      紹介欄には、患者様へのメッセージをご記入ください。情報検索機能は紹介欄も含めて検索致します。<br>
-      登録した医療機関情報は後から修正できます。また、診療時間を登録できますので、合わせてご活用ください。
-    </div>
-  </div>
-  <% unless medicalstaff_signed_in? %>
-    <div class="new_medicalstaff_login">
-      <%= link_to "ログイン", new_medicalstaff_session_path, class: "new_medicalstaff_login_text sesstion_path" %>
-    </div>
-    <div class="new_medicalstaff_registration">
-      <%= link_to "新規登録", new_medicalstaff_registration_path, class: "new_medicalstaff_registarion_text registration_path" %>
-    </div>
-  <% end %>
 </div>

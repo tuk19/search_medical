@@ -76,6 +76,32 @@ $medicalstaff-color: #eaf;
 /* ===================================================================
                   medicalstaff_info
 ====================================================================*/
+.medicalstaff_info_main {
+  margin: 30px 0;
+  padding: 0 5%;
+  .medicalstaff_info_container{
+    padding: 20px;
+    border: 2px solid $medicalstaff-color;
+    border-radius: 20px;
+    background-color: white;
+    h2 {
+      color: $medicalstaff-color;
+    }
+    .medicalstaff_info_paragraph_text {
+      line-height: 1.5em;
+    }
+    .medicalstaff_info_login, .medicalstaff_info_registration {
+      padding: 5px 40px;
+      margin: 20px 10px;
+      color: white;
+      text-align: center;
+      border: 1px solid $medicalstaff-color;
+      border-radius: 5px;
+      background-color: $medicalstaff-color;
+    }
+  }
+}
+
 
 
 
