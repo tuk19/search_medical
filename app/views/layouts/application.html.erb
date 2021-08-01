@@ -13,8 +13,8 @@
     <header class="header">
       <div class="top_bar">
         <h2 class="page_title">医療機関検索</h2>
-        <div class="link_home font_large"><%= link_to "home", root_path %></div>
-        <div class="link_institution font_large"><%= link_to "医療機関情報", institutions_path %></div>
+        <div class="link_home"><%= link_to "home", root_path %></div>
+        <div class="link_institution"><%= link_to "医療機関情報", institutions_path %></div>
         <% if user_signed_in? %>
           <%= render "shared/header_user_sign_in" %>
         <% elsif medicalstaff_signed_in? %>
@@ -23,7 +23,9 @@
       </div>
     </header>
     <% if flash.notice %>
-      <%= flash.notice %>
+      <div class="flash_notice font_large">
+        <%= flash.notice %>
+      </div>
     <% end %>
     <%= yield %>
     <div class="footer">
