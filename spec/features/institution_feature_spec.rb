@@ -85,6 +85,7 @@ RSpec.feature "Institution_Features", type: :feature do
   end
 
   feature "医療機関検索" do
+    let!(:otherinstitution) { create(:fukuokainstitution) }
     before do
       visit institutions_path
     end
@@ -95,6 +96,7 @@ RSpec.feature "Institution_Features", type: :feature do
       expect(page.status_code).to eq(200)
       expect(page).to have_content(institution.name)
       expect(page).to have_content(institution.address)
+      expect(page).not_to have_content(otherinstitution.name)
     end
 
     scenario "住所に検索語を含まないとき" do
@@ -105,20 +107,13 @@ RSpec.feature "Institution_Features", type: :feature do
       expect(page).not_to have_content(institution.address)
     end
 
-    scenario "検索欄が空欄のとき" do
-      fill_in 'q[address_cont]', with: ''
-      find('#institution_search_submit').click
-      expect(page.status_code).to eq(200)
-      expect(page).to have_content(institution.name)
-      expect(page).to have_content(institution.address)
-    end
-
     scenario "名前に検索語を含むとき" do
       fill_in 'q[name_or_department_or_introduction_cont]', with: 'tokyo'
       find('#institution_search_submit').click
       expect(page.status_code).to eq(200)
       expect(page).to have_content(institution.name)
       expect(page).to have_content(institution.address)
+      expect(page).not_to have_content(otherinstitution.name)
     end
 
     scenario "名前に検索語を含まないとき" do
@@ -129,12 +124,50 @@ RSpec.feature "Institution_Features", type: :feature do
       expect(page).not_to have_content(institution.address)
     end
 
-    scenario "検索欄が空欄の時" do
+    scenario "診療科目に検索語を含むとき" do
+      fill_in 'q[name_or_department_or_introduction_cont]', with: '内科'
+      find('#institution_search_submit').click
+      expect(page.status_code).to eq(200)
+      expect(page).to have_content(institution.name)
+      expect(page).to have_content(institution.department)
+      expect(page).not_to have_content(otherinstitution.name)
+    end
+
+    scenario "診療科目に検索語を含まないとき" do
+      fill_in 'q[name_or_department_or_introduction_cont]', with: '皮膚科'
+      find('#institution_search_submit').click
+      expect(page.status_code).to eq(200)
+      expect(page).not_to have_content(institution.name)
+      expect(page).not_to have_content(institution.department)
+      expect(page).not_to have_content(otherinstitution.name)
+    end
+
+    scenario "紹介欄に検索語を含むとき" do
+      fill_in 'q[name_or_department_or_introduction_cont]', with: '東京駅近く'
+      find('#institution_search_submit').click
+      expect(page.status_code).to eq(200)
+      expect(page).to have_content(institution.name)
+      expect(page).to have_content(institution.department)
+      expect(page).not_to have_content(otherinstitution.name)
+    end
+
+    scenario "紹介欄に検索語を含まないとき" do
+      fill_in 'q[name_or_department_or_introduction_cont]', with: '大学と提携'
+      find('#institution_search_submit').click
+      expect(page.status_code).to eq(200)
+      expect(page).not_to have_content(institution.name)
+      expect(page).not_to have_content(institution.department)
+      expect(page).not_to have_content(otherinstitution.name)
+    end
+
+    scenario "検索欄が空欄のとき" do
+      fill_in 'q[address_cont]', with: ''
       fill_in 'q[name_or_department_or_introduction_cont]', with: ''
       find('#institution_search_submit').click
       expect(page.status_code).to eq(200)
       expect(page).to have_content(institution.name)
       expect(page).to have_content(institution.address)
+      expect(page).to have_content(otherinstitution.name)
     end
   end
 end
