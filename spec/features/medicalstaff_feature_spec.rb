@@ -6,6 +6,45 @@ RSpec.feature 'Medicalstaff_Features', type: :feature do
   describe "medicalstaff_login" do
     let(:medicalstaff) { create(:teststaff) }
 
+    scenario 'medicalstaff_infoへアクセスできるか' do
+      visit root_path
+      expect(page).to have_content('ログインしてお気に入り機能を使おう')
+      click_link "医療機関関係者へ"
+      expect(page).to have_content('所属登録をすると、登録情報画面に一覧が表示されます。')
+    end
+
+    scenario '新規登録画面へアクセスできるか' do
+      visit root_path
+      expect(page).to have_content('ログインしてお気に入り機能を使おう')
+      within(".medicalstaff_login") do
+        click_link "新規登録"
+      end
+      expect(page).to have_content("医療関係者新規登録")
+    end
+
+    scenario 'ログイン画面へアクセスできるか' do
+      visit root_path
+      expect(page).to have_content('ログインしてお気に入り機能を使おう')
+      within(".medicalstaff_login") do
+        click_link "ログイン"
+      end
+      expect(page).to have_content("医療関係者ログイン")
+    end
+
+    scenario 'medicalstaff_infoから新規登録画面へアクセスできるか' do
+      visit top_medicalstaff_info_path
+      expect(page).to have_content('所属登録をすると、登録情報画面に一覧が表示されます。')
+      click_link "新規登録"
+      expect(page).to have_content("医療関係者新規登録")
+    end
+
+    scenario 'medicalstaff_infoからログイン画面へアクセスできるか' do
+      visit top_medicalstaff_info_path
+      expect(page).to have_content('所属登録をすると、登録情報画面に一覧が表示されます。')
+      click_link "ログイン"
+      expect(page).to have_content("医療関係者ログイン")
+    end
+
     scenario "新規作成できるか" do
       visit new_medicalstaff_registration_path
       expect(page).to have_content("新規登録")
@@ -27,11 +66,24 @@ RSpec.feature 'Medicalstaff_Features', type: :feature do
     end
   end
 
-  describe "link_to_medicalstaffs" do
+  describe "medicalstaffs_signed_in" do
     let(:medicalstaff) { create(:teststaff, :staff_institution) }
 
     background do
       sign_in medicalstaff
+    end
+
+    scenario 'user_infoへアクセスできるか' do
+      visit root_path
+      click_link "医療機関関係者へ"
+      expect(page).to have_content('所属登録をすると、登録情報画面に一覧が表示されます。')
+    end
+
+    scenario 'ログインしている時、使用法説明ページに新規登録、ログインが表示されない' do
+      visit top_medicalstaff_info_path
+      expect(page).to have_content('所属登録をすると、登録情報画面に一覧が表示されます。')
+      expect(page).not_to have_content("新規登録")
+      expect(page).not_to have_content("ログイン")
     end
 
     scenario '登録情報画面からアカウント情報編集画面へ遷移し、登録情報画面へ戻れるか' do
