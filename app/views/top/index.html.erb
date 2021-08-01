@@ -7,12 +7,11 @@
           <div class="user_body">
             <p>ログインしています(ログアウトは右上から)</p>
             <p>お気に入り機能が使えます</p>
-            <p>コメントを残すことができます</p>
           </div>
         <% elsif medicalstaff_signed_in? %>
           <div class="midecal_staff_body">
             <p>医療関係者としてログインしています</p>
-            <p>近隣医療機関を表示することができます</p>
+            <p>住所を登録すると、登録した住所の近隣医療機関を表示することができます</p>
           </div>
         <% else %>
           <div class="login_body font_large">
@@ -31,7 +30,7 @@
             <% elsif medicalstaff_signed_in? %>
             <% else %>
               <div class="without_login text_center font_larger">
-                <p class="without_login_text">ログインせずに検索</p>
+                <p class="without_login_text">ログインせずに地図検索</p>
                 <div class="down_triangle">
                 </div>
               </div>
@@ -45,7 +44,7 @@
 <% if medicalstaff_signed_in? %>
   <div class="top_map_caontainer">
     <% if current_medicalstaff.address? %>
-      <%= render "shared/place_map" %>
+      <%#= render "shared/place_map" %>
     <% else %>
       <%#= render "shared/search_map" %>
     <% end %>
