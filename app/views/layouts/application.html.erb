@@ -12,7 +12,14 @@
   <body>
     <header class="header">
       <div class="top_bar">
-        <h2 class="page_title">医療機関検索</h2>
+        <div>
+          <h2 class="page_title">医療機関検索</h2>
+          <% if user_signed_in? %>
+            <div class="user_info_link"><%= link_to "詳しい使い方", top_user_info_path %></div>
+          <% elsif medicalstaff_signed_in? %>
+            <div class="medicalstaff_info_link"><%= link_to "医療機関関係者へ", top_medicalstaff_info_path %></div>
+          <% end %>
+        </div>
         <div class="link_home"><%= link_to "home", root_path %></div>
         <div class="link_institution"><%= link_to "医療機関情報", institutions_path %></div>
         <% if user_signed_in? %>
@@ -23,7 +30,7 @@
       </div>
     </header>
     <% if flash.notice %>
-      <div class="flash_notice font_large">
+      <div class="flash_notice font_large red">
         <%= flash.notice %>
       </div>
     <% end %>
