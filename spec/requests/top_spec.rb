@@ -26,8 +26,11 @@ RSpec.describe "Tops", type: :request do
       expect(response).to have_http_status(:success)
     end
 
-    example "ログイン機能が含まれること" do
-      expect(response.body).to include("お気に入りに登録すると、プロフィール画面にお気に入り一覧が表示されます。")
+    example "使用法の説明が含まれること" do
+      expect(response.body).to include("お気に入り機能")
+      expect(response.body).to include("医療機関情報検索機能")
+      expect(response.body).not_to include("所属登録")
+      expect(response.body).not_to include("周辺情報表示機能")
     end
   end
 
@@ -41,8 +44,9 @@ RSpec.describe "Tops", type: :request do
       expect(response).to have_http_status(:success)
     end
 
-    example "ログイン機能が含まれること" do
-      expect(response.body).to include("所属登録をすると、登録情報画面に一覧が表示されます。")
+    example "使用法の説明が含まれること" do
+      expect(response.body).to include("所属登録")
+      expect(response.body).to include("周辺情報表示機能")
     end
   end
 end
