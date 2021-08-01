@@ -6,7 +6,7 @@ FactoryBot.define do
 
     trait :staff_institution do
       after(:create) do |medicalstaff|
-        create(:teststaff_institution, medicalstaff: medicalstaff, institution: create(:tokyoinstitution) )
+        create(:teststaff_institution, medicalstaff: medicalstaff, institution: create(:tokyoinstitution))
       end
     end
   end

@@ -13,8 +13,8 @@ RSpec.describe "Institutions", type: :request do
         address_building: "福岡ショッピング5F",
         address: "福岡県福岡市福岡4-5-6福岡ショッピング5F",
         introduction: "整形外科、リハビリテーション科",
-        image: "examplehospital.png"
-      }
+        image: "examplehospital.png",
+      },
     }
   end
 
@@ -57,7 +57,7 @@ RSpec.describe "Institutions", type: :request do
   end
 
   describe "GET /show" do
-    let!(:consultationhour) { create(:testconsultationhour, institution: institution)}
+    let!(:consultationhour) { create(:testconsultationhour, institution: institution) }
 
     before do
       get institution_path(institution.id)

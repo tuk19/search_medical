@@ -5,7 +5,7 @@ class Consultationhour < ApplicationRecord
   validate :before_start_time
 
   def before_start_time
-    if start_time != nil && end_time != nil
+    if !start_time.nil? && !end_time.nil?
       if end_time < start_time
         errors.add(:end_time, "は開始時間よりも後に設定してください")
       end

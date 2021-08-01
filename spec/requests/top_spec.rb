@@ -2,12 +2,11 @@ require 'rails_helper'
 
 RSpec.describe "Tops", type: :request do
   describe "GET /index" do
-
     before do
       get root_path
     end
 
-    example "topページへアクセスできること"  do
+    example "topページへアクセスできること" do
       expect(response).to have_http_status(:success)
     end
 
@@ -17,12 +16,11 @@ RSpec.describe "Tops", type: :request do
   end
 
   describe "GET /user_info" do
-
     before do
       get top_user_info_path
     end
 
-    example "ユーザーの使用法説明ページへアクセスできること"  do
+    example "ユーザーの使用法説明ページへアクセスできること" do
       expect(response).to have_http_status(:success)
     end
 
@@ -35,12 +33,11 @@ RSpec.describe "Tops", type: :request do
   end
 
   describe "GET /medicalstaff_info" do
-
     before do
       get top_medicalstaff_info_path
     end
 
-    example "医療関係者の使用法説明ページへアクセスできること"  do
+    example "医療関係者の使用法説明ページへアクセスできること" do
       expect(response).to have_http_status(:success)
     end
 

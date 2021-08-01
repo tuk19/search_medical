@@ -34,10 +34,10 @@ class ConsultationhoursController < ApplicationController
     @consultationhour.destroy
     redirect_to institutions_path, notice: "診療時間を削除しました"
   end
-end
 
-private
+  private
 
-def consultationhour_params
-  params.require(:consultationhour).permit(:start_time, :end_time, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday, :holiday, :detail, :institution_id)
+  def consultationhour_params
+    params.require(:consultationhour).permit(:start_time, :end_time, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday, :holiday, :detail, :institution_id)
+  end
 end

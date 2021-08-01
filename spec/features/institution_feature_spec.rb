@@ -20,7 +20,7 @@ RSpec.feature "Institution_Features", type: :feature do
 
     scenario "新規作成できるか" do
       visit new_institution_path
-      fill_in  "institution_name_text", with: "exampleinstitution"
+      fill_in "institution_name_text", with: "exampleinstitution"
       fill_in "institution_postcode_text", with: "9876543"
       fill_in "institution_city_text", with: "大阪市大阪"
       fill_in "institution_street_text", with: "9-8-7"
@@ -86,6 +86,7 @@ RSpec.feature "Institution_Features", type: :feature do
 
   feature "医療機関検索" do
     let!(:otherinstitution) { create(:fukuokainstitution) }
+
     before do
       visit institutions_path
     end

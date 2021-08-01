@@ -22,6 +22,7 @@ class MedicalstaffsController < ApplicationController
   end
 
   private
+
   def medicalstaff_params
     params.require(:medicalstaff).permit(:name, :address)
   end

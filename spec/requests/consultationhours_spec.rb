@@ -4,7 +4,6 @@ RSpec.describe "Consultationhours", type: :request do
   let(:institution) { create(:tokyoinstitution) }
   let!(:consultationhour) { create(:testconsultationhour, institution: institution) }
 
-
   describe 'POST /create' do
     example 'リクエストが成功すること' do
       post consultationhours_path, params: { consultationhour: FactoryBot.attributes_for(:editconsultationhour) }
