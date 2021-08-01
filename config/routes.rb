@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root to: 'top#index'
+  get "top/user_info"
+  get "top/medicalstaff_info"
   devise_for :users
   resources :users, only: [:index, :edit, :update]
   devise_for :medicalstaffs
