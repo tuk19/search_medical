@@ -44,6 +44,42 @@ $medicalstaff-color: #eaf;
 }
 
 /* ===================================================================
+                  user_info
+====================================================================*/
+.user_info_main {
+  margin: 30px 0;
+  padding: 0 5%;
+  .user_info_container{
+    padding: 20px;
+    border: 2px solid $user-color;
+    border-radius: 20px;
+    background-color: white;
+    h2 {
+      color: $user-color;
+    }
+    .user_info_paragraph_text {
+      line-height: 1.5em;
+    }
+    .user_info_login, .user_info_registration {
+      padding: 5px 40px;
+      margin: 20px 10px;
+      color: white;
+      text-align: center;
+      border: 1px solid $user-color;
+      border-radius: 5px;
+      background-color: $user-color;
+    }
+  }
+}
+
+
+/* ===================================================================
+                  medicalstaff_info
+====================================================================*/
+
+
+
+/* ===================================================================
                   shared/place_map
 ====================================================================*/
 .place_map_container{
