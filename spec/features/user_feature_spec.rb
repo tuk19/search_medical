@@ -6,6 +6,45 @@ RSpec.feature 'Users_Features', type: :feature do
   describe "user_login" do
     let(:user) { create(:testuser) }
 
+    scenario 'user_infoへアクセスできるか' do
+      visit root_path
+      expect(page).to have_content('ログインしてお気に入り機能を使おう')
+      click_link "詳しい使い方"
+      expect(page).to have_content('お気に入りに登録すると、プロフィール画面にお気に入り一覧が表示されます。')
+    end
+
+    scenario '新規登録画面へアクセスできるか' do
+      visit root_path
+      expect(page).to have_content('ログインしてお気に入り機能を使おう')
+      within(".user_login") do
+        click_link "新規登録"
+      end
+      expect(page).to have_content("患者様・ご家族様新規登録")
+    end
+
+    scenario 'ログイン画面へアクセスできるか' do
+      visit root_path
+      expect(page).to have_content('ログインしてお気に入り機能を使おう')
+      within(".user_login") do
+        click_link "ログイン"
+      end
+      expect(page).to have_content("患者様・ご家族様ログイン")
+    end
+
+    scenario 'user_infoから新規登録画面へアクセスできるか' do
+      visit top_user_info_path
+      expect(page).to have_content('お気に入りに登録すると、プロフィール画面にお気に入り一覧が表示されます。')
+      click_link "新規登録"
+      expect(page).to have_content("患者様・ご家族様新規登録")
+    end
+
+    scenario 'user_infoからログイン画面へアクセスできるか' do
+      visit top_user_info_path
+      expect(page).to have_content('お気に入りに登録すると、プロフィール画面にお気に入り一覧が表示されます。')
+      click_link "ログイン"
+      expect(page).to have_content("患者様・ご家族様ログイン")
+    end
+
     scenario "新規作成できるか" do
       visit new_user_registration_path
       expect(page).to have_content("患者様・ご家族様新規登録")
@@ -27,13 +66,26 @@ RSpec.feature 'Users_Features', type: :feature do
     end
   end
 
-  describe "link_to_users" do
+  describe "user_signed_in" do
     let(:user) { create(:testuser) }
     let(:institution) { create(:tokyoinstitution) }
     let!(:favorite) { create(:testfavorite, user: user, institution: institution) }
 
     background do
       sign_in user
+    end
+
+    scenario 'user_infoへアクセスできるか' do
+      visit root_path
+      click_link "詳しい使い方"
+      expect(page).to have_content('お気に入りに登録すると、プロフィール画面にお気に入り一覧が表示されます。')
+    end
+
+    scenario 'ログインしている時、使用法説明ページに新規登録、ログインが表示されない' do
+      visit top_user_info_path
+      expect(page).to have_content('お気に入りに登録すると、プロフィール画面にお気に入り一覧が表示されます。')
+      expect(page).not_to have_content("新規登録")
+      expect(page).not_to have_content("ログイン")
     end
 
     scenario 'プロフィール画面からアカウント情報編集画面へ遷移し、プロフィール画面へ戻れるか' do
@@ -51,7 +103,7 @@ RSpec.feature 'Users_Features', type: :feature do
       expect(page).to have_content("プロフィールを編集する")
     end
 
-    scenario 'プロフィール画面からアカウント情報編集画面へ遷移し、プロフィール画面へ戻れるか', js: true do
+    scenario 'お気に入りを解除できるか', js: true do
       visit users_path
       expect(page).to have_content("お気に入り解除")
       find('.like-btn').click
