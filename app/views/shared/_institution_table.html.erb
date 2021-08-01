@@ -3,9 +3,9 @@
     <tr class="institution_index_thead_tr">
       <th class="institution_index_th image_th">画像</th>
       <th class="institution_index_th name_th">名前</th>
+      <th class="institution_index_th department_th">診療科目</th>
       <th class="institution_index_th postcode_th">郵便番号</th>
       <th class="institution_index_th address_th">住所</th>
-      <th class="institution_index_th intro_th">紹介</th>
     </tr>
   </thead>
   <tbody class="institution_index_table_tbody">
@@ -18,9 +18,9 @@
         <% end %>
       </td>
       <td class="institution_index_td name_td"><%= institution.name %></td>
+      <td class="institution_index_td department_td"><%= institution.department %></td>
       <td class="institution_index_td postcode_td"><%= institution.postcode.to_s[0,3] %>-<%= institution.postcode.to_s[3..] %></td>
       <td class="institution_index_td address_td"><%= institution.address %></td>
-      <td class="institution_index_td intro_td"><%= institution.introduction%></td>
     </tr>
     <% if user_signed_in? %>
       <td class="institution_index_td favorite_td"><%= render "favorites/favorite", institution: institution %></td>

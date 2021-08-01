@@ -61,7 +61,7 @@ class InstitutionsController < ApplicationController
   private
 
   def institution_params
-    params.require(:institution).permit(:name, :postcode, :prefecture, :address_city, :address_street, :address_building, :address, :introduction, :image)
+    params.require(:institution).permit(:name, :department, :postcode, :prefecture, :address_city, :address_street, :address_building, :address, :introduction, :image)
   end
 
   def set_q

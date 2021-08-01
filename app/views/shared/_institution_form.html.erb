@@ -4,6 +4,10 @@
       <%= f.label :name, "医療機関名", class: "institution_label", id: "institution_name_label" %>
       <%= f.text_field :name, class: "institution_text", id: "institution_name_text" %>
     </div>
+    <div class="institution_department_container">
+      <%= f.label :department, "診療科目　", class: "institution_label", id: "institution_department_label" %>
+      <%= f.text_field :department, class: "institution_text", id: "institution_department_text" %>
+    </div>
     <div class="institution_postcode_container">
       <%= f.label :postcode, "郵便番号　", class: "institution_label",id: "institution_postcode_label" %>
       <%= f.text_field :postcode, class: "institution_text", id: "institution_postcode_text" %>

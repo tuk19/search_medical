@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_29_110417) do
+ActiveRecord::Schema.define(version: 2021_08_01_054336) do
 
   create_table "consultationhours", force: :cascade do |t|
     t.time "start_time"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2021_07_29_110417) do
     t.string "address_street"
     t.string "address_building"
     t.string "prefecture"
+    t.string "department"
   end
 
   create_table "medicalstaffs", force: :cascade do |t|

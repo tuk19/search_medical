@@ -90,7 +90,7 @@ $medical-color: #eaf;
       color: $medical-color;
     }
     .institution_show_info_container {
-      .institution_show_name_container, .institution_show_postcode_container, .institution_show_address_container, .institution_show_intro_container, .institution_show_image_container {
+      .institution_show_name_container, .institution_show_department_container, .institution_show_postcode_container, .institution_show_address_container, .institution_show_intro_container, .institution_show_image_container {
         margin: 20px;
       }
       .show_text {
@@ -175,7 +175,7 @@ $medical-color: #eaf;
 ====================================================================*/
 .institution_info_container {
   text-align: left;
-  .institution_name_container, .institution_image_container, .institution_postcode_container, .institution_prefecture_container, .institution_city_container, .institution_street_container, .institution_building_container, .institution_intro_container {
+  .institution_name_container, .institution_department_container, .institution_image_container, .institution_postcode_container, .institution_prefecture_container, .institution_city_container, .institution_street_container, .institution_building_container, .institution_intro_container {
     margin: 15px 5px;
   }
   .institution_label{
@@ -226,18 +226,18 @@ $medical-color: #eaf;
     }
   }
   .name_td, .name_th {
-    width: 15%;
+    width: 20%;
+    overflow-wrap: break-word;
+  }
+  .department_td, department_th {
+    width: 20%;
     overflow-wrap: break-word;
   }
   .postcode_td, .postcode_th {
     width: 15%;
   }
   .address_td, .address_th {
-    width: 20%;
-    overflow-wrap: break-word;
-  }
-  .intro_td, .intro_th {
-    width: 30%;
+    width: 25%;
     overflow-wrap: break-word;
   }
 }

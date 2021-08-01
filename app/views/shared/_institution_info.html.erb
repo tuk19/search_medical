@@ -4,6 +4,10 @@
       <div class= "institution_show_name_label show_label">医療機関名</div>
       <div class="institution_show_name_text show_text"><%= institution.name %></div>
     </div>
+    <div class="institution_show_department_container">
+      <div class= "institution_show_department_label show_label">診療科目</div>
+      <div class="institution_show_department_text show_text"><%= institution.department %></div>
+    </div>
     <div class="institution_show_postcode_container">
       <div class="institution_show_postcode_label show_label">郵便番号</div>
       <div class="institution_show_postcode_text show_text"><%= institution.postcode.to_s[0,3] %>-<%= institution.postcode.to_s[3..]%></div>
