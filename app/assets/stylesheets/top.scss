@@ -6,6 +6,10 @@ $top-background-color: #fee;
 $user-color: #16e;
 $medicalstaff-color: #eaf;
 
+/* ===================================================================
+                  top/index
+====================================================================*/
+
 .top_background_img {
   height: 650px;
   background-image: url('top/hospital.png');
@@ -24,12 +28,12 @@ $medicalstaff-color: #eaf;
   }
 }
 
-.user_login {
+.user_login, .user_info_link {
   color: $user-color;
   font-weight: bold;
 }
 
-.medicalstaff_login {
+.medicalstaff_login, .medicalstaff_info_link {
   color: $medicalstaff-color;
   font-weight: bold;
 }
