@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Institutions", type: :request do
-  let!(:institution) { create(:testinstitution) }
+  let!(:institution) { create(:tokyoinstitution) }
   let(:param) do
     {
       institution: {
@@ -100,7 +100,7 @@ RSpec.describe "Institutions", type: :request do
     example '医療機関情報が更新されること' do
       expect do
         put institution_path(institution.id), params: param
-      end.to change { Institution.find(institution.id).name }.from('testinstitution').to('examplehospital')
+      end.to change { Institution.find(institution.id).name }.from('tokyoinstitution').to('examplehospital')
     end
   end
 

@@ -1,6 +1,6 @@
 FactoryBot.define do
-  factory :testinstitution, class: "Institution" do
-    name { "testinstitution" }
+  factory :tokyoinstitution, class: "Institution" do
+    name { "tokyoinstitution" }
     postcode { 1234567 }
     prefecture { "東京都" }
     address_city { "東京区東京" }

@@ -29,7 +29,7 @@ RSpec.feature 'Users_Features', type: :feature do
 
   describe "link_to_users" do
     let(:user) { create(:testuser) }
-    let(:institution) { create(:testinstitution) }
+    let(:institution) { create(:tokyoinstitution) }
     let!(:favorite) { create(:testfavorite, user: user, institution: institution) }
 
     background do

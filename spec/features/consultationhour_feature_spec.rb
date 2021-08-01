@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Consultationhour_Features", type: :feature do
   let(:medicalstaff) { create(:teststaff) }
-  let(:institution) { create(:testinstitution) }
+  let(:institution) { create(:tokyoinstitution) }
 
   before do
     login_staff(medicalstaff)

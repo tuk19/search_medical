@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Consultationhours", type: :request do
-  let(:institution) { create(:testinstitution) }
+  let(:institution) { create(:tokyoinstitution) }
   let!(:consultationhour) { create(:testconsultationhour, institution: institution) }
 
 
