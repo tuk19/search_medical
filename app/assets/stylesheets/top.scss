@@ -6,6 +6,11 @@ $top-background-color: #fee;
 $user-color: #16e;
 $medicalstaff-color: #eaf;
 
+@mixin login($color: #fff) {
+  color: $color;
+  font-weight: bold;
+}
+
 /* ===================================================================
                   top/index
 ====================================================================*/
@@ -29,13 +34,11 @@ $medicalstaff-color: #eaf;
 }
 
 .user_login {
-  color: $user-color;
-  font-weight: bold;
+  @include login($user-color);
 }
 
 .medicalstaff_login {
-  color: $medicalstaff-color;
-  font-weight: bold;
+  @include login($medicalstaff-color);
 }
 
 .down_triangle {
