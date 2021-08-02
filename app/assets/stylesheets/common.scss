@@ -3,6 +3,13 @@ $jp_font-family: "メイリオ";
 $user-color: #16e;
 $medicalstaff-color: #eaf;
 
+@mixin info_link($color: "fff") {
+  color: white;
+  background-color: $color;
+  border: 1px solid $color;
+  border-radius: 2px;
+}
+
 body {
   margin: 0;
   background-color: $body_background_color;
@@ -82,16 +89,10 @@ a {
     background-color: $body_background_color;
   }
   .user_info_link {
-    color: white;
-    background-color: $user-color;
-    border: 1px solid $user-color;
-    border-radius: 2px;
+    @include info_link($user-color);
 
   }
   .medicalstaff_info_link {
-    color: white;
-    background-color: $medicalstaff-color;
-    border: 1px solid $medicalstaff-color;
-    border-radius: 2px;
+    @include info_link($medicalstaff-color);
   }
 }
