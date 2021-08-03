@@ -11,7 +11,13 @@
         <% elsif medicalstaff_signed_in? %>
           <div class="midecal_staff_body">
             <p>医療関係者としてログインしています</p>
-            <p>住所を登録すると、登録した住所の近隣医療機関を表示することができます</p>
+            <% if current_medicalstaff.address? %>
+              <div class="staff_address">登録住所</div>
+              <div class="staff_address" id="place_medicalstaff_address"><%= current_medicalstaff.address %></div>
+            <% else %>
+              <div class="default_staff_address">住所が登録されていません</div>
+              <div class="staff_address">住所を登録すると、登録した住所の近隣医療機関を表示することができます</div>
+            <% end %>
           </div>
         <% else %>
           <div class="login_body font_large">
@@ -43,7 +49,7 @@
 <% if medicalstaff_signed_in? %>
   <div class="top_map_caontainer">
     <% if current_medicalstaff.address? %>
-      <%#= render "shared/place_map" %>
+      <%= render "shared/place_map" %>
     <% else %>
       <%#= render "shared/search_map" %>
     <% end %>
