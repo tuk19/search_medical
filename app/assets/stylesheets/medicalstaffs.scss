@@ -253,7 +253,8 @@ $breakpoints: (
   .medicalstaff_edit_address_container, .medicalstaff_edit_prof_address_container {
     margin: 10px;
   }
-  .medicalstaff_address_label {
+  .medicalstaff_name_label, .medicalstaff_address_label {
+    display: block;
     vertical-align: top;
   }
   .medicalstaff_address_text_field{
