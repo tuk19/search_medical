@@ -5,6 +5,17 @@
 $top-background-color: #fee;
 $user-color: #16e;
 $medicalstaff-color: #eaf;
+$breakpoints: (
+  'lg': 'screen and (max-width :960px)',
+  'md': 'screen and (max-width :720px)',
+  'sm': 'screen and (max-width :480px)'
+);
+
+@mixin media($bp) {
+  @media #{map-get($breakpoints, $bp)}{
+    @content;
+  }
+}
 
 @mixin login($color: #fff) {
   color: $color;
@@ -22,6 +33,9 @@ $medicalstaff-color: #eaf;
   background-repeat: no-repeat;
   background-position: center;
   background-color: $top-background-color;
+  @include media(md) {
+    height: 550px;
+  }
   .image_mask {
     height: 100%;
     width: 100%;
@@ -29,16 +43,48 @@ $medicalstaff-color: #eaf;
     .size_adjust {
       margin: 0 30px;
       padding: 30px;
+      @include media(md) {
+        margin: 0 20px;
+        padding: 20px;
+      }
+      h1 {
+        @include media(md) {
+          font-size: 1.5em;
+        }
+        @include media(sm) {
+          margin: 0;
+          font-size: 1.2em;
+        }
+      }
     }
   }
 }
 
 .user_login {
   @include login($user-color);
+  .user_login_text {
+    @include media(md) {
+      margin: 10px;
+    }
+  }
 }
 
 .medicalstaff_login {
   @include login($medicalstaff-color);
+  @include media(md) {
+    margin-top: 20px;
+  }
+  .medicalstaff_login_text {
+    @include media(md) {
+      margin: 10px;
+    }
+  }
+}
+
+.without_login_text {
+  @include media(lg) {
+    margin: 10px;
+  }
 }
 
 .down_triangle {
@@ -48,6 +94,11 @@ $medicalstaff-color: #eaf;
   border-top: 30px solid black;
   border-right: 30px solid transparent;
   border-left:  30px solid transparent;
+  @include media(md) {
+    border-top: 20px solid black;
+    border-right: 20px solid transparent;
+    border-left: 20px solid transparent;
+  }
 }
 
 /* ===================================================================
@@ -147,6 +198,9 @@ $medicalstaff-color: #eaf;
     width: 300px;
     font-size: large;
     padding: 3px;
+    @include media(sm) {
+      width: 200px;
+    }
   }
   #search_address_button{
     font-size: large;
@@ -158,5 +212,8 @@ $medicalstaff-color: #eaf;
   #search_map {
     height: 600px;
     width: 100%;
+    @include media(md) {
+      height: 400px;
+    }
   }
 }
