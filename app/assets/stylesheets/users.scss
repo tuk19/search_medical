@@ -23,6 +23,15 @@ $breakpoints: (
   border-radius: 50%;
   background-color: white;
   height: 80px;
+  @include media(md) {
+    width: 60px;
+    height: 60px
+  }
+  @include media(sm) {
+    width: 40px;
+    height: 40px
+  }
+
 }
 
 /* ===================================================================

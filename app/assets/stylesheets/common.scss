@@ -129,7 +129,28 @@ a {
   align-items: center;
   div {
     margin: 0 10px;
+    @include media(sm) {
+      margin: 0 3px;
+    }
   }
+  .user_header_bar {
+    align-items: center;
+    margin: 0 10px 0 auto;
+    @include media(lg) {
+      display: none;
+    }
+    div {
+      margin: 0 10px;
+    }
+  }
+  .user_nemu_icon {
+    display: none;
+    @include media(lg) {
+      display: block;
+      margin: 0 10px 0 auto;
+    }
+  }
+
 }
 
 .top_title_container {
