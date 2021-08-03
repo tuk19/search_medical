@@ -88,6 +88,15 @@ $breakpoints: (
   margin: 30px 0;
   padding: 0 25%;
   text-align: center;
+  @include media(lg) {
+    padding: 0 20%;
+  }
+  @include media (md) {
+    padding: 0 12%;
+  }
+  @include media (sm) {
+    padding: 0 10%;
+  }
   .user_registration_container {
     padding: 20px;
   }
@@ -105,6 +114,9 @@ $breakpoints: (
   }
   .user_registration_mail_label, .user_registration_password_label, .user_registration_password_confirmation_label, .user_registration_current_password_label {
     padding-right: 10px;
+    @include media (md) {
+      display: block;
+    }
   }
   .user_registration_submit, .link_to_back {
     padding: 5px 40px;
@@ -127,6 +139,9 @@ $breakpoints: (
     margin: 20px 25%;
     border: 1px solid black;
     border-radius: 20px;
+    @include media (sm) {
+      margin: 20px 15%;
+    }
   }
 }
 
@@ -136,11 +151,11 @@ $breakpoints: (
 
 .user_link_container {
   margin: 10px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 20px;
   .user_link {
-    padding: 5px 10px;
     color: $user-color;
-    border: 1px solid black;
-    border-radius: 20px;
   }
 }
 
