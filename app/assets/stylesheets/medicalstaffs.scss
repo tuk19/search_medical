@@ -103,7 +103,7 @@ $breakpoints: (
   .field {
     margin: 10px;
   }
-  .medicalstaff_registration_mail_label, .medicalstaff_registration_password_label, .medicalstaff_registration_password_confirmation_label {
+  .medicalstaff_registration_mail_label, .medicalstaff_registration_password_label, .medicalstaff_registration_password_confirmation_label, .medicalstaff_registration_current_password_label {
     padding-right: 10px;
     @include media (md) {
       display: block;
