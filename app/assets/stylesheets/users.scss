@@ -3,6 +3,17 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 $user-color: #16e;
+$breakpoints: (
+  'lg': 'screen and (max-width :960px)',
+  'md': 'screen and (max-width :720px)',
+  'sm': 'screen and (max-width :480px)'
+);
+
+@mixin media($bp) {
+  @media #{map-get($breakpoints, $bp)}{
+    @content;
+  }
+}
 
 /* ===================================================================
                   users/common
@@ -21,8 +32,21 @@ $user-color: #16e;
   margin: 30px 0;
   padding: 0 25%;
   text-align: center;
+  @include media (lg) {
+    padding: 0 20%;
+  }
+  @include media (md) {
+    padding: 0 15%;
+  }
+  @include media (sm) {
+    padding: 0 10%;
+  }
   h2 {
     color: $user-color;
+    @include media(sm) {
+      font-size: 1.2em;
+      margin: 10px;
+    }
   }
   .user_login_container{
     border: 2px solid $user-color;
@@ -34,6 +58,9 @@ $user-color: #16e;
   }
   .user_login_mail_label, .user_login_password_label {
     padding-right: 10px;
+    @include media (sm) {
+      display: block;
+    }
   }
   .user_login_submit {
     padding: 5px 40px;
@@ -48,6 +75,9 @@ $user-color: #16e;
     margin: 20px 25%;
     border: 1px solid black;
     border-radius: 20px;
+    @include media (sm) {
+      margin: 20px 15%;
+    }
   }
 }
 
