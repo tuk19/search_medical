@@ -112,8 +112,14 @@ $breakpoints: (
     border: 2px solid $user-color;
     border-radius: 20px;
     background-color: white;
+    @include media(md) {
+      padding: 10px;
+    }
     h2 {
       color: $user-color;
+      @include media(md) {
+        margin: 10px 0;
+      }
     }
     .user_info_paragraph_text {
       line-height: 1.5em;
@@ -142,11 +148,20 @@ $breakpoints: (
     border: 2px solid $medicalstaff-color;
     border-radius: 20px;
     background-color: white;
+    @include media(md) {
+      padding: 10px;
+    }
     h2 {
       color: $medicalstaff-color;
+      @include media(md) {
+        margin: 10px 0;
+      }
     }
     .medicalstaff_info_paragraph_text {
       line-height: 1.5em;
+      @include media(md) {
+        margin: 10px 0 5px;
+      }
     }
     .medicalstaff_info_login, .medicalstaff_info_registration {
       padding: 5px 40px;
