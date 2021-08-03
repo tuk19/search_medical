@@ -38,7 +38,7 @@ $breakpoints: (
                   users/sessions/new
 ====================================================================*/
 .user_login_main {
-  margin: 30px 0;
+  margin: 40px 0;
   padding: 0 25%;
   text-align: center;
   @include media (lg) {
@@ -94,7 +94,7 @@ $breakpoints: (
           users/registrations/new & users/registrations/edit
 ====================================================================*/
 .user_registration_main {
-  margin: 30px 0;
+  margin: 40px 0;
   padding: 0 25%;
   text-align: center;
   @include media(lg) {
@@ -179,7 +179,7 @@ $breakpoints: (
                   users/index
 ====================================================================*/
 .user_index_main {
-  margin: 30px 0;
+  margin: 40px 0;
   padding: 0 25%;
   text-align: center;
   .user_index_container {
@@ -220,17 +220,33 @@ $breakpoints: (
                   users/edit
 ====================================================================*/
 .user_edit_main {
-  margin: 30px 0;
+  margin: 40px 0;
   padding: 0 25%;
   text-align: center;
+  @include media(lg) {
+    padding: 0 20%;
+  }
+  @include media(md) {
+    padding: 0 15%;
+  }
+  @include media(sm) {
+    padding: 0 10%;
+  }
   .user_edit_container {
     padding: 20px;
     border: 2px solid $user-color;
     border-radius: 20px;
     background-color: white;
+    @include media(sm) {
+      padding: 5px;
+    }
   }
   h2 {
     color: $user-color;
+    @include media(sm) {
+      font-size: 1.2em;
+      margin: 10px;
+    }
   }
   .user_edit_name_container {
     margin: 20px;
