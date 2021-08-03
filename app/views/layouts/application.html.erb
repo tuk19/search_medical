@@ -20,7 +20,7 @@
             <div class="medicalstaff_info_link"><%= link_to "医療機関関係者へ", top_medicalstaff_info_path %></div>
           <% end %>
         </div>
-        <div class="link_home"><%= link_to "home", root_path %></div>
+        <div class="link_home"><%= link_to "home", root_path, "data-turbolinks": false %></div>
         <div class="link_institution"><%= link_to "医療機関情報", institutions_path %></div>
         <% if user_signed_in? %>
           <%= render "shared/header_user_sign_in" %>
