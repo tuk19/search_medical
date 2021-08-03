@@ -19,7 +19,7 @@ $breakpoints: (
                   medicalstaff/sessions/new
 ====================================================================*/
 .medicalstaff_login_main {
-  margin: 30px 0;
+  margin: 40px 0;
   padding: 0 25%;
   text-align: center;
   @include media (lg) {
@@ -162,9 +162,18 @@ $breakpoints: (
                   medicalstaffs/index
 ====================================================================*/
 .medicalstaff_index_main {
-  margin: 30px 0;
+  margin: 40px 0;
   padding: 0 25%;
   text-align: center;
+  @include media(lg) {
+    padding: 0 20%;
+  }
+  @include media(md) {
+    padding: 0 15%;
+  }
+  @include media(sm) {
+    padding: 0 10%;
+  }
   .medicalstaff_index_container {
     padding: 20px;
     border: 2px solid $medical-color;
@@ -175,10 +184,12 @@ $breakpoints: (
     color: $medical-color;
   }
   .medicalstaff_index_name_container, .medicalstaff_index_address_container, .medicalstaff_index_email_container, .medicalstaff_index_password_container{
-    margin: 5px;
+    width: 80%;
+    margin: 10px auto;
   }
   .medicalstaff_name_index, .medicalstaff_address_index, .medicalstaff_email_index, .medicalstaff_password_index {
     padding-right: 10px;
+    display: block;
   }
   .medicalstaff_registration_submit {
     padding: 5px 40px;
@@ -189,12 +200,17 @@ $breakpoints: (
     background-color: $medical-color;
   }
   .medicalstaff_index_link_edit {
-    margin: 20px 0;
-    .link_to_medicalstaff_edit {
-      padding: 10px;
-      color: $medical-color;
-      border: 1px solid black;
-      border-radius: 20px;
+    width: 50%;
+    margin: 20px auto;
+    padding: 5px;
+    color: $medical-color;
+    border: 1px solid black;
+    border-radius: 20px;
+    @include media(md) {
+      width: 70%;
+    }
+    @include media(md) {
+      width: 85%;
     }
   }
 }
@@ -203,17 +219,33 @@ $breakpoints: (
                   medicalstaffs/edit
 ====================================================================*/
 .medicalstaff_edit_main {
-  margin: 30px 0;
+  margin: 40px 0;
   padding: 0 25%;
   text-align: center;
+  @include media(lg) {
+    padding: 0 20%;
+  }
+  @include media(md) {
+    padding: 0 15%;
+  }
+  @include media(sm) {
+    padding: 0 10%;
+  }
   .medicalstaff_edit_container {
     padding: 20px;
     border: 2px solid $medical-color;
     border-radius: 20px;
     background-color: white;
+    @include media(sm) {
+      padding: 5px;
+    }
   }
   h2 {
     color: $medical-color;
+    @include media(sm) {
+      font-size: 1.2em;
+      margin: 10px;
+    }
   }
   .medicalstaff_edit_name_container {
     margin: 20px;
