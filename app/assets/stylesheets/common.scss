@@ -151,6 +151,24 @@ a {
       text-align: center;
     }
   }
+  .medicalstaff_header_bar {
+    align-items: center;
+    margin: 0 10px 0 auto;
+    @include media(lg) {
+      display: none;
+    }
+    div {
+      margin: 0 10px;
+    }
+  }
+  .medicalstaff_nemu {
+    display: none;
+    @include media(lg) {
+      display: block;
+      margin: 0 10px 0 auto;
+      text-align: center;
+    }
+  }
 }
 
 .top_title_container {
@@ -185,6 +203,19 @@ a {
     right: 3px;
   }
   .user_nemu_prof {
+    margin-right: 10px;
+  }
+}
+
+.medicalstaff_nemu_content {
+  display: none;
+  @include media(lg) {
+    display: flex;
+    position: absolute;
+    margin: 0 10px 0 auto;
+    right: 3px;
+  }
+  .medicalstaff_nemu_prof {
     margin-right: 10px;
   }
 }
