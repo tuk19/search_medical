@@ -108,15 +108,16 @@ $breakpoints: (
   }
   .user_registration_container {
     padding: 20px;
+    border: 2px solid $user-color;
+    border-radius: 20px;
+    background-color: white;
+    @include media(md) {
+      padding: 20px 0;
+    }
   }
   h2 {
     margin: 0;
     color: $user-color;
-  }
-  .user_registration_container{
-    border: 2px solid $user-color;
-    border-radius: 20px;
-    background-color: white;
   }
   .field {
     margin: 10px;
@@ -165,11 +166,17 @@ $breakpoints: (
 ====================================================================*/
 
 .user_link_container {
-  width: 50%;
+  width: 70%;
   margin: 10px auto;
   padding: 5px;
   border: 1px solid black;
   border-radius: 20px;
+  @include media(lg) {
+    width: 80%;
+  }
+  @include media(md) {
+    width: 90%;
+  }
   .user_link {
     color: $user-color;
   }
