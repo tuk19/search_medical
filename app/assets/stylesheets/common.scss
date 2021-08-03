@@ -143,11 +143,12 @@ a {
       margin: 0 10px;
     }
   }
-  .user_nemu_icon {
+  .user_nemu {
     display: none;
     @include media(lg) {
       display: block;
       margin: 0 10px 0 auto;
+      text-align: center;
     }
   }
 }
@@ -175,7 +176,7 @@ a {
   }
 }
 
-.user_nemu {
+.user_nemu_content {
   display: none;
   @include media(lg) {
     display: block;
