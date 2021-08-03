@@ -78,6 +78,16 @@ $breakpoints: (
   margin: 30px 0;
   padding: 0 25%;
   text-align: center;
+  @include media(lg) {
+    padding: 0 20%;
+  }
+  @include media (md) {
+    padding: 0 12%;
+  }
+  @include media (sm) {
+    padding: 0 10%;
+  }
+  .user_regi
   .medicalstaff_registration_container {
     padding: 20px;
   }
@@ -92,6 +102,9 @@ $breakpoints: (
   }
   .field {
     margin: 10px;
+    @include media (md) {
+      display: block;
+    }
   }
   .medicalstaff_registration_mail_label, .medicalstaff_registration_password_label, .medicalstaff_registration_password_confirmation_label {
     padding-right: 10px;
@@ -117,6 +130,9 @@ $breakpoints: (
     margin: 20px 25%;
     border: 1px solid black;
     border-radius: 20px;
+    @include media (sm) {
+      margin: 20px 15%;
+    }
   }
 }
 
@@ -126,11 +142,11 @@ $breakpoints: (
 
 .medicalstaff_link_container {
   margin: 10px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 20px;
   .medicalstaff_link {
-    padding: 5px 10px;
     color: $medical-color;
-    border: 1px solid black;
-    border-radius: 20px;
   }
 }
 
