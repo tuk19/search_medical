@@ -13,7 +13,7 @@
       <div class="field">
         <span class="medicalstaff_registration_password_label">新規パスワード
           <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %>文字以上)</em>
+            <span>(<%= @minimum_password_length %>文字以上)</span>
           <% end %>
         </span>
         <%= f.password_field :password, autocomplete: "new-password", id: "edit_user_registratin_password" %>
