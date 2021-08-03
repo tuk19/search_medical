@@ -28,17 +28,13 @@
           <%= render "shared/header_medicalstaff_sign_in" %>
         <% end %>
       </div>
-      <div class="user_nemu">
-        <div class="link_users_path"><%= link_to "プロフィール画面", users_path %></div>
-        <%= link_to users_path do %>
-          <% if current_user.name? %>
-            <div class="user_name"><%= current_user.name %></div>
-          <% else %>
-            <div class="user_guest">ゲスト</div>
-          <% end %>
-        <% end %>
-        <div class="logout_users"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
-      </div>
+      <% if user_signed_in? %>
+        <div class="user_nemu_content">
+          <div class="link_users_path"><%= link_to "プロフィール", users_path %></div>
+          <div class="logout_users"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
+        </div>
+      <% elsif medicalstaff_signed_in? %>
+      <% end %>
     </header>
     <% if flash.notice %>
       <div class="flash_notice font_large red">
