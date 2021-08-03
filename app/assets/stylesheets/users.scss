@@ -182,6 +182,15 @@ $breakpoints: (
   margin: 40px 0;
   padding: 0 25%;
   text-align: center;
+  @include media(lg) {
+    padding: 0 20%;
+  }
+  @include media(md) {
+    padding: 0 15%;
+  }
+  @include media(sm) {
+    padding: 0 10%;
+  }
   .user_index_container {
     padding: 20px;
     border: 2px solid $user-color;
@@ -192,10 +201,20 @@ $breakpoints: (
     color: $user-color;
   }
   .user_index_name_container, .user_index_email_container, .user_index_password_container{
-    margin: 5px;
+    width: 60%;
+    margin: 5px auto;
+    text-align: left;
+    @include media(md) {
+      width: auto;
+      text-align: center;
+      margin: 10px;
+    }
   }
   .user_name_index, .user_email_index, .user_password_index {
     padding-right: 10px;
+    @include media(md) {
+      display: block;
+    }
   }
   .user_registration_submit {
     padding: 5px 40px;
@@ -206,12 +225,17 @@ $breakpoints: (
     background-color: $user-color;
   }
   .user_index_link_edit {
-    margin: 20px 0;
-    .link_to_user_edit {
-      padding: 10px;
-      color: $user-color;
-      border: 1px solid black;
-      border-radius: 20px;
+    width: 50%;
+    margin: 20px auto;
+    padding: 5px;
+    color: $user-color;
+    border: 1px solid black;
+    border-radius: 20px;
+    @include media(md) {
+      width: 70%;
+    }
+    @include media(md) {
+      width: 85%;
     }
   }
 }
