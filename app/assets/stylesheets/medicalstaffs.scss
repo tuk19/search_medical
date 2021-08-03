@@ -75,7 +75,7 @@ $breakpoints: (
   medicalstaffs/registrations/new & medicalstaffs/registrations/edit
 ====================================================================*/
 .medicalstaff_registration_main {
-  margin: 30px 0;
+  margin: 40px 0;
   padding: 0 25%;
   text-align: center;
   @include media(lg) {
@@ -87,27 +87,27 @@ $breakpoints: (
   @include media (sm) {
     padding: 0 10%;
   }
-  .user_regi
   .medicalstaff_registration_container {
     padding: 20px;
+    border: 2px solid $medical-color;
+    border-radius: 20px;
+    background-color: white;
+    @include media(md) {
+      padding: 20px 0;
+    }
   }
   h2 {
     margin: 0;
     color: $medical-color;
   }
-  .medicalstaff_registration_container{
-    border: 2px solid $medical-color;
-    border-radius: 20px;
-    background-color: white;
-  }
   .field {
     margin: 10px;
-    @include media (md) {
-      display: block;
-    }
   }
   .medicalstaff_registration_mail_label, .medicalstaff_registration_password_label, .medicalstaff_registration_password_confirmation_label {
     padding-right: 10px;
+    @include media (md) {
+      display: block;
+    }
   }
   .medicalstaff_registration_submit {
     padding: 5px 40px;
@@ -141,11 +141,17 @@ $breakpoints: (
 ====================================================================*/
 
 .medicalstaff_link_container {
-  width: 50%;
+  width: 70%;
   margin: 10px auto;
   padding: 5px;
   border: 1px solid black;
   border-radius: 20px;
+  @include media(lg) {
+    width: 80%;
+  }
+  @include media(md) {
+    width: 90%;
+  }
   .medicalstaff_link {
     color: $medical-color;
   }
