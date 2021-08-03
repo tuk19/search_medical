@@ -179,10 +179,13 @@ a {
 .user_nemu_content {
   display: none;
   @include media(lg) {
-    display: block;
+    display: flex;
     position: absolute;
     margin: 0 10px 0 auto;
     right: 3px;
+  }
+  .user_nemu_prof {
+    margin-right: 10px;
   }
 }
 

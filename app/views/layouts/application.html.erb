@@ -30,8 +30,8 @@
       </div>
       <% if user_signed_in? %>
         <div class="user_nemu_content">
-          <div class="link_users_path"><%= link_to "プロフィール", users_path %></div>
-          <div class="logout_users"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
+          <div class="user_nemu_prof"><%= link_to "プロフィール", users_path %></div>
+          <div class="user_nemu_logout"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
         </div>
       <% elsif medicalstaff_signed_in? %>
       <% end %>
