@@ -258,6 +258,9 @@ $breakpoints: (
   }
   .medicalstaff_address_text_field{
     width: 300px;
+    @include media(sm) {
+      width: 200px;
+    }
   }
   .medicalstaff_edit_submit {
     padding: 5px 40px;
