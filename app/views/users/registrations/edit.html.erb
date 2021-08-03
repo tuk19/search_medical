@@ -4,7 +4,7 @@
     <%= form_with(model: resource, scope: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= render "users/shared/error_messages", resource: resource %>
       <div class="field">
-        <span class="user_registration_mail_label">メールアドレス</span>
+        <span class="user_registration_mail_label">　　　メールアドレス　　　</span>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", id: "edit_user_registratin_email" %>
       </div>
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -13,17 +13,17 @@
       <div class="field">
         <span class="user_registration_password_label">新規パスワード
           <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %>文字以上)</em>
+            <span>(<%= @minimum_password_length %>文字以上)</span>
           <% end %>
         </span>
         <%= f.password_field :password, autocomplete: "new-password", id: "edit_user_registratin_password" %>
       </div>
       <div class="field">
-        <span class="user_registration_password_confirmation_label">新規パスワード(確認用)</span>
+        <span class="user_registration_password_confirmation_label">　新規パスワード(確認用)　</span>
         <%= f.password_field :password_confirmation, autocomplete: "new-password", id: "edit_user_registratin_confirm_password" %>
       </div>
       <div class="field">
-        <span class="user_registration_current_password_label">現在のパスワード</span>
+        <span class="user_registration_current_password_label">　　現在のパスワード　　　</span>
         <%= f.password_field :current_password, autocomplete: "current-password", id: "edit_user_current_password" %>
       </div>
       <div class="actions">
