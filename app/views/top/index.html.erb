@@ -31,9 +31,7 @@
               <%= render "shared/login_user" %>
               <%= render "shared/login_medicalstaff" %>
             </div>
-            <% if user_signed_in? %>
-            <% elsif medicalstaff_signed_in? %>
-            <% else %>
+            <% unless user_signed_in? && medicalstaff_signed_in? %>
               <div class="without_login text_center font_larger">
                 <p class="without_login_text">ログインせずに地図検索</p>
                 <div class="down_triangle">
@@ -49,7 +47,7 @@
 <% if medicalstaff_signed_in? %>
   <div class="top_map_caontainer">
     <% if current_medicalstaff.address? %>
-      <%= render "shared/place_map" %>
+      <%#= render "shared/place_map" %>
     <% else %>
       <%#= render "shared/search_map" %>
     <% end %>
