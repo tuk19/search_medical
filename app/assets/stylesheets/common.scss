@@ -3,6 +3,11 @@ $jp_font-family: "メイリオ";
 $user-color: #16e;
 $medicalstaff-color: #eaf;
 
+$break-point1: 960px;
+$break-point2: 720px;
+$break-point3: 480px;
+
+
 @mixin info_link($color: "fff") {
   color: white;
   background-color: $color;
