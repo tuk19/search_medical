@@ -191,6 +191,9 @@ $breakpoints: (
       width: 300px;
       font-size: large;
       padding: 3px;
+      @include media(sm) {
+        width: 200px;
+      }
     }
     #place_search_button{
       font-size: large;
@@ -199,6 +202,9 @@ $breakpoints: (
   #place_map {
     height: 600px;
     width: 100%;
+    @include media(md) {
+      height: 400px;
+    }
   }
 }
 
