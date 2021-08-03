@@ -3,7 +3,7 @@
     <h2>登録情報編集</h2>
     <%= form_with model: @staff do |f| %>
       <div class="medicalstaff_edit_name_container">
-        <%= f.label :name, "登録名" %>
+        <%= f.label :name, "アカウント名", class: "medicalstaff_name_label" %>
         <%= f.text_field :name, id: "medicalstaff_edit_name" %>
       </div>
       <div class="medicalstaff_edit_address_container">
