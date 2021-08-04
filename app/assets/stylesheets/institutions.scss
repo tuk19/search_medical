@@ -232,41 +232,65 @@ $breakpoints: (
 /* ===================================================================
                     _institution_form
 ====================================================================*/
-.institution_info_container {
-  text-align: left;
-  .institution_name_container, .institution_department_container, .institution_image_container, .institution_postcode_container, .institution_prefecture_container, .institution_city_container, .institution_street_container, .institution_building_container, .institution_intro_container {
-    margin: 15px 5px;
+.institution_form_flex_container {
+  display: flex;
+  justify-content: space-around;
+  @include media(lg) {
+    display: block;
   }
-  .institution_label{
-    margin-right: 5px;
+  .institution_info_container {
+    text-align: left;
+    @include media(md) {
+      text-align: center;
+    }
+    .institution_name_container, .institution_department_container, .institution_image_container, .institution_postcode_container, .institution_prefecture_container, .institution_city_container, .institution_street_container, .institution_building_container, .institution_intro_container {
+      margin: 15px 5px;
+      @include media(lg) {
+        width: 80%;
+        margin: 15px auto;
+      }
+    }
+    .institution_label{
+      margin-right: 5px;
+      font-size: large;
+      @include media(md) {
+        display: block;
+
+      }
+    }
+    .institution_text {
+      width: 200px;
+      padding: 5px;
+      @include media(lg) {
+        width: 70%;
+      }
+      @include media(md) {
+        width: 90%;
+      }
+    }
+    #institution_prefecture {
+      padding: 5px;
+      width: 60%;
+      font-size: 14px;
+    }
+    #institution_intro_label {
+      vertical-align: top;
+    }
+    #institution_intro_text{
+      height: 100px;
+    }
+  }
+  #institution_image_label {
     font-size: large;
   }
-  .institution_text {
-    width: 200px;
-    padding: 5px;
-  }
-  #institution_prefecture {
-    padding: 5px;
-    width: 60%;
-    font-size: 14px;
-  }
-  #institution_intro_label {
-    vertical-align: top;
-  }
-  #institution_intro_text{
-    height: 100px;
-  }
-}
-#institution_image_label {
-  font-size: large;
-}
-.institution_image_box {
-  margin: 20px 0;
-  #institution_image{
-    width: 80%;
-  }
-  #default_institution_image{
-    width: 80%;
+  .institution_image_box {
+    margin: 20px 0;
+    #institution_image{
+      width: 80%;
+    }
+    #default_institution_image{
+      width: 80%;
+    }
   }
 }
 
