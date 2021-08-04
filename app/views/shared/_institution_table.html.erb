@@ -23,9 +23,9 @@
       <td class="institution_index_td address_td"><%= institution.address %></td>
     </tr>
     <% if user_signed_in? %>
-      <td class="institution_index_td favorite_td"><%= render "favorites/favorite", institution: institution %></td>
+      <td colspan="2", class="institution_index_td favorite_td"><%= render "favorites/favorite", institution: institution %></td>
     <% elsif medicalstaff_signed_in? %>
-      <td class="institution_index_td staff_institution_td"><%= render "staff_institutions/staff_institutions", institution: institution %></td>
+      <td colspan="2", class="institution_index_td staff_institution_td"><%= render "staff_institutions/staff_institutions", institution: institution %></td>
     <% end %>
   </tbody>
 </table>
