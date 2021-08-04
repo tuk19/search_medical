@@ -297,39 +297,42 @@ $breakpoints: (
 /* ===================================================================
                     _institution_table
 ====================================================================*/
-.insitution_index_table {
-  text-align: center;
-  @include media(sm) {
-    font-size: 14px;
-  }
-  .institution_index_td {
-    padding: 10px;
-  }
-  .image_th, .image_td {
-    width: 20%;
-    .institution_index_image {
-      width: 100%;
+.institution_table_starbtn_container {
+  margin-bottom: 20px;
+  .insitution_index_table {
+    text-align: center;
+    @include media(sm) {
+      font-size: 14px;
     }
-  }
-  .name_td, .name_th {
-    width: 20%;
-    overflow-wrap: break-word;
-  }
-  .department_td, department_th {
-    width: 20%;
-    overflow-wrap: break-word;
-  }
-  .postcode_td, .postcode_th {
-    width: 15%;
-    @include media(lg) {
-      display: none;
+    .institution_index_td {
+      padding: 10px;
     }
-  }
-  .address_td, .address_th {
-    width: 25%;
-    overflow-wrap: break-word;
-    @include media(md) {
-      display: none;
+    .image_th, .image_td {
+      width: 20%;
+      .institution_index_image {
+        width: 100%;
+      }
+    }
+    .name_td, .name_th {
+      width: 20%;
+      overflow-wrap: break-word;
+    }
+    .department_td, department_th {
+      width: 20%;
+      overflow-wrap: break-word;
+    }
+    .postcode_td, .postcode_th {
+      width: 15%;
+      @include media(lg) {
+        display: none;
+      }
+    }
+    .address_td, .address_th {
+      width: 25%;
+      overflow-wrap: break-word;
+      @include media(md) {
+        display: none;
+      }
     }
   }
 }

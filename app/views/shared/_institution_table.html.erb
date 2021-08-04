@@ -1,31 +1,33 @@
-<table class="insitution_index_table">
-  <thead class="institution_index_table_thead">
-    <tr class="institution_index_thead_tr">
-      <th class="institution_index_th image_th">画像</th>
-      <th class="institution_index_th name_th">名前</th>
-      <th class="institution_index_th department_th">診療科目</th>
-      <th class="institution_index_th postcode_th">郵便番号</th>
-      <th class="institution_index_th address_th">住所</th>
-    </tr>
-  </thead>
-  <tbody class="institution_index_table_tbody">
-    <tr class="institution_index_tbody_tr" data-href="/institutions/<%= institution.id%>">
-      <td class="institution_index_td image_td">
-        <% if institution.image? %>
-          <%= image_tag institution.image.url, alt: "クリニック画像", class: "institution_index_image" %>
-        <% else %>
-          <%= image_tag "default_institution_image.png", class: "institution_index_image" %>
-        <% end %>
-      </td>
-      <td class="institution_index_td name_td"><%= institution.name %></td>
-      <td class="institution_index_td department_td"><%= institution.department %></td>
-      <td class="institution_index_td postcode_td"><%= institution.postcode.to_s[0,3] %>-<%= institution.postcode.to_s[3..] %></td>
-      <td class="institution_index_td address_td"><%= institution.address %></td>
-    </tr>
-  </tbody>
-</table>
-<% if user_signed_in? %>
-  <div class="favorite"><%= render "favorites/favorite", institution: institution %></div>
-<% elsif medicalstaff_signed_in? %>
-  <div class="staff_institution"><%= render "staff_institutions/staff_institutions", institution: institution %></div>
-<% end %>
+<div class="institution_table_starbtn_container">
+  <table class="insitution_index_table">
+    <thead class="institution_index_table_thead">
+      <tr class="institution_index_thead_tr">
+        <th class="institution_index_th image_th">画像</th>
+        <th class="institution_index_th name_th">名前</th>
+        <th class="institution_index_th department_th">診療科目</th>
+        <th class="institution_index_th postcode_th">郵便番号</th>
+        <th class="institution_index_th address_th">住所</th>
+      </tr>
+    </thead>
+    <tbody class="institution_index_table_tbody">
+      <tr class="institution_index_tbody_tr" data-href="/institutions/<%= institution.id%>">
+        <td class="institution_index_td image_td">
+          <% if institution.image? %>
+            <%= image_tag institution.image.url, alt: "クリニック画像", class: "institution_index_image" %>
+          <% else %>
+            <%= image_tag "default_institution_image.png", class: "institution_index_image" %>
+          <% end %>
+        </td>
+        <td class="institution_index_td name_td"><%= institution.name %></td>
+        <td class="institution_index_td department_td"><%= institution.department %></td>
+        <td class="institution_index_td postcode_td"><%= institution.postcode.to_s[0,3] %>-<%= institution.postcode.to_s[3..] %></td>
+        <td class="institution_index_td address_td"><%= institution.address %></td>
+      </tr>
+    </tbody>
+  </table>
+  <% if user_signed_in? %>
+    <div class="favorite"><%= render "favorites/favorite", institution: institution %></div>
+  <% elsif medicalstaff_signed_in? %>
+    <div class="staff_institution"><%= render "staff_institutions/staff_institutions", institution: institution %></div>
+  <% end %>
+</div>
