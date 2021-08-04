@@ -4,11 +4,11 @@
     <div class="flex_center">
       <div class="search_form_container">
         <div class="addres_cont_container">
-          <%= f.label :address_cont, '住所で検索' %>
+          <%= f.label :address_cont, '住所で検索', class: "address_cont_label" %>
           <%= f.search_field :address_cont %>
         </div>
-        <div class="name_introduction_cont_container">
-          <%= f.label :name_or_department_or_introduction_cont, '情報で検索' %>
+        <div class="name_department_introduction_cont_container">
+          <%= f.label :name_or_department_or_introduction_cont, '情報で検索', class: "name_or_department_or_introduction_cont_label" %>
           <%= f.search_field :name_or_department_or_introduction_cont %>
         </div>
       </div>
