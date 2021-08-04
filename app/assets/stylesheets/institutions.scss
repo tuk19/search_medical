@@ -3,17 +3,41 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 $medical-color: #eaf;
+$breakpoints: (
+  'lg': 'screen and (max-width :960px)',
+  'md': 'screen and (max-width :720px)',
+  'sm': 'screen and (max-width :480px)'
+);
+
+@mixin media($bp) {
+  @media #{map-get($breakpoints, $bp)}{
+    @content;
+  }
+}
 
 
 /* ===================================================================
                         institution/index
 ====================================================================*/
 .institution_index_main {
-  margin: 30px 0;
+  margin: 40px 0;
   padding: 0 5%;
   text-align: center;
+  @include media(sm) {
+    padding: 0 2%;
+  }
   h3 {
     margin: 0;
+  }
+  .address_cont_label {
+    @include media(md) {
+      display: block;
+    }
+  }
+  .name_or_department_or_introduction_cont_label {
+    @include media(md) {
+      display: block;
+    }
   }
   .search_submit {
     padding: 5px 10px;
@@ -28,6 +52,9 @@ $medical-color: #eaf;
     border: 2px solid $medical-color;
     border-radius: 20px;
     background-color: white;
+    @include media(sm) {
+      padding: auto;
+    }
     h2 {
       color: $medical-color;
     }
@@ -46,7 +73,7 @@ $medical-color: #eaf;
                 institution/new & institution/edit
 ====================================================================*/
 .institution_new_main {
-  margin: 30px 0;
+  margin: 40px 0;
   padding: 0 5%;
   text-align: center;
   .institution_new_container {
@@ -73,7 +100,7 @@ $medical-color: #eaf;
                           institution/show
 ====================================================================*/
 .institution_show_main {
-  margin: 30px 0;
+  margin: 40px 0;
   padding: 0 5%;
   text-align: center;
   .show_label {
@@ -216,6 +243,9 @@ $medical-color: #eaf;
 ====================================================================*/
 .insitution_index_table {
   text-align: center;
+  @include media(sm) {
+    font-size: 14px;
+  }
   .institution_index_td {
     padding: 10px;
   }
@@ -235,9 +265,15 @@ $medical-color: #eaf;
   }
   .postcode_td, .postcode_th {
     width: 15%;
+    @include media(lg) {
+      display: none;
+    }
   }
   .address_td, .address_th {
     width: 25%;
     overflow-wrap: break-word;
+    @include media(md) {
+      display: none;
+    }
   }
 }
