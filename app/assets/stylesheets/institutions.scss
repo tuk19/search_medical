@@ -117,14 +117,30 @@ $breakpoints: (
       color: $medical-color;
     }
     .institution_show_info_container {
-      .institution_show_name_container, .institution_show_department_container, .institution_show_postcode_container, .institution_show_address_container, .institution_show_intro_container, .institution_show_image_container {
+      width: 50%;
+      @include media(md) {
+        width: auto;
+      }
+      .institution_show_name_container, .institution_show_department_container, .institution_show_postcode_container, .institution_show_address_container, .institution_show_intro_container {
         margin: 20px;
       }
       .show_text {
         font-size: large;
+        @include media(sm) {
+          font-size: medium;
+        }
       }
       .institution_show_intro_text {
         overflow-wrap: break-word;
+      }
+    }
+    .institution_show_image_container {
+      margin: auto 20px;
+      @include media(md) {
+        margin: 20px;
+      }
+      img {
+        width: 100%;
       }
     }
     .institution_show_edit, .institution_consultationhour_create_link {
@@ -147,17 +163,30 @@ $breakpoints: (
   .institution_consultationhour_container{
     width: 80%;
     margin: 0 auto;
+    @include media(md) {
+      width: auto;
+    }
     .consultation_detail_container {
       text-align: left;
       width: 50%;
       margin: 0 auto;
+      @include media(lg) {
+        width: 100%;
+        margin: 0 10%;
+      }
+      @include media(sm) {
+        font-size: small;
+      }
     }
-    .institution_consultationhour_table{
+    .institution_consultationhour_table {
       margin: 0 auto;
       width: 100%;
       td {
         height: 35px;
         font-size: large;
+        @include media(sm) {
+          font-size: small;
+        }
       }
       .th_time, .td_time {
         width: 40%;
@@ -194,6 +223,9 @@ $breakpoints: (
   #institution_map {
     height: 600px;
     width: 100%;
+    @include media(md) {
+      height: 400px;
+    }
   }
 }
 
