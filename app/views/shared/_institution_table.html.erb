@@ -22,10 +22,10 @@
       <td class="institution_index_td postcode_td"><%= institution.postcode.to_s[0,3] %>-<%= institution.postcode.to_s[3..] %></td>
       <td class="institution_index_td address_td"><%= institution.address %></td>
     </tr>
-    <% if user_signed_in? %>
-      <td colspan="2", class="institution_index_td favorite_td"><%= render "favorites/favorite", institution: institution %></td>
-    <% elsif medicalstaff_signed_in? %>
-      <td colspan="2", class="institution_index_td staff_institution_td"><%= render "staff_institutions/staff_institutions", institution: institution %></td>
-    <% end %>
   </tbody>
 </table>
+<% if user_signed_in? %>
+  <div class="institution_index_td favorite_td"><%= render "favorites/favorite", institution: institution %></div>
+<% elsif medicalstaff_signed_in? %>
+  <div class="institution_index_td staff_institution_td"><%= render "staff_institutions/staff_institutions", institution: institution %></div>
+<% end %>
