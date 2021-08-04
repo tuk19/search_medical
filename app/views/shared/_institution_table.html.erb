@@ -25,7 +25,7 @@
   </tbody>
 </table>
 <% if user_signed_in? %>
-  <div class="institution_index_td favorite_td"><%= render "favorites/favorite", institution: institution %></div>
+  <div class="favorite"><%= render "favorites/favorite", institution: institution %></div>
 <% elsif medicalstaff_signed_in? %>
-  <div class="institution_index_td staff_institution_td"><%= render "staff_institutions/staff_institutions", institution: institution %></div>
+  <div class="staff_institution"><%= render "staff_institutions/staff_institutions", institution: institution %></div>
 <% end %>
