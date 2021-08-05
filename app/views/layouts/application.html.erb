@@ -29,7 +29,7 @@
         <% end %>
       </div>
       <% if user_signed_in? %>
-        <div class="user_menu_content">
+        <div class="user_menu_content", id="user_menu_bar">
           <div class="user_menu_prof"><%= link_to "プロフィール", users_path %></div>
           <div class="user_menu_logout"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
         </div>
