@@ -143,7 +143,7 @@ a {
       margin: 0 10px;
     }
   }
-  .user_nemu {
+  .user_menu {
     display: none;
     @include media(lg) {
       display: block;
@@ -161,7 +161,7 @@ a {
       margin: 0 10px;
     }
   }
-  .medicalstaff_nemu {
+  .medicalstaff_menu {
     display: none;
     @include media(lg) {
       display: block;
@@ -194,7 +194,7 @@ a {
   }
 }
 
-.user_nemu_content {
+.user_menu_content {
   display: none;
   @include media(lg) {
     display: flex;
@@ -202,12 +202,12 @@ a {
     margin: 0 10px 0 auto;
     right: 3px;
   }
-  .user_nemu_prof {
+  .user_menu_prof {
     margin-right: 10px;
   }
 }
 
-.medicalstaff_nemu_content {
+.medicalstaff_menu_content {
   display: none;
   @include media(lg) {
     display: flex;
@@ -215,7 +215,7 @@ a {
     margin: 0 10px 0 auto;
     right: 3px;
   }
-  .medicalstaff_nemu_prof {
+  .medicalstaff_menu_prof {
     margin-right: 10px;
   }
 }

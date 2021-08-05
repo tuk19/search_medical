@@ -7,11 +7,11 @@
   <% end %>
   <div class="logout_staff"><%= link_to "ログアウト", destroy_medicalstaff_session_path, method: :delete %></div>
 </div>
-<div class="medicalstaff_nemu">
-  <div class="medicalstaff_nemu_icon">
+<div class="medicalstaff_menu">
+  <div class="medicalstaff_menu_icon">
     <i class="fas fa-bars fa-2x"></i>
   </div>
-  <div class="medicalstaff_nemu_name">
+  <div class="medicalstaff_menu_name">
     <% if current_medicalstaff.name? %>
       <div class="medicalstaff_name"><%= current_medicalstaff.name %></div>
     <% else %>

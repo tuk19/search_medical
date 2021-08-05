@@ -14,15 +14,15 @@
   <% end %>
   <div class="logout_users"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
 </div>
-<div class="user_nemu">
-  <div class="user_nemu_icon">
+<div class="user_menu", id="user_menu">
+  <div class="user_menu_icon">
     <% if current_user.image? %>
       <%= image_tag current_user.image.url, alt: "プロフィール画像", class: "user_image" %>
     <% else %>
       <%= image_tag "default_icon.png", alt: "プロフィール画像", class: "default_user_image" %>
     <% end %>
   </div>
-  <div class="user_nemu_name">
+  <div class="user_menu_name">
     <%= link_to users_path do %>
       <% if current_user.name? %>
         <div class="user_name"><%= current_user.name %></div>
