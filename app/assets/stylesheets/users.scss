@@ -1,19 +1,4 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-
-$user-color: #16e;
-$breakpoints: (
-  'lg': 'screen and (max-width :960px)',
-  'md': 'screen and (max-width :720px)',
-  'sm': 'screen and (max-width :480px)'
-);
-
-@mixin media($bp) {
-  @media #{map-get($breakpoints, $bp)}{
-    @content;
-  }
-}
+@import "variable";
 
 /* ===================================================================
                   users/common

@@ -1,26 +1,4 @@
-// Place all the styles related to the top controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-
-$top-background-color: #fee;
-$user-color: #16e;
-$medicalstaff-color: #eaf;
-$breakpoints: (
-  'lg': 'screen and (max-width :960px)',
-  'md': 'screen and (max-width :720px)',
-  'sm': 'screen and (max-width :480px)'
-);
-
-@mixin media($bp) {
-  @media #{map-get($breakpoints, $bp)}{
-    @content;
-  }
-}
-
-@mixin login($color: #fff) {
-  color: $color;
-  font-weight: bold;
-}
+@import "variable";
 
 /* ===================================================================
                   top/index
@@ -70,7 +48,7 @@ $breakpoints: (
 }
 
 .medicalstaff_login {
-  @include login($medicalstaff-color);
+  @include login($medical-color);
   @include media(md) {
     margin-top: 20px;
   }
@@ -145,14 +123,14 @@ $breakpoints: (
   padding: 0 5%;
   .medicalstaff_info_container{
     padding: 20px;
-    border: 2px solid $medicalstaff-color;
+    border: 2px solid $medical-color;
     border-radius: 20px;
     background-color: white;
     @include media(md) {
       padding: 10px;
     }
     h2 {
-      color: $medicalstaff-color;
+      color: $medical-color;
       @include media(md) {
         margin: 10px 0;
       }
@@ -168,9 +146,9 @@ $breakpoints: (
       margin: 20px 10px;
       color: white;
       text-align: center;
-      border: 1px solid $medicalstaff-color;
+      border: 1px solid $medical-color;
       border-radius: 5px;
-      background-color: $medicalstaff-color;
+      background-color: $medical-color;
     }
   }
 }
