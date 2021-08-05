@@ -168,6 +168,9 @@ a {
       margin: 0 10px 0 auto;
       text-align: center;
     }
+  #medicalstaff_menu_close {
+    display: none;
+  }
   }
 }
 
@@ -208,13 +211,14 @@ a {
   }
 }
 
-.medicalstaff_menu_content {
+#medicalstaff_menu_bar {
   display: none;
   @include media(lg) {
-    display: flex;
+    display: none;
+    margin: -8px 10px 0 auto;
     position: absolute;
-    margin: 0 10px 0 auto;
     right: 3px;
+    background-color: $body_background_color;
   }
   .medicalstaff_menu_prof {
     margin-right: 10px;
@@ -224,6 +228,7 @@ a {
 .flash_notice {
   margin: 0px 15px 3px;
 }
+
 
 
 /* ===================================================================
