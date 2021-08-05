@@ -8,8 +8,13 @@
   <div class="logout_staff"><%= link_to "ログアウト", destroy_medicalstaff_session_path, method: :delete %></div>
 </div>
 <div class="medicalstaff_menu">
-  <div class="medicalstaff_menu_icon">
-    <i class="fas fa-bars fa-2x"></i>
+  <div class="medicalstaff_menu_icon", id="medicalstaff_menu_box">
+    <div id="medicalstaff_hamburger">
+      <i class="fas fa-bars fa-2x"></i>
+    </div>
+    <div id="medicalstaff_menu_close">
+      <i class="far fa-window-close fa-2x"></i>
+    </div>
   </div>
   <div class="medicalstaff_menu_name">
     <% if current_medicalstaff.name? %>
