@@ -34,7 +34,7 @@
           <div class="user_menu_logout"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
         </div>
       <% elsif medicalstaff_signed_in? %>
-        <div class="medicalstaff_menu_content">
+        <div class="medicalstaff_menu_content", id="medicalstaff_menu_bar">
           <div class="medicalstaff_menu_prof"><%= link_to "登録情報確認", medicalstaffs_path %></div>
           <div class="medicalstaff_menu_logout"><%= link_to "ログアウト", destroy_medicalstaff_session_path, method: :delete %></div>
         </div>
