@@ -4,15 +4,6 @@ body {
   margin: 0;
   background-color: $body_background_color;
   font-family: $jp_font-family;
-  @include media(lg) {
-    background-color: red;
-  }
-  @include media(md) {
-    background-color: green;
-  }
-  @include media(sm) {
-    background-color: orange;
-  }
 }
 
 a {
