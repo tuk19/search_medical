@@ -11,6 +11,7 @@ import "channels"
 import "jquery"
 import "packs/jquery.jpostal.js"
 import "packs/institutions.js"
+import "packs/menu.js"
 
 Rails.start()
 Turbolinks.start()
