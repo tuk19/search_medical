@@ -194,13 +194,14 @@ a {
   }
 }
 
-.user_menu_content {
+#user_menu_bar {
   display: none;
   @include media(lg) {
-    display: flex;
+    display: none;
+    margin: -8px 10px 0 auto;
     position: absolute;
-    margin: 0 10px 0 auto;
     right: 3px;
+    background-color: $body_background_color;
   }
   .user_menu_prof {
     margin-right: 10px;
