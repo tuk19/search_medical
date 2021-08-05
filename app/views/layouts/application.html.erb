@@ -29,14 +29,14 @@
         <% end %>
       </div>
       <% if user_signed_in? %>
-        <div class="user_nemu_content">
-          <div class="user_nemu_prof"><%= link_to "プロフィール", users_path %></div>
-          <div class="user_nemu_logout"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
+        <div class="user_menu_content">
+          <div class="user_menu_prof"><%= link_to "プロフィール", users_path %></div>
+          <div class="user_menu_logout"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
         </div>
       <% elsif medicalstaff_signed_in? %>
-        <div class="medicalstaff_nemu_content">
-          <div class="medicalstaff_nemu_prof"><%= link_to "登録情報確認", medicalstaffs_path %></div>
-          <div class="medicalstaff_nemu_logout"><%= link_to "ログアウト", destroy_medicalstaff_session_path, method: :delete %></div>
+        <div class="medicalstaff_menu_content">
+          <div class="medicalstaff_menu_prof"><%= link_to "登録情報確認", medicalstaffs_path %></div>
+          <div class="medicalstaff_menu_logout"><%= link_to "ログアウト", destroy_medicalstaff_session_path, method: :delete %></div>
         </div>
       <% end %>
     </header>
