@@ -142,14 +142,18 @@ RSpec.feature 'Medicalstaff_Features', type: :feature do
       expect(page).to have_content(medicalstaff.email)
       expect(page).to have_content("アカウント情報を編集する")
       expect(page).to have_content("登録情報を編集する")
-      click_link "ログアウト"
+      within(".logout_staff") do
+        click_link "ログアウト"
+      end
       expect(page).to have_content("ログインしてお気に入り機能を使おう")
     end
 
     scenario '登録情報画面から登録情報画面へ遷移できるか' do
       visit edit_medicalstaff_path(medicalstaff.id)
       expect(page).to have_content("登録情報編集")
-      click_link "登録情報確認"
+      within(".link_staff_info") do
+        click_link "登録情報確認"
+      end
       expect(page).to have_content(medicalstaff.email)
       expect(page).to have_content("アカウント情報を編集する")
       expect(page).to have_content("登録情報を編集する")

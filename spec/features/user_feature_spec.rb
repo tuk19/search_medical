@@ -147,7 +147,9 @@ RSpec.feature 'Users_Features', type: :feature do
       expect(page).to have_content(user.email)
       expect(page).to have_content("アカウント情報を編集する")
       expect(page).to have_content("プロフィールを編集する")
-      click_link "ログアウト"
+      within(".logout_users") do
+        click_link "ログアウト"
+      end
       expect(page).to have_content("ログインしてお気に入り機能を使おう")
     end
 
