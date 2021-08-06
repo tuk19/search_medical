@@ -1,8 +1,4 @@
 class ConsultationhoursController < ApplicationController
-  def index
-    @consultationhour = Consultationhour.all
-  end
-
   def create
     @consultationhour = Consultationhour.new(consultationhour_params)
     institution_id = @consultationhour.institution_id
