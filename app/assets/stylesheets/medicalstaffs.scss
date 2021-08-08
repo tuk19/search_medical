@@ -122,6 +122,54 @@
 }
 
 /* ===================================================================
+                    medicalstaffs/passwords/new
+====================================================================*/
+.medicalstaff_passwords_main {
+  margin: 40px 0;
+  padding: 0 25%;
+  text-align: center;
+  @include media(lg) {
+    padding: 0 20%;
+  }
+  @include media (md) {
+    padding: 0 12%;
+  }
+  @include media (sm) {
+    padding: 0 10%;
+  }
+  .medicalstaff_passwords_container {
+    padding: 20px;
+    border: 2px solid $medical-color;
+    border-radius: 20px;
+    background-color: white;
+    @include media(md) {
+      padding: 20px 0;
+    }
+  }
+  h2 {
+    margin: 0;
+    color: $medical-color;
+  }
+  .field {
+    margin: 10px;
+  }
+  .medicalstaff_passwords_mail_label {
+    padding-right: 10px;
+    @include media (md) {
+      display: block;
+    }
+  }
+  .medicalstaff_passwords_submit {
+    padding: 5px 40px;
+    margin: 10px;
+    color: white;
+    border: 1px solid $medical-color;
+    border-radius: 5px;
+    background-color: $medical-color;
+  }
+}
+
+/* ===================================================================
                   medicalstaffs/shared/_links
 ====================================================================*/
 

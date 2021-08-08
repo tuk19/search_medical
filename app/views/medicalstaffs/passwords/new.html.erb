@@ -1,16 +1,16 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "medicalstaffs/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="medicalstaff_passwords_main">
+  <div class="medicalstaff_passwords_container">
+    <h2>パスワード再設定</h2>
+    <%= form_with(model: resource, scope: resource_name, url: password_path(resource_name)) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
+      <div class="field">
+        <span class="medicalstaff_passwords_mail_label">メールアドレス</span>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", id: "edit_medicalstaff_password_email" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "再設定用のメールをアドレスに送信する", class: "medicalstaff_passwords_submit" %>
+      </div>
+    <% end %>
+    <%= render "medicalstaffs/shared/links" %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "medicalstaffs/shared/links" %>
+</div>
