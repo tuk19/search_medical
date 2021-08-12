@@ -1,24 +1,27 @@
 # README
+医療機関情報の検索・地図の確認ができます。
+検索は住所検索と、医療機関名や診療科目などの情報検索とができます。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+患者としてログインすると
+お気に入り機能が使えるようになります。
+お気に入りは一覧で確認することができます。
 
-Things you may want to cover:
+医療関係者としてログインすると
+医療機関情報の登録ができます。
+また、住所を登録すると住所周辺の医療機関が表示されます。
 
-* Ruby version
 
-* System dependencies
+1つのサイトで患者用、医療関係者用で操作ができること
+医療機関情報を住所、情報で検索できること
+実際に近隣医療機関についての問い合わせを受けることがあるので、
+医療関係者には登録住所周辺の医療機関を地図上に表示できるようにしました。
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+仕様
+Ruby 2.7.2
+jQuery
+Googlemap API(Geometory, Place)
+rspec
+Rubocop
+sqlite3
+Heroku
